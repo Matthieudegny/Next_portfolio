@@ -1,0 +1,23 @@
+.LayoutText_Container {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.LayoutText {
+  display: inline-block;
+  transition: transform;
+  transition-timing-function: ease-in;
+  transform: translateY(85%);
+  animation: slidein forwards;
+  animation-duration: 1s;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateY(85%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}

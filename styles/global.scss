@@ -1,0 +1,25 @@
+//title
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+//title with weight
+@font-face {
+  font-family: "Abril_Fatface";
+  src: url("/fonts/Abril_Fatface/AbrilFatface-Regular.ttf");
+}
+
+//text with thin, light, regular
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Montserrat light";
+  src: url("/fonts/Montserrat/static/Montserrat-ExtraLight.ttf");
+}
+
+$primarycolor: #f0eeb9;
