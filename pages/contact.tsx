@@ -14,7 +14,7 @@ const Contact = () => {
       transition={{ duration: 0.75, ease: "easeOut" }}
       className={styles.testContact}
     >
-      <h1>Contact</h1>
+      <motion.h1>Contact</motion.h1>
       <Link href="/">Home</Link>
     </motion.div>
   );
