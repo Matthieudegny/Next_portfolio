@@ -30,7 +30,14 @@ export default function Home({ projects }: { projects: any }) {
         duration: 0.75,
         ease: "easeOut",
       }}
-      className={styles.test}
+      style={{
+        position: "absolute",
+        top: "0px",
+        left: "0px",
+        height: "100%",
+        width: "100%",
+        backgroundColor: "#f0eeb9",
+      }}
     >
       <Head>
         <title>PortFolio</title>

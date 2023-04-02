@@ -5,8 +5,8 @@ h1 {
 }
 .test_app {
   position: relative;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-y: hidden;
 }
 
 // /* width */
