@@ -14,18 +14,20 @@ const Skills = () => {
 
   return (
     <motion.div
-      animate={{ x: "0%" }}
-      //at the unmount of the compo => exit
+      animate={{ y: "0%" }}
       exit={{ opacity: 1 }}
-      initial={{ x: "-100%" }}
-      transition={{ duration: 0.75, ease: "easeOut" }}
+      initial={{ y: "100%" }}
+      transition={{
+        duration: 0.75,
+        ease: "easeOut",
+      }}
       style={{
         position: "absolute",
         top: "0px",
         left: "0px",
         height: "100%",
         width: "100%",
-        backgroundColor: "#edd06f;",
+        backgroundColor: "#f0eeb9",
       }}
     >
       <div className={styles.SkillsRelativePage}>
