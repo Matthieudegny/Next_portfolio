@@ -47,7 +47,7 @@ export default function Home({ projects }: { projects: any }) {
       <main className={styles.main}>
         <div className={styles.main_top}>
           <LayoutText delay={0.25} lineHeight={4} timeAnimation={0.025}>
-            <h1 className={styles.main_top_h1}>
+            <h1 style={{ fontSize: "3rem", lineHeight: "4em" }}>
               Hello, I'm Matthieu, a front-end developer with a passion for
               creating beautiful and functional websites.
             </h1>
