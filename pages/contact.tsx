@@ -6,26 +6,17 @@ import styles from "../styles/Contact.module.scss";
 
 const Contact = () => {
   return (
-    <motion.div
-      animate={{ y: "0%" }}
-      exit={{ opacity: 1 }}
-      initial={{ y: "100%" }}
-      transition={{
-        duration: 0.75,
-        ease: "easeOut",
-      }}
+    <div
       style={{
         position: "absolute",
-        top: "0px",
-        left: "0px",
-        height: "100%",
-        width: "100%",
+        height: "100vh",
+        width: "100vw",
         backgroundColor: "#f0eeb9",
       }}
     >
       <motion.h1>Contact</motion.h1>
       <Link href="/">Home</Link>
-    </motion.div>
+    </div>
   );
 };
 
