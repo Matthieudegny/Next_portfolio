@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import LayoutNav from "../LayoutNav/LayoutNav";
 
@@ -17,50 +18,48 @@ const Nav = () => {
     }, 600);
   };
   return (
-    <div>
-      <nav>
-        <Link
-          onMouseEnter={() => setHome(true)}
-          onMouseLeave={() => turnOffAnimation(setHome)}
-          className={styles.container_rollingText}
-          href="/contact"
-        >
-          <LayoutNav Anim={Home}>
-            <h1>HOME</h1>
-          </LayoutNav>
-        </Link>
-        <Link
-          onMouseEnter={() => setProjects(true)}
-          onMouseLeave={() => turnOffAnimation(setProjects)}
-          className={styles.container_rollingText}
-          href="/projects"
-        >
-          <LayoutNav Anim={Projects}>
-            <h1>PROJECTS</h1>
-          </LayoutNav>
-        </Link>
-        <Link
-          onMouseEnter={() => setSkills(true)}
-          onMouseLeave={() => turnOffAnimation(setSkills)}
-          className={styles.container_rollingText}
-          href="/skills"
-        >
-          <LayoutNav Anim={Skills}>
-            <h1>SKILLS</h1>
-          </LayoutNav>
-        </Link>
-        <Link
-          onMouseEnter={() => setContact(true)}
-          onMouseLeave={() => turnOffAnimation(setContact)}
-          className={styles.container_rollingText}
-          href="/contact"
-        >
-          <LayoutNav Anim={Contact}>
-            <h1>CONTACT</h1>
-          </LayoutNav>
-        </Link>
-      </nav>
-    </div>
+    <motion.nav>
+      <Link
+        onMouseEnter={() => setHome(true)}
+        onMouseLeave={() => turnOffAnimation(setHome)}
+        className="inline-block text-4xl font-playfair leading-78px h-20 mr-4 overflow-hidden  "
+        href="/contact"
+      >
+        <LayoutNav Anim={Home}>
+          <h1>HOME</h1>
+        </LayoutNav>
+      </Link>
+      <Link
+        onMouseEnter={() => setProjects(true)}
+        onMouseLeave={() => turnOffAnimation(setProjects)}
+        className="inline-block text-4xl font-playfair leading-78px h-20 mr-4 overflow-hidden  "
+        href="/projects"
+      >
+        <LayoutNav Anim={Projects}>
+          <h1>PROJECTS</h1>
+        </LayoutNav>
+      </Link>
+      <Link
+        onMouseEnter={() => setSkills(true)}
+        onMouseLeave={() => turnOffAnimation(setSkills)}
+        className="inline-block text-4xl font-playfair leading-78px h-20 mr-4 overflow-hidden  "
+        href="/skills"
+      >
+        <LayoutNav Anim={Skills}>
+          <h1>SKILLS</h1>
+        </LayoutNav>
+      </Link>
+      <Link
+        onMouseEnter={() => setContact(true)}
+        onMouseLeave={() => turnOffAnimation(setContact)}
+        className="inline-block text-4xl font-playfair leading-78px h-20 mr-4 overflow-hidden  "
+        href="/contact"
+      >
+        <LayoutNav Anim={Contact}>
+          <h1>CONTACT</h1>
+        </LayoutNav>
+      </Link>
+    </motion.nav>
   );
 };
 
