@@ -19,7 +19,7 @@ export default function Home({ projects }: { projects: any }) {
         duration: 0.75,
         ease: "easeOut",
       }}
-      className=" text-gray-900 absolute top-0 left-0 w-full h-full bg-primary-color lg:px-48 px-16 "
+      className=" text-gray-900 absolute top-0 left-0 min-w-full h-full bg-primary-color lg:px-48 px-16 "
     >
       <Head>
         <title>PortFolio</title>
@@ -27,7 +27,7 @@ export default function Home({ projects }: { projects: any }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className=" relative h-screen flex-col justify-center items-center  ">
-        <div className="w-full h-40v mt-8 text-3xl font-playfair   ">
+        <div className="min-w-full h-40v mt-8 text-3xl font-playfair   ">
           <LayoutText delay={0.25} lineHeight={3} timeAnimation={0.025}>
             <h1>
               Hello, I'm Matthieu, a front-end developer specialized, with
@@ -36,7 +36,7 @@ export default function Home({ projects }: { projects: any }) {
           </LayoutText>
         </div>
         <Nav />
-        <div className="w-full h-40v mt-8">
+        <div className="min-w-full h-40v mt-8">
           <LayoutText delay={0.7} lineHeight={2.5} timeAnimation={0.0075}>
             <h2>
               As a front-end developer with expertise in React, Next.js, and
@@ -45,7 +45,7 @@ export default function Home({ projects }: { projects: any }) {
             </h2>
           </LayoutText>
         </div>
-        <div className="w-full h-10v flex items-end justify-end">
+        <div className="min-w-full h-10v flex items-end justify-end">
           <div className="">
             ©2023 <span>Available for work from July</span>
           </div>
