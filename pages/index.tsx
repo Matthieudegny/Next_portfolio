@@ -13,7 +13,7 @@ export default function Home({ projects }: { projects: any }) {
   return (
     <motion.div
       animate={{ y: "0%" }}
-      exit={{ opacity: 1 }}
+      exit={{ opacity: 1, width: "100vw" }}
       initial={{ y: "100%" }}
       transition={{
         duration: 0.75,
