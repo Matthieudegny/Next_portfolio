@@ -6,17 +6,10 @@ import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps, router }: AppProps) {
   return (
-    <div className="test_app">
-      <AnimatePresence mode="wait">
-        <motion.div
-          initial={{ y: "100%" }}
-          animate={{ y: "0%" }}
-          exit={{ opacity: 1, y: "-100%", backgroundColor: "red" }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
-          key={router.pathname}
-        >
-          <Component {...pageProps} />
-        </motion.div>
+    <div className="font-latoBold relative h-screen overflow-hidden py-24 px-12 lg:px-48">
+      {/* initial false => at the mount of the component no animation */}
+      <AnimatePresence initial={false}>
+        <Component key={router.pathname} {...pageProps} />
       </AnimatePresence>
     </div>
   );
