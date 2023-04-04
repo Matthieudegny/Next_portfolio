@@ -49,7 +49,7 @@ export default function Home({ projects }: { projects: any }) {
             Contact
           </li>
         </Link>
-        <div className="my-96 p-1 font-archivo overflow-hidden ">
+        {/* <div className="my-96 p-1 font-archivo overflow-hidden ">
           <motion.h1
             animate={{ y: 0 }}
             initial={{ y: "100%" }}
@@ -58,7 +58,7 @@ export default function Home({ projects }: { projects: any }) {
           >
             Happy Pickle
           </motion.h1>
-        </div>
+        </div> */}
         <div className="flex justify-between">
           <motion.div
             variants={container}
