@@ -102,27 +102,23 @@ export default function Home({ projects }: { projects: any }) {
       </main>
       <main className=" relative min-h-screen flex-col justify-center items-center  ">
         <div className="min-w-full h-40v mt-8 text-3xl font-playfair   ">
-          <LayoutText delay={0.25} lineHeight={3} timeAnimation={0.025}>
-            <motion.h1
-              animate={{ y: 0 }}
-              initial={{ y: "100%" }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="text-6xl text-center lg:text-right lg:text-9xl "
-            >
-              Hello, I'm Matthieu, a front-end developer specialized, with
-              modern technologies built around the Javascript framework.
-            </motion.h1>
-          </LayoutText>
+          <motion.h1
+            animate={{ y: 0 }}
+            initial={{ y: "100%" }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="text-6xl text-center lg:text-right lg:text-9xl "
+          >
+            Hello, I'm Matthieu, a front-end developer specialized, with modern
+            technologies built around the Javascript framework.
+          </motion.h1>
         </div>
         <Nav />
         <div className="min-w-full h-40v mt-8">
-          <LayoutText delay={0.7} lineHeight={2.5} timeAnimation={0.0075}>
-            <motion.h2 variants={item}>
-              As a front-end developer with expertise in React, Next.js, and
-              TypeScript, I'm passionate about crafting user-friendly interfaces
-              that bring ideas to life.
-            </motion.h2>
-          </LayoutText>
+          <motion.h2 variants={item}>
+            As a front-end developer with expertise in React, Next.js, and
+            TypeScript, I'm passionate about crafting user-friendly interfaces
+            that bring ideas to life.
+          </motion.h2>
         </div>
         <div className="min-w-full h-10v flex items-end justify-end">
           <div className="">
