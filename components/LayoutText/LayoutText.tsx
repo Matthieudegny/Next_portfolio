@@ -1,16 +1,18 @@
 import React from "react";
 import styles from "./LayoutText.module.scss";
-
+import { motion } from "framer-motion";
 const LayoutText = ({
   children,
   delay,
   lineHeight,
   timeAnimation,
+  type,
 }: {
   children: any;
   delay: number;
   lineHeight: number;
   timeAnimation: number;
+  type: any;
 }) => {
   let words: string[] = [];
   console.log("children", children);
@@ -20,8 +22,10 @@ const LayoutText = ({
     console.log("words", words);
   }
 
+  let test = motion.h1;
+
   return (
-    <children.type>
+    <test>
       {words.length > 0
         ? words.map((word: string, index: number) => (
             <div
@@ -42,7 +46,7 @@ const LayoutText = ({
             </div>
           ))
         : ""}
-    </children.type>
+    </test>
   );
 };
 

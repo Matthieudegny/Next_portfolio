@@ -21,7 +21,7 @@ export default function Home({ projects }: { projects: any }) {
         duration: 0.75,
         ease: "easeOut",
       }}
-      className="text-gray-900 absolute top-0 left-0 w-full h-full bg-red-400 lg:px-48 px-16"
+      className={styles.test}
     >
       {" "}
       <Head>
