@@ -31,6 +31,19 @@ module.exports = {
       lineHeight: {
         "78px": "78px",
       },
+      animation: {
+        slidein: "slidein 1s ease-out forwards",
+      },
+      keyframes: {
+        slidein: {
+          from: {
+            transform: "translateY(85%)",
+          },
+          to: {
+            transform: "translateY(0%)",
+          },
+        },
+      },
     },
   },
   plugins: [],

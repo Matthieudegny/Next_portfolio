@@ -13,11 +13,10 @@ const LayoutText = ({
   timeAnimation: number;
 }) => {
   let words: string[] = [];
-  console.log("children", children);
+
   if (children) {
     const text = children;
     words = text.split(" ");
-    console.log("words", words);
   }
 
   return (
@@ -26,11 +25,11 @@ const LayoutText = ({
         ? words.map((word: string, index: number) => (
             <div
               key={index}
-              className={styles.LayoutText_Container}
+              className="inline-block overflow-hidden"
               style={{ lineHeight: `${lineHeight}rem` }}
             >
               <span
-                className={styles.LayoutText}
+                className="inline-block transition-transform translate-y-3/4 animate-[slidein_1s_ease-out_forwards] duration-100"
                 style={{
                   animationDelay: `${timeAnimation * index + delay}s`,
                   willChange: "transform",

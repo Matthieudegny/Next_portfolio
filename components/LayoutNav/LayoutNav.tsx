@@ -13,7 +13,7 @@ const LayoutNav = ({ children, Anim }: { children: any; Anim: boolean }) => {
           <span
             key={index}
             className={`${styles.letter} ${Anim ? styles.anim : ""}
-        }`}
+            }`}
             style={{ transitionDelay: `${index * 0.03}s` }}
           >
             {item}
@@ -25,7 +25,7 @@ const LayoutNav = ({ children, Anim }: { children: any; Anim: boolean }) => {
           <span
             key={index}
             className={`${styles.letter} ${Anim ? styles.anim : ""}
-        }`}
+            }`}
             style={{
               transitionDelay: `${index * 0.03}s`,
               fontFamily: "serif",
