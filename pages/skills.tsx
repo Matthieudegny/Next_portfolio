@@ -46,7 +46,7 @@ const Skills = () => {
               appealing and user-friendly interfaces using Figma and CSS`}
             </p>
             <p>
-              {` Performance optimization: Skilled in optimizing website
+              {` Performance optimization: Skilled in optimizing application
               performance with React and dynamic DOM, including reusable
               components and dynamic updates.`}
             </p>

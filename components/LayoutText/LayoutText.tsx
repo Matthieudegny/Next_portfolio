@@ -6,18 +6,16 @@ const LayoutText = ({
   delay,
   lineHeight,
   timeAnimation,
-  type,
 }: {
   children: any;
   delay: number;
   lineHeight: number;
   timeAnimation: number;
-  type: any;
 }) => {
   let words: string[] = [];
   console.log("children", children);
   if (children) {
-    const text = children.props.children;
+    const text = children;
     words = text.split(" ");
     console.log("words", words);
   }

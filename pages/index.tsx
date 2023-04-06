@@ -31,15 +31,10 @@ export default function Home({ projects }: { projects: any }) {
       </Head>
       <main className=" relative min-h-screen flex flex-col justify-center items-center  ">
         <div className="min-w-full h-40v mt-8 text-3xl font-playfair   ">
-          <motion.h1
-            animate={{ y: 0 }}
-            initial={{ y: "100%" }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            className="text-6xl text-center lg:text-right lg:text-4xl "
-          >
+          <LayoutText delay={1} lineHeight={5} timeAnimation={0.08}>
             Hello, I'm Matthieu, a front-end developer specialized, with modern
             technologies built around the Javascript framework.
-          </motion.h1>
+          </LayoutText>
         </div>
         <Nav />
         <div className="min-w-full h-40v mt-8">
