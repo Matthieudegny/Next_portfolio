@@ -1,5 +1,3 @@
-import styles from "./LayoutNav.module.scss";
-
 const LayoutNav = ({ children, Anim }: { children: any; Anim: boolean }) => {
   const string = children.props.children;
   let array: string[] = [];
@@ -12,7 +10,10 @@ const LayoutNav = ({ children, Anim }: { children: any; Anim: boolean }) => {
         {array.map((item: string, index: number) => (
           <span
             key={index}
-            className={`${styles.letter} ${Anim ? styles.anim : ""}
+            // className={`${styles.letter} ${Anim ? styles.anim : ""}
+            // }`}
+            className={`inline-block transition-transform duration-500 ${
+              Anim ? "-translate-y-full" : ""
             }`}
             style={{ transitionDelay: `${index * 0.03}s` }}
           >
@@ -20,11 +21,14 @@ const LayoutNav = ({ children, Anim }: { children: any; Anim: boolean }) => {
           </span>
         ))}
       </div>
-      <div style={{ marginTop: "-17px" }}>
+      <div>
         {array.map((item: string, index: number) => (
           <span
             key={index}
-            className={`${styles.letter} ${Anim ? styles.anim : ""}
+            // className={`${styles.letter} ${Anim ? styles.anim : ""}
+            // }`}
+            className={`inline-block transition-transform duration-500  ${
+              Anim ? "-translate-y-full" : ""
             }`}
             style={{
               transitionDelay: `${index * 0.03}s`,

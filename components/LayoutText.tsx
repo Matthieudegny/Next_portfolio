@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./LayoutText.module.scss";
 import { motion } from "framer-motion";
 const LayoutText = ({
   children,

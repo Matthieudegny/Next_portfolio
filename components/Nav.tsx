@@ -2,9 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import LayoutNav from "../LayoutNav/LayoutNav";
-
-import styles from "../../styles/Nav.module.scss";
+import LayoutNav from "./LayoutNav";
 
 const Nav = () => {
   const [Home, setHome] = useState(false);
@@ -17,13 +15,17 @@ const Nav = () => {
       setstate(false);
     }, 600);
   };
+
+  const styleNav =
+    "inline-block text-3xl font-playfair leading-9 h-9 mr-4 overflow-hidden";
+
   return (
-    <motion.nav>
+    <motion.nav className="absolute z-50 right-5 top-16 ">
       <Link
         onMouseEnter={() => setHome(true)}
         onMouseLeave={() => turnOffAnimation(setHome)}
-        className="inline-block text-4xl font-playfair leading-78px h-20 mr-4 overflow-hidden  "
-        href="/contact"
+        className={styleNav}
+        href="/"
       >
         <LayoutNav Anim={Home}>
           <h1>HOME</h1>
@@ -32,27 +34,18 @@ const Nav = () => {
       <Link
         onMouseEnter={() => setProjects(true)}
         onMouseLeave={() => turnOffAnimation(setProjects)}
-        className="inline-block text-4xl font-playfair leading-78px h-20 mr-4 overflow-hidden  "
+        className={styleNav}
         href="/projects"
       >
         <LayoutNav Anim={Projects}>
           <h1>PROJECTS</h1>
         </LayoutNav>
       </Link>
-      <Link
-        onMouseEnter={() => setSkills(true)}
-        onMouseLeave={() => turnOffAnimation(setSkills)}
-        className="inline-block text-4xl font-playfair leading-78px h-20 mr-4 overflow-hidden  "
-        href="/skills"
-      >
-        <LayoutNav Anim={Skills}>
-          <h1>SKILLS</h1>
-        </LayoutNav>
-      </Link>
+
       <Link
         onMouseEnter={() => setContact(true)}
         onMouseLeave={() => turnOffAnimation(setContact)}
-        className="inline-block text-4xl font-playfair leading-78px h-20 mr-4 overflow-hidden  "
+        className={styleNav}
         href="/contact"
       >
         <LayoutNav Anim={Contact}>
