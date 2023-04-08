@@ -8,11 +8,7 @@ import { container, item } from "../animation";
 import LayoutText from "../components/LayoutText";
 import { useEffect } from "react";
 
-import {
-  titlesSkills,
-  textSkills,
-  dataSkills,
-} from "./utils/skillsData/skillsData";
+import { dataSkills } from "./utils/skillsData/skillsData";
 import { useState } from "react";
 
 type test = {
