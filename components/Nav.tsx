@@ -20,7 +20,7 @@ const Nav = () => {
     "inline-block text-3xl font-playfair leading-9 h-9 mr-4 overflow-hidden";
 
   return (
-    <motion.nav className="absolute z-50 right-5 top-16 ">
+    <motion.nav className="fixed z-50 right-5 top-16 ">
       <Link
         onMouseEnter={() => setHome(true)}
         onMouseLeave={() => turnOffAnimation(setHome)}

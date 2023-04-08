@@ -19,7 +19,7 @@ const LayoutText = ({
   }
 
   return (
-    <motion.h1>
+    <div>
       {words.length > 0
         ? words.map((word: string, index: number) => (
             <div
@@ -40,7 +40,7 @@ const LayoutText = ({
             </div>
           ))
         : ""}
-    </motion.h1>
+    </div>
   );
 };
 

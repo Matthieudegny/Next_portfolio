@@ -28,6 +28,9 @@ module.exports = {
         "90v": "90vh",
         "100v": "100vh",
       },
+      minHeight: {
+        "40v": "40vh",
+      },
       lineHeight: {
         "78px": "78px",
       },

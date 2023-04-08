@@ -8,7 +8,7 @@ import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps, router }: AppProps) {
   return (
-    <div className="font-latoBold relative h-screen overflow-hidden py-24 px-12 lg:px-48">
+    <div className="relative min-h-screen overflow-y-auto py-24 px-12 lg:px-48">
       {/* initial false => at the mount of the component no animation */}
       <AnimatePresence initial={false}>
         <Nav />
