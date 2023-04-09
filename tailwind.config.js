@@ -37,6 +37,10 @@ module.exports = {
       animation: {
         slidein: "slidein 1s ease-out forwards",
       },
+
+      zIndex: {
+        n: "-1",
+      },
       keyframes: {
         slidein: {
           from: {
