@@ -126,11 +126,13 @@ const ContainerLinkAnimated = ({
         ref={refText}
         onMouseEnter={() => {
           // setAnimationOn(true);
-          reftest.current.style.transform = "translateY(-200px)";
+          if (reftest.current)
+            reftest.current.style.transform = "translateY(-200px)";
         }}
         onMouseLeave={() => {
           // setAnimationOn(false);
-          reftest.current.style.transform = "translateY(0px)";
+          if (reftest.current)
+            reftest.current.style.transform = "translateY(0px)";
         }}
         style={{
           transform: isInViewText ? "none" : "translateY(50px)",
