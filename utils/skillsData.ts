@@ -49,14 +49,4 @@ export const dataSkills: articleSkills[] = [
     platforms such as Netlify, vercel with SAAS solutions.",
     ],
   },
-  {
-    title: "Current Focus",
-    image: false,
-    text: [
-      "working on improving my skills in Continuous Integration and \
-    Deployment (CI/CD) by learning Docker and how to use it to create and \
-    manage containers for various applications.",
-      "test unitaires.",
-    ],
-  },
 ];

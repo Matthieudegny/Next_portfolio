@@ -201,6 +201,16 @@ export default function Home() {
             />
           );
         })}
+
+        <div>
+          <h3>Current Focus</h3>
+          <p>
+            working on improving my skills in Continuous Integration and \
+            Deployment (CI/CD) by learning Docker and how to use it to create
+            and \ manage containers for various applications.", test unitaires.
+          </p>
+        </div>
+
         <ContainerLinkAnimated
           title={"Projects / works"}
           linkImage={"/homeMin.png"}

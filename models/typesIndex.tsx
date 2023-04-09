@@ -1,5 +1,5 @@
 export type articleSkills = {
   title: string;
-  image: string | boolean;
+  image: string;
   text: string[];
 };
