@@ -6,11 +6,17 @@ import { useRouter } from "next/router";
 
 //components
 import LayoutText from "../components/LayoutText";
-import ArticleSkillsComponent from "@/components/ArticleSkillsComponent";
+import ArticleSkillsComponent from "@/components/ArticleSkillFrontEnd";
 import ContainerLinkAnimated from "@/components/ContainerLinkAnimated";
+import ArticleSkill from "@/components/ArticleSkill";
 import Footer from "@/components/Footer";
 
-import { dataSkills } from "@/utils/skillsData";
+import {
+  dataSkills,
+  dataSkillsBackend,
+  dataSkillsStructure,
+  dataSkillsVersionning,
+} from "@/utils/skillsData";
 
 import { articleSkills } from "@/models/typesIndex";
 
@@ -34,7 +40,7 @@ export default function Home({ mobilVersion }: { mobilVersion: boolean }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className=" relative min-h-screen w-screen flex flex-col justify-center bg-primary-color font-Montserrat_regular  sm:px-16 lg:px-48  ">
+      <main className=" relative min-h-screen w-screen flex flex-col justify-center bg-primary-color font-Montserrat_regular  sm:px-16 xl:px-48  ">
         <div className="h-screen flex flex-col justify-between sm:justify-evenly">
           <div className="font-NotoSansGeorgian tracking-widest text-3xl w-full p-2 md:text-4xl  xl:w-3/5  ">
             <LayoutText delay={0.5} timeAnimation={0.02}>
@@ -51,7 +57,7 @@ export default function Home({ mobilVersion }: { mobilVersion: boolean }) {
             </LayoutText>
           </div>
 
-          <div className="mb-5 p-2 text-1xl md:text-3xl sm:mb-0">
+          <div className="mb-5 p-2 text-xl md:text-3xl sm:mb-0">
             <LayoutText delay={1.2} timeAnimation={0.005}>
               What i can bring to you:
             </LayoutText>
@@ -70,18 +76,25 @@ export default function Home({ mobilVersion }: { mobilVersion: boolean }) {
           );
         })}
 
+        <div className="w-full  flex flex-col md:flex-row md:items-center">
+          <ArticleSkill title={"Back-end:"} texts={dataSkillsBackend} />
+          <div>
+            <ArticleSkill title={"Structure:"} texts={dataSkillsStructure} />
+            <ArticleSkill
+              title={"Versionning:"}
+              texts={dataSkillsVersionning}
+            />
+          </div>
+        </div>
+
         <div className="mt-14 mb-14">
-          <h3 className=" mb-8  tracking-widest text-4xl uppercase text-center ">
-            Current Focus
-          </h3>
-          <h4 className="leading-6 p-2 md:leading-10 m-2 text-1xl 2xl:text-2xl">
-            working on improving my skills in Continuous Integration and \
+          <h3>Current Focus:</h3>
+          <h4>
+            working on improving my skills in Continuous Integration and
             Deployment (CI/CD) by learning Docker and how to use it to create
-            and \ manage containers for various applications.
+            and manage containers for various applications.
           </h4>
-          <h4 className="leading-6 p-2 md:leading-10 m-2 text-1xl 2xl:text-2xl">
-            Unit testing with the Jest library.
-          </h4>
+          <h4>Unit testing with the Jest library.</h4>
         </div>
 
         <div className="mt-20">

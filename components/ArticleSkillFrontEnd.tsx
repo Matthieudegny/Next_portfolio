@@ -30,7 +30,7 @@ const ArticleSkillsComponent = ({
   let indiceRotationY = (offsetX - 210) / -20.75;
 
   return (
-    <article className="group relative flex flex-col w-full justify-evenly text-1xl 2xl:text-2xl  xl:flex-row xl:justify-between">
+    <article className="group relative flex flex-col w-full justify-evenly  xl:flex-row xl:justify-between">
       <main
         ref={refText}
         className=" flex flex-col justify-center mt-6 xl:mt-0 "
@@ -40,14 +40,14 @@ const ArticleSkillsComponent = ({
           transition: "all 0.6s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
         }}
       >
-        <h3 className=" relative  mb-8 ml-4 tracking-widest text-4xl uppercase">
+        <h3>
           {title}:
           {/* <div className="absolute h-px w-full bottom-0 left-0 bg-slate-400 z-50"></div> */}
         </h3>
         {text?.map((text, index) => {
           return (
             <React.Fragment key={index}>
-              <h4 className=" leading-6 pl-2 md:leading-10 m-2">{text}</h4>
+              <h4>{text}</h4>
             </React.Fragment>
           );
         })}
