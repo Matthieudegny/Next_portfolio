@@ -8,7 +8,12 @@ const ArticleSkillsComponent = ({
   image,
   text,
   mobilVersion,
-}: articleSkills) => {
+}: {
+  title: string;
+  image: string;
+  text: string[];
+  mobilVersion: boolean;
+}) => {
   const refText = useRef<HTMLInputElement>(null);
   const isInViewText = useInView(refText, { once: true });
 
