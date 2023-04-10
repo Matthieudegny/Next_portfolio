@@ -19,10 +19,12 @@ const ContainerLinkAnimated = ({
   const isInViewBorder = useInView(refBorder, { once: true });
 
   return (
-    <div className="h-20v w-screen overflow-hidden relative sm:-ml-16 lg:-ml-48 cursor-pointer">
+    <div
+      ref={refBorder}
+      className="h-20v w-screen overflow-hidden relative sm:-ml-16 xl:-ml-48 cursor-pointer"
+    >
       {index === 1 ? (
         <div
-          ref={refBorder}
           className="absolute h-0.5 w-full top-0 left-0 bg-black z-50 transition-all duration-1000"
           style={{
             width: isInViewBorder ? "100%" : "0%",
@@ -32,6 +34,13 @@ const ContainerLinkAnimated = ({
       ) : (
         ""
       )}
+      <div
+        className="absolute h-0.5 w-full bottom-0 left-0 bg-black z-50 transition-all duration-1000"
+        style={{
+          width: isInViewBorder ? "100%" : "0%",
+          transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        }}
+      ></div>
       <img
         src={linkImage}
         alt="desk"
@@ -61,18 +70,10 @@ const ContainerLinkAnimated = ({
           opacity: isInViewText ? 1 : 0,
           transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
         }}
-        className="flex  items-center h-20v w-full absolute top-0 left-0 z-10 ml-0 sm:ml-16 lg:ml-48  text-5xl tracking-widest"
+        className="flex  items-center h-20v w-full absolute top-0 left-0 z-10 ml-2 sm:ml-16 lg:ml-48  text-5xl tracking-widest"
       >
         {title}
       </div>
-      <div
-        ref={refBorder}
-        className="absolute h-0.5 w-full bottom-0 left-0 bg-black z-50 transition-all duration-1000"
-        style={{
-          width: isInViewBorder ? "100%" : "0%",
-          transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-        }}
-      ></div>
     </div>
   );
 };

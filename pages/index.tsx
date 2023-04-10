@@ -1,14 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRouter } from "next/router";
+import React, { useRef } from "react";
 
 //components
 import LayoutText from "../components/LayoutText";
 import ArticleSkillsComponent from "@/components/ArticleSkillFrontEnd";
 import ContainerLinkAnimated from "@/components/ContainerLinkAnimated";
-import ArticleSkill from "@/components/ArticleSkill";
 import Footer from "@/components/Footer";
 
 import {
@@ -22,6 +22,12 @@ import { articleSkills } from "@/models/typesIndex";
 
 export default function Home({ mobilVersion }: { mobilVersion: boolean }) {
   const router = useRouter();
+
+  const refSkillsLines = useRef<HTMLInputElement>(null);
+  const isInViewSkillstLines = useInView(refSkillsLines, { once: true });
+
+  const refSkillsTexts = useRef<HTMLInputElement>(null);
+  const isInViewSkillstTexts = useInView(refSkillsTexts, { once: true });
 
   return (
     <motion.main
@@ -76,19 +82,107 @@ export default function Home({ mobilVersion }: { mobilVersion: boolean }) {
           );
         })}
 
-        <div className="w-full  flex flex-col md:flex-row md:items-center">
-          <ArticleSkill title={"Back-end:"} texts={dataSkillsBackend} />
-          <div>
-            <ArticleSkill title={"Structure:"} texts={dataSkillsStructure} />
-            <ArticleSkill
-              title={"Versionning:"}
-              texts={dataSkillsVersionning}
-            />
+        <div
+          ref={refSkillsTexts}
+          className="w-full md:h-75v flex flex-col md:flex-row "
+        >
+          <div
+            className="relative h-full  pt-4 pb-4 flex flex-col justify-center"
+            style={{
+              transform: isInViewSkillstTexts ? "none" : "translateX(-200px)",
+              opacity: isInViewSkillstTexts ? 1 : 0,
+              transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+            }}
+          >
+            <h3>Back-end:</h3>
+            <h4>
+              API creation: Experienced in building robust and scalable APIs
+              using Node.js and Express.js, with a deep understanding of RESTful
+              API design principles and best practices.
+            </h4>
+            <h4>
+              Database basics: Familiar with designing and implementing database
+              schemas and queries using SQL. Experienced in working with
+              PostgreSQL, SupaBase (relational database) and MongoDB(document
+              database), ensuring efficient and optimized data storage and
+              retrieval.
+            </h4>
+            {/* border bottom-left hozyzontale */}
+            <div
+              className="absolute  md:w-full h-px  bottom-0 left-0 bg-slate-400 z-50 transition-all duration-1000"
+              style={{
+                transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s",
+                transformOrigin: "right",
+                transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
+              }}
+            ></div>
+          </div>
+          <div className="relative h-full">
+            <div
+              className="relative h-2/5  pt-4 pb-4 flex flex-col justify-center"
+              style={{
+                transform: isInViewSkillstTexts ? "none" : "translateX(200px)",
+                opacity: isInViewSkillstTexts ? 1 : 0,
+                transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+              }}
+            >
+              <h3>Structure:</h3>
+              <h4>
+                Clean coding: Skilled in writing maintainable and scalable code
+                using the MVC design pattern and TypeScript, ensuring code
+                reliability and type safety.
+              </h4>
+            </div>
+            <div
+              className="relative h-3/5   pt-4 pb-4 flex flex-col justify-center"
+              style={{
+                transform: isInViewSkillstTexts ? "none" : "translateX(200px)",
+                opacity: isInViewSkillstTexts ? 1 : 0,
+                transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+              }}
+            >
+              <h3>Versionning:</h3>
+              <h4>
+                Experienced in using Git, GitHub, and Azur for version control,\
+                ensuring efficient collaboration with team members and \
+                maintaining codebase integrity. Proficient in managing \
+                repositories, branches, and pull requests.
+              </h4>
+              {/* border middle hozyzontale */}
+              <div
+                className="absolute  md:h-px  top-0 left-0 bg-slate-400 z-50 transition-all duration-1000"
+                style={{
+                  transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+
+                  width: isInViewSkillstLines ? "100%" : "0%",
+                }}
+              ></div>
+            </div>
+            {/* border middle vertical */}
+            <div
+              ref={refSkillsLines}
+              className="absolute w-px md:h-full  bottom-0 left-0 bg-slate-400 z-50 transition-all duration-1000"
+              style={{
+                transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
+                transformOrigin: "top",
+                transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
+              }}
+            ></div>
+            {/* border bottom-right horyzontal */}
+            <div
+              ref={refSkillsLines}
+              className="absolute md:w-full h-px bottom-0 left-0 bg-slate-400 transition-all duration-1000"
+              style={{
+                transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s",
+                transformOrigin: "left",
+                transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
+              }}
+            ></div>
           </div>
         </div>
 
-        <div className="mt-14 mb-14">
-          <h3>Current Focus:</h3>
+        <div className="md:mt-14 mb-14">
+          <h3 className="xl:text-center">Current Focus:</h3>
           <h4>
             working on improving my skills in Continuous Integration and
             Deployment (CI/CD) by learning Docker and how to use it to create
@@ -97,7 +191,7 @@ export default function Home({ mobilVersion }: { mobilVersion: boolean }) {
           <h4>Unit testing with the Jest library.</h4>
         </div>
 
-        <div className="mt-20">
+        <div className="mt-20 mb-20">
           <ContainerLinkAnimated
             title={"Projects / works"}
             linkImage={"/homeMin.png"}

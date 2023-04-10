@@ -19,7 +19,7 @@ const Nav = () => {
   //a function to know the size width of the screen
   const [width, setWidth] = useState<string>("");
   const updateWidth = () => {
-    if (window.innerWidth < 1024) {
+    if (window.innerWidth < 1280) {
       setWidth("mobileWidth");
     } else {
       setWidth("desktopWidth");

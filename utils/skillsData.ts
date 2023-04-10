@@ -15,40 +15,6 @@ export const dataSkills: articleSkills[] = [
     performance and search engine rankings.",
     ],
   },
-  // {
-  //   title: "structure",
-  //   image: "/structure_skills.png",
-  //   text: [
-  //     "Clean coding: Skilled in writing maintainable and scalable code using \
-  //   the MVC design pattern and TypeScript, ensuring code reliability and \
-  //   type safety.",
-  //   ],
-  // },
-  // {
-  //   title: "Back-end",
-  //   image: "/backEnd_skills.png",
-  //   text: [
-  //     "API creation: Experienced in building robust and scalable APIs using \
-  //   Node.js and Express.js, with a deep understanding of RESTful API \
-  //   design principles and best practices.",
-  //     "Database basics: Familiar with designing and implementing database \
-  //   schemas and queries using SQL. Experienced in working with PostgreSQL, \
-  //   SupaBase (relational database) and MongoDB(document database), \
-  //   ensuring efficient and optimized data storage and retrieval.",
-  //   ],
-  // },
-  // {
-  //   title: "Version Control and Deployment",
-  //   image: "/devops_skills.png",
-  //   text: [
-  //     "Experienced in using Git, GitHub, and Azur for version control,\
-  //   ensuring efficient collaboration with team members and maintaining\
-  //   codebase integrity. Proficient in managing repositories, branches, and\
-  //   pull requests.",
-  //     "skilled in deploying applications to various\
-  //   platforms such as Netlify, vercel with SAAS solutions.",
-  //   ],
-  // },
 ];
 
 export const dataSkillsBackend: string[] = [

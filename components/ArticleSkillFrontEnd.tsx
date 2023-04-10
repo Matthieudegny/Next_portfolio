@@ -62,6 +62,7 @@ const ArticleSkillsComponent = ({
         }}
         className="m-auto  p-14  md:p-0"
       >
+        {/* mobile version => no card 3d animation */}
         {!mobilVersion ? (
           <div
             ref={refImage}

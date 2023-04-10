@@ -40,7 +40,7 @@
 h3 {
   margin-top: 1rem;
   margin-left: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   letter-spacing: 0.1rem;
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -57,6 +57,12 @@ h4 {
 //h4 responsive
 //line-height: 1.5rem;
 
+@media (max-width: 1250px) {
+  h4 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
 html,
 body {
   padding: 0;
