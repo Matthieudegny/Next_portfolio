@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #f0eeb9;
+  --primary-color: rgb(230, 223, 223);
 }
 
 /* Firefox */
@@ -16,27 +16,25 @@
   width: 0px;
 }
 
+//serif modular
 @font-face {
-  font-family: "Playfair Display";
-  src: url("/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
-  font-weight: normal;
-  font-style: normal;
+  font-family: "NotoSansGeorgian";
+  src: url("/fonts/Noto_Sans_Georgian/NotoSansGeorgian-VariableFont_wdth,wght.ttf");
 }
 
-//title with weight
+//sans-serif
 @font-face {
-  font-family: "Abril_Fatface";
-  src: url("/fonts/Abril_Fatface/AbrilFatface-Regular.ttf");
-}
-
-//text with thin, light, regular
-@font-face {
-  font-family: "Montserrat";
-  src: url("/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
-}
-@font-face {
-  font-family: "Montserrat light";
+  font-family: "Montserrat_thin";
   src: url("/fonts/Montserrat/static/Montserrat-ExtraLight.ttf");
+}
+@font-face {
+  font-family: "Montserrat_regular";
+  src: url("/fonts/Montserrat/static/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat_semibold";
+  src: url("/fonts/Montserrat/static/Montserrat-SemiBold.ttf");
 }
 
 h1 {

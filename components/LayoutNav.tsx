@@ -10,9 +10,7 @@ const LayoutNav = ({ children, Anim }: { children: any; Anim: boolean }) => {
         {array.map((item: string, index: number) => (
           <span
             key={index}
-            // className={`${styles.letter} ${Anim ? styles.anim : ""}
-            // }`}
-            className={`inline-block transition-transform duration-500 ${
+            className={`inline-block transition-transform duration-500 font-NotoSansGeorgian font-light text-3xl ${
               Anim ? "-translate-y-full" : ""
             }`}
             style={{ transitionDelay: `${index * 0.03}s` }}
@@ -25,15 +23,11 @@ const LayoutNav = ({ children, Anim }: { children: any; Anim: boolean }) => {
         {array.map((item: string, index: number) => (
           <span
             key={index}
-            // className={`${styles.letter} ${Anim ? styles.anim : ""}
-            // }`}
-            className={`inline-block transition-transform duration-500  ${
-              Anim ? "-translate-y-full" : ""
+            className={`inline-block transition-transform duration-500 font-NotoSansGeorgian text-3xl -mt-5   ${
+              Anim ? "-translate-y-full " : ""
             }`}
             style={{
               transitionDelay: `${index * 0.03}s`,
-              fontFamily: "serif",
-              fontWeight: "500",
             }}
           >
             {item}

@@ -3,12 +3,10 @@ import { motion } from "framer-motion";
 const LayoutText = ({
   children,
   delay,
-  lineHeight,
   timeAnimation,
 }: {
   children: any;
   delay: number;
-  lineHeight: number;
   timeAnimation: number;
 }) => {
   let words: string[] = [];
@@ -22,13 +20,9 @@ const LayoutText = ({
     <div>
       {words.length > 0
         ? words.map((word: string, index: number) => (
-            <div
-              key={index}
-              className="inline-block overflow-hidden"
-              style={{ lineHeight: `${lineHeight}rem` }}
-            >
+            <div key={index} className="inline-block overflow-hidden">
               <span
-                className="inline-block transition-transform translate-y-3/4 animate-[slidein_1s_ease-out_forwards] duration-100"
+                className="inline-block transition-transform translate-y-full  animate-[slidein_1s_ease-out_forwards] duration-100"
                 style={{
                   animationDelay: `${timeAnimation * index + delay}s`,
                   willChange: "transform",

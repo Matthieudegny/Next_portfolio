@@ -7,10 +7,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        playfair: "Playfair Display",
-        abril: "Abril_Fatface",
-        Montserrat: "Montserrat",
-        MontserratLight: "Montserrat light",
+        NotoSansGeorgian: "NotoSansGeorgian",
+        Montserrat_thin: "Montserrat_thin",
+        Montserrat_regular: "Montserrat_regular",
+        Montserrat_semibold: "Montserrat_semibold",
       },
       colors: {
         "primary-color": "var(--primary-color)",
@@ -36,8 +36,10 @@ module.exports = {
       },
       animation: {
         slidein: "slidein 1s ease-out forwards",
+        slideinNav: "0.7s slideinNav 0.7s ease-out forwards",
+        slideinNav: "0.7s slideinNav 0.9s ease-out forwards",
+        slideinNav: "0.7s slideinNav 1.1s ease-out forwards",
       },
-
       zIndex: {
         n: "-1",
       },
@@ -50,6 +52,19 @@ module.exports = {
             transform: "translateY(0%)",
           },
         },
+        slideinNav: {
+          from: {
+            transform: "translateX(100%)",
+            opacity: "0",
+          },
+          to: {
+            transform: "translateX(0%)",
+            opacity: "1",
+          },
+        },
+      },
+      translateX: {
+        "custom-translate-x": "10rem",
       },
     },
   },
