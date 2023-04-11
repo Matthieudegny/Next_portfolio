@@ -30,7 +30,7 @@ const ArticleSkillsComponent = ({
   let indiceRotationY = (offsetX - 210) / -20.75;
 
   return (
-    <article className="group relative flex flex-col w-full justify-evenly  xl:flex-row xl:justify-between">
+    <article className="group relative flex flex-col w-full justify-evenly  2xl:flex-row 2xl:justify-between">
       <main
         ref={refText}
         className=" flex flex-col justify-center mt-6 xl:mt-0 "
