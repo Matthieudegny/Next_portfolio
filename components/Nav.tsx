@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 
 import LayoutNav from "./LayoutNav";
 
-const Nav = () => {
+const Nav = ({ hideNav }: { hideNav: boolean }) => {
+  console.log("hideNav: ", hideNav);
   const [Home, setHome] = useState(false);
   const [Projects, setProjects] = useState(false);
   const [Skills, setSkills] = useState(false);
@@ -32,17 +33,17 @@ const Nav = () => {
   }, []);
 
   const styleNav =
-    "inline-block translate-x-full opacity-0 leading-9 h-9 mr-4 overflow-hidden mb-7 ";
+    "inline-block translate-x-full opacity-0 leading-9 h-9 overflow-hidden mb-3 ";
 
   return (
-    <motion.nav className="fixed flex flex-col z-50 right-10 top-14">
-      {width === "desktopWidth" ? (
+    <motion.nav className="fixed flex flex-col z-50 right-7 top-7">
+      {width === "desktopWidth" && !hideNav ? (
         <>
           <Link
             onMouseEnter={() => setHome(true)}
             onMouseLeave={() => turnOffAnimation(setHome)}
             className={
-              styleNav + "animate-[0.5s_slideinNav_0.7s_ease-out_forwards]"
+              styleNav + "animate-[0.7s_slideinNav_0.1s_ease-out_forwards]"
             }
             href="/"
           >
@@ -55,7 +56,7 @@ const Nav = () => {
             onMouseEnter={() => setProjects(true)}
             onMouseLeave={() => turnOffAnimation(setProjects)}
             className={
-              styleNav + " animate-[0.5s_slideinNav_0.9s_ease-out_forwards]"
+              styleNav + " animate-[0.7s_slideinNav_0.2s_ease-out_forwards]"
             }
             href="/projects"
           >
@@ -68,7 +69,7 @@ const Nav = () => {
             onMouseEnter={() => setContact(true)}
             onMouseLeave={() => turnOffAnimation(setContact)}
             className={
-              styleNav + " animate-[0.5s_slideinNav_1.1s_ease-out_forwards]"
+              styleNav + " animate-[0.7s_slideinNav_0.3s_ease-out_forwards]"
             }
             href="/contact"
           >

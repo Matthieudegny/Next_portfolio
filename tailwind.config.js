@@ -36,9 +36,9 @@ module.exports = {
       },
       animation: {
         slidein: "slidein 1s ease-out forwards",
-        slideinNav: "0.7s slideinNav 0.7s ease-out forwards",
-        slideinNav: "0.7s slideinNav 0.9s ease-out forwards",
-        slideinNav: "0.7s slideinNav 1.1s ease-out forwards",
+        slideinNav: "0.3s slideinNav 0.1s ease-out forwards",
+        slideinNav: "0.3s slideinNav 0.2s ease-out forwards",
+        slideinNav: "0.3s slideinNav 0.3s ease-out forwards",
       },
       zIndex: {
         n: "-1",

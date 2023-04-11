@@ -58,8 +58,10 @@ const ContainerLinkAnimated = ({
       <div
         ref={refText}
         onMouseEnter={() => {
-          if (reftest.current)
+          if (reftest.current && index === 1)
             reftest.current.style.transform = "translateY(-200px)";
+          if (reftest.current && index === 2)
+            reftest.current.style.transform = "translateY(200px)";
         }}
         onMouseLeave={() => {
           if (reftest.current)
@@ -70,7 +72,7 @@ const ContainerLinkAnimated = ({
           opacity: isInViewText ? 1 : 0,
           transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
         }}
-        className="flex  items-center h-20v w-full absolute top-0 left-0 z-10 ml-2 sm:ml-16 lg:ml-48  text-5xl tracking-widest"
+        className="flex  items-center h-20v w-full absolute top-0 left-0 z-10 ml-2 sm:ml-16 lg:ml-48 font-NotoSansGeorgian  text-5xl tracking-widest"
       >
         {title}
       </div>

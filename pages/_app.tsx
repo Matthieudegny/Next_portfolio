@@ -9,6 +9,7 @@ import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps, router }: AppProps) {
   const [mobilVersion, setmobilVersion] = useState<boolean>(false);
+  const [hideNav, setHideNav] = useState(false);
 
   const updateWidth = () => {
     if (window.innerWidth < 768) {
@@ -31,10 +32,11 @@ export default function App({ Component, pageProps, router }: AppProps) {
     <div className="relative min-h-screen h-full overflow-y-auto py-24 px-12 lg:px-48">
       {/* initial false => at the mount of the component no animation */}
       <AnimatePresence initial={false}>
-        <Nav />
+        <Nav hideNav={hideNav} />
         <Component
           key={router.pathname}
           mobilVersion={mobilVersion}
+          setHideNav={setHideNav}
           {...pageProps}
         />
       </AnimatePresence>

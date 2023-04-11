@@ -10,7 +10,7 @@ const LayoutNav = ({ children, Anim }: { children: any; Anim: boolean }) => {
         {array.map((item: string, index: number) => (
           <span
             key={index}
-            className={`inline-block transition-transform duration-500 font-NotoSansGeorgian font-light text-3xl ${
+            className={`inline-block transition-transform duration-500 font-Montserrat_thin font-light text-3xl ${
               Anim ? "-translate-y-full" : ""
             }`}
             style={{ transitionDelay: `${index * 0.03}s` }}
