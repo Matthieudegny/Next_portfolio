@@ -69,14 +69,14 @@ export default function Home({
 
       <main className=" relative min-h-screen w-screen flex flex-col justify-center bg-primary-color font-Montserrat_regular  sm:px-16 xl:px-48  ">
         <div className="h-screen flex flex-col justify-between sm:justify-evenly">
-          <div className="font-NotoSansGeorgian tracking-widest text-3xl w-full p-2 md:text-4xl  xl:w-2/5  ">
+          <div className="font-NotoSansGeorgian tracking-widest text-3xl w-full p-2 md:text-6xl  xl:w-3/5  ">
             <LayoutText delay={0.5} timeAnimation={0.04}>
               Hello, I'm Matthieu, a front-end developer specialized, with
               modern technologies built around the Javascript framework.
             </LayoutText>
           </div>
 
-          <div className="min-w-full p-2  md:pl-20 xl:pl-80 text-2xl md:text-3xl">
+          <div className="min-w-full p-2 font-Montserrat_thin  md:pl-20 xl:pl-40vw text-2xl md:text-4xl">
             <LayoutText delay={1.3} timeAnimation={0.03}>
               As a front-end developer with expertise in React, Next.js, and
               TypeScript, I'm passionate about crafting user-friendly interfaces
@@ -84,14 +84,16 @@ export default function Home({
             </LayoutText>
           </div>
 
-          <div className="mb-5 p-2 text-xl md:text-3xl sm:mb-0">
+    
+        </div>
+
+        <div className="2xl:h-90v mb-5">
+          <div className="mb-5 mt-8 p-2 text-xl font-Montserrat_thin md:text-4xl sm:mb-0">
             <LayoutText delay={1.6} timeAnimation={0.03}>
               What i can bring to you:
             </LayoutText>
           </div>
-        </div>
-
-        {dataSkills?.map((skill: articleSkills, index) => {
+          {dataSkills?.map((skill: articleSkills, index) => {
           return (
             <ArticleSkillsComponent
               key={index}
@@ -101,14 +103,25 @@ export default function Home({
               mobilVersion={mobilVersion}
             />
           );
-        })}
+          })}
+        </div>
+     
 
         <div
           ref={refSkillsTexts}
-          className="w-full md:h-90v 2xl:h-75v  flex flex-col md:flex-row "
+          className="relative w-full md:h-90v 2xl:h-60v flex flex-col md:flex-row "
         >
+            {/* border top horyzontale */}
+            <div
+              className="absolute h-px w-full top-0 left-0 bg-slate-400 z-50 scale-0"
+              style={{
+                transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
+                transformOrigin: "center",
+                transform: isInViewSkillstTexts ? "scaleX(1)" : "scaleX(0)",
+              }}
+            ></div>
           <div
-            className="relative h-full  pt-4 pb-4 flex flex-col justify-center"
+            className="relative h-full  pt-4 pb-4 flex flex-col "
             style={{
               transform: isInViewSkillstTexts ? "none" : "translateX(-200px)",
               opacity: isInViewSkillstTexts ? 1 : 0,
@@ -117,22 +130,20 @@ export default function Home({
           >
             <h3>Back-end:</h3>
             <h4>
-              API creation: Experienced in building robust and scalable APIs
+              API creation: Experienced in building scalable APIs
               using Node.js and Express.js, with a deep understanding of RESTful
               API design principles and best practices.
             </h4>
             <h4>
-              Database basics: Familiar with designing and implementing database
+              Database basics: Familiar with implementing database
               schemas and queries using SQL. Experienced in working with
-              PostgreSQL, SupaBase (relational database) and MongoDB (document
-              database), ensuring efficient and optimized data storage and
-              retrieval.
+              PostgreSQL, SupaBase and MongoDB.
             </h4>
-            {/* border bottom-left hozyzontale */}
+            {/* border middle-bottom-left hozyzontale */}
             <div
               className="absolute  md:w-full h-px  bottom-0 left-0 bg-slate-400 z-50 transition-all duration-1000"
               style={{
-                transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s",
+                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s",
                 transformOrigin: "right",
                 transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
               }}
@@ -140,7 +151,7 @@ export default function Home({
           </div>
           <div className="relative h-full">
             <div
-              className="relative h-3/6  pt-4 pb-4 flex flex-col justify-center"
+              className="relative h-3/6  pt-4 pb-4 flex flex-col "
               style={{
                 transform: isInViewSkillstTexts ? "none" : "translateX(200px)",
                 opacity: isInViewSkillstTexts ? 1 : 0,
@@ -156,7 +167,7 @@ export default function Home({
               <h4>AGILE: Experienced in working in an AGILE environment.</h4>
             </div>
             <div
-              className="relative h-3/6   pt-4 pb-4 flex flex-col justify-center"
+              className="relative h-3/6   pt-4 pb-4 flex flex-col "
               style={{
                 transform: isInViewSkillstTexts ? "none" : "translateX(200px)",
                 opacity: isInViewSkillstTexts ? 1 : 0,
@@ -174,7 +185,7 @@ export default function Home({
               <div
                 className="absolute  md:h-px  top-0 left-0 bg-slate-400 z-50 transition-all duration-1000"
                 style={{
-                  transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+                  transition: "all 0.75s cubic-bezier(0.17, 0.55, 0.55, 1) 0.45s",
 
                   width: isInViewSkillstLines ? "100%" : "0%",
                 }}
@@ -185,17 +196,17 @@ export default function Home({
               ref={refSkillsLines}
               className="absolute w-px md:h-full  bottom-0 left-0 bg-slate-400 z-50 transition-all duration-1000"
               style={{
-                transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
+                transition: "all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
                 transformOrigin: "top",
                 transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
               }}
             ></div>
-            {/* border bottom-right horyzontal */}
+            {/* border middle-bottom-right horyzontal */}
             <div
               ref={refSkillsLines}
               className="absolute md:w-full h-px bottom-0 left-0 bg-slate-400 transition-all duration-1000"
               style={{
-                transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s",
+                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s",
                 transformOrigin: "left",
                 transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
               }}
@@ -203,7 +214,7 @@ export default function Home({
           </div>
         </div>
 
-        <div className="md:mt-14 mb-14">
+        <div className="relative md:pt-5 mb-32 pb-5">
           <h3 className="xl:text-center">Current Focus:</h3>
           <h4>
             Working on improving my skills in Continuous Integration and
@@ -211,9 +222,29 @@ export default function Home({
             and manage containers for various applications.
           </h4>
           <h4>Unit testing with the Jest library.</h4>
+            {/* border bottom-left vertical */}
+          <div
+              ref={refSkillsLines}
+              className="absolute w-px md:h-full  bottom-0 left-0 bg-slate-400 z-50 transition-all duration-1000"
+              style={{
+                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 1.3s",
+                transformOrigin: "top",
+                transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
+              }}
+            ></div>
+               {/* border bottom-right vertical */}
+              <div
+              ref={refSkillsLines}
+              className="absolute w-px md:h-full  bottom-0 right-0 bg-slate-400 z-50 transition-all duration-1000"
+              style={{
+                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 1.3s",
+                transformOrigin: "top",
+                transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
+              }}
+            ></div>
         </div>
 
-        <div className="mt-20 mb-20" ref={refBottomPage}>
+        <div className="mt-32 mb-52" ref={refBottomPage}>
           <ContainerLinkAnimated
             title={"Projects / works"}
             linkImage={"/wave.png"}

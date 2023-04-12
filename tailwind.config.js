@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
@@ -23,10 +20,13 @@ module.exports = {
         "40v": "40vh",
         "50v": "50vh",
         "60v": "60vh",
-        "75v": "75vh",
+        "65v": "65vh",
         "80v": "80vh",
         "90v": "90vh",
         "100v": "100vh",
+      },
+      padding: {
+        "40vw": "40vw",
       },
       minHeight: {
         "40v": "40vh",
@@ -36,10 +36,10 @@ module.exports = {
       },
       animation: {
         slidein: "slidein 1s ease-out forwards",
-        slideinNav: "0.3s slideinNav 0.1s ease-out forwards",
-        slideinNav: "0.3s slideinNav 0.2s ease-out forwards",
-        slideinNav: "0.3s slideinNav 0.3s ease-out forwards",
-        slideOutNavMobile: "4s slideOutNavMobile 1s ease-out forwards",
+        slideinNav: "0.25s slideinNav 0s ease-out forwards",
+        slideinNav: "0.25s slideinNav 0.05s ease-out forwards",
+        slideinNav: "0.25s slideinNav 0.1s ease-out forwards",
+        slideOutNavMobile: "2.3s slideOutNavMobile 1s ease-in forwards",
       },
       zIndex: {
         n: "-1",

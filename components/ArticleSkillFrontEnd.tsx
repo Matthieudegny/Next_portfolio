@@ -109,15 +109,6 @@ const ArticleSkillsComponent = ({
           />
         )}
       </div>
-      <div
-        ref={refbottomLine}
-        className="absolute h-px w-full bottom-0 left-0 bg-slate-400 z-50 scale-0"
-        style={{
-          transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
-          transformOrigin: "center",
-          transform: isInViewBottomLine ? "scaleX(1)" : "scaleX(0)",
-        }}
-      ></div>
     </article>
   );
 };

@@ -16,14 +16,28 @@ const ItemNavMobile = ({
     <div className="m-5 w-full ml-20 flex items-center">
       <Link
         href=""
-        className={`text-white w-full pl-3 z-50 flex items-center justify-start ${
+        className={`text-white w-full pl-3 z-50 flex items-center justify-start 
+        ${
           item_Nav_Animation
-            ? "animate-[1.5s_slideOutNavMobile_1s_ease-out_forwards]"
+            ? "animate-[2.3s_slideOutNavMobile_1s_ease-in_forwards]"
             : ""
-        }`}
+        }
+
+        `
+      }
         onClick={() => {
           setitem_Nav_Animation(true);
-          // setmenuNavMobile((prev: boolean) => !prev);
+          const myTimeout = setTimeout(()=>{
+            setmenuNavMobile((prev: boolean) => !prev)
+          }
+            , 800);
+            const myTimeoutNAv = setTimeout(()=>
+            
+              setitem_Nav_Animation(false)
+            
+              , 5000);
+            
+          
         }}
       >
         <div>
@@ -72,7 +86,7 @@ const Nav = ({ hideNav }: { hideNav: boolean }) => {
     }, 600);
   };
 
-  const [width, setWidth] = useState<string>("");
+  const [width, setWidth] = useState<string>("desktopWidth");
   const updateWidth = () => {
     if (window.innerWidth < 1280) {
       setWidth("mobileWidth");
@@ -98,7 +112,7 @@ const Nav = ({ hideNav }: { hideNav: boolean }) => {
               onMouseEnter={() => setHome(true)}
               onMouseLeave={() => turnOffAnimation(setHome)}
               className={
-                styleNav + "animate-[0.7s_slideinNav_0.1s_ease-out_forwards]"
+                styleNav + "animate-[0.25s_slideinNav_0s_ease-out_forwards]"
               }
               href="/"
             >
@@ -111,7 +125,7 @@ const Nav = ({ hideNav }: { hideNav: boolean }) => {
               onMouseEnter={() => setProjects(true)}
               onMouseLeave={() => turnOffAnimation(setProjects)}
               className={
-                styleNav + " animate-[0.7s_slideinNav_0.2s_ease-out_forwards]"
+                styleNav + " animate-[0.25s_slideinNav_0.05s_ease-out_forwards]"
               }
               href="/projects"
             >
@@ -124,7 +138,7 @@ const Nav = ({ hideNav }: { hideNav: boolean }) => {
               onMouseEnter={() => setContact(true)}
               onMouseLeave={() => turnOffAnimation(setContact)}
               className={
-                styleNav + " animate-[0.7s_slideinNav_0.3s_ease-out_forwards]"
+                styleNav + " animate-[0.25s_slideinNav_0.1s_ease-out_forwards]"
               }
               href="/contact"
             >
@@ -185,6 +199,7 @@ const Nav = ({ hideNav }: { hideNav: boolean }) => {
           />
         </div>
       </div>
+     
     </>
   );
 };
