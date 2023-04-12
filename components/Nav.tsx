@@ -3,41 +3,43 @@ import Link from "next/link";
 import { animate, motion } from "framer-motion";
 
 import LayoutNav from "./LayoutNav";
-
+// animate-[2.3s_slideOutNavMobile_1s_ease-in_forwards]
 const ItemNavMobile = ({
   setmenuNavMobile,
+  setmobilAnimationLink,
+  mobilAnimationLink,
   pageString,
+  link,
 }: {
   setmenuNavMobile: Function;
+  setmobilAnimationLink: Function;
+  mobilAnimationLink: string;
   pageString: string;
+  link: string;
 }) => {
-  const [item_Nav_Animation, setitem_Nav_Animation] = useState<boolean>(false);
   return (
-    <div className="m-5 w-full ml-20 flex items-center">
-      <Link
-        href=""
-        className={`text-white w-full pl-3 z-50 flex items-center justify-start 
+    <div className="m-5 p-1 w-full ml-20 flex items-center overflow-hidden">
+      <div
+        className={`text-white w-full pl-3 z-50 flex items-center justify-start ease-in duration-700
         ${
-          item_Nav_Animation
-            ? "animate-[2.3s_slideOutNavMobile_1s_ease-in_forwards]"
+          mobilAnimationLink !== pageString && mobilAnimationLink
+            ? "translate-y-full"
             : ""
         }
 
-        `
-      }
+        `}
         onClick={() => {
-          setitem_Nav_Animation(true);
-          const myTimeout = setTimeout(()=>{
-            setmenuNavMobile((prev: boolean) => !prev)
-          }
-            , 800);
-            const myTimeoutNAv = setTimeout(()=>
-            
-              setitem_Nav_Animation(false)
-            
-              , 5000);
-            
-          
+          if (typeof pageString === "string") setmobilAnimationLink(pageString);
+          const timeOutOffMenuTurnOff = setTimeout(() => {
+            setmenuNavMobile(false);
+          }, 600);
+          const timeOutOffAnimation = setTimeout(() => {
+            setmobilAnimationLink(false);
+          }, 1100);
+          return () => {
+            clearTimeout(timeOutOffMenuTurnOff);
+            clearTimeout(timeOutOffAnimation);
+          };
         }}
       >
         <div>
@@ -47,8 +49,8 @@ const ItemNavMobile = ({
             viewBox="0 0 24 24"
             strokeWidth={2.5}
             stroke="white"
-            className={`w-0 h-8 ease-out duration-300 tra ${
-              item_Nav_Animation ? "w-8" : ""
+            className={`w-0 h-8  duration-1000 ${
+              mobilAnimationLink === pageString ? "w-8" : ""
             } `}
           >
             <path
@@ -58,17 +60,8 @@ const ItemNavMobile = ({
             />
           </svg>
         </div>
-        <div>{pageString}</div>
-      </Link>
-
-      {/* <div
-        className="absolute top-0 left-0 ml-16 skew-x-30d scale-y-100 hover:scale-y-0 origin-left text-transparent "
-        style={{
-          textShadow: "	#41413c 1px 0 5px",
-        }}
-      >
-        {pageString}
-      </div> */}
+        <Link href={link}>{pageString}</Link>
+      </div>
     </div>
   );
 };
@@ -79,11 +72,13 @@ const Nav = ({ hideNav }: { hideNav: boolean }) => {
   const [Projects, setProjects] = useState(false);
   const [Contact, setContact] = useState(false);
   const [menuNavMobile, setmenuNavMobile] = useState(false);
+  const [mobilAnimationLink, setmobilAnimationLink] = useState<any>(false);
 
   const turnOffAnimation = (setstate: Function) => {
     const timeOutOffAnimation = setTimeout(() => {
       setstate(false);
     }, 600);
+    return () => clearTimeout(timeOutOffAnimation);
   };
 
   const [width, setWidth] = useState<string>("desktopWidth");
@@ -105,9 +100,9 @@ const Nav = ({ hideNav }: { hideNav: boolean }) => {
 
   return (
     <>
-      <motion.nav className="fixed flex flex-col z-50 right-7 top-7">
+      <motion.nav>
         {width === "desktopWidth" && !hideNav ? (
-          <>
+          <div className="fixed flex flex-col z-50 right-7 top-7">
             <Link
               onMouseEnter={() => setHome(true)}
               onMouseLeave={() => turnOffAnimation(setHome)}
@@ -146,9 +141,9 @@ const Nav = ({ hideNav }: { hideNav: boolean }) => {
                 <h1>CONTACT</h1>
               </LayoutNav>
             </Link>
-          </>
+          </div>
         ) : !hideNav ? (
-          <div>
+          <div className="fixed flex flex-col z-50 right-3 top-5">
             <Link
               href=""
               className="font-NotoSansGeorgian"
@@ -156,14 +151,14 @@ const Nav = ({ hideNav }: { hideNav: boolean }) => {
             >
               <div className="flex flex-col opacity-1 leading-9 h-9 mb-3 overflow-hidden ">
                 <div
-                  className={`inline-block leading-9 h-9 transition-transform duration-500   text-3xl ${
+                  className={`inline-block leading-9 h-9 transition-transform duration-1000   text-2xl ${
                     menuNavMobile ? "-translate-y-full" : ""
                   }`}
                 >
                   Menu
                 </div>
                 <div
-                  className={`inline-block text-white leading-9 h-9 transition-transform duration-500  text-3xl   ${
+                  className={`inline-block text-white leading-9 h-9 transition-transform duration-500  text-2xl   ${
                     menuNavMobile ? "-translate-y-full " : ""
                   }`}
                 >
@@ -184,22 +179,30 @@ const Nav = ({ hideNav }: { hideNav: boolean }) => {
           width: menuNavMobile ? "100%" : "0%",
         }}
       >
-        <div className="h-full w-full p-10 flex flex-col items-start justify-center font-NotoSansGeorgian text-5xl">
+        <div className="h-full w-full p-0 md:pl-2  flex flex-col items-start justify-center font-NotoSansGeorgian text-5xl">
           <ItemNavMobile
             setmenuNavMobile={setmenuNavMobile}
+            setmobilAnimationLink={setmobilAnimationLink}
+            mobilAnimationLink={mobilAnimationLink}
             pageString={"HOME"}
+            link={"/"}
           />
           <ItemNavMobile
             setmenuNavMobile={setmenuNavMobile}
+            setmobilAnimationLink={setmobilAnimationLink}
+            mobilAnimationLink={mobilAnimationLink}
             pageString={"CONTACT"}
+            link={"/contact"}
           />
           <ItemNavMobile
             setmenuNavMobile={setmenuNavMobile}
+            setmobilAnimationLink={setmobilAnimationLink}
+            mobilAnimationLink={mobilAnimationLink}
             pageString={"PROJECTS"}
+            link={"/projects"}
           />
         </div>
       </div>
-     
     </>
   );
 };

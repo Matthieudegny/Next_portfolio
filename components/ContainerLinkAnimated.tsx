@@ -21,7 +21,7 @@ const ContainerLinkAnimated = ({
   return (
     <div
       ref={refBorder}
-      className="h-20v w-screen overflow-hidden relative sm:-ml-16 xl:-ml-48 cursor-pointer"
+      className="h-20v w-screen overflow-hidden relative sm:-ml-5rem xl:-ml-48 cursor-pointer"
     >
       {index === 1 ? (
         <div

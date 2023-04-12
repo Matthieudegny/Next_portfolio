@@ -19,7 +19,7 @@ const projects = () => {
       exit={{ opacity: 1 }}
       initial={{ y: "100%" }}
       transition={{
-        duration: 0.75,
+        duration: 0.7,
         ease: "easeOut",
       }}
       style={{

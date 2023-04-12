@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -21,12 +24,17 @@ module.exports = {
         "50v": "50vh",
         "60v": "60vh",
         "65v": "65vh",
+        "75v": "75vh",
         "80v": "80vh",
         "90v": "90vh",
         "100v": "100vh",
       },
       padding: {
         "40vw": "40vw",
+        "5rem": "5rem",
+      },
+      margin: {
+        "5rem": "5rem",
       },
       minHeight: {
         "40v": "40vh",

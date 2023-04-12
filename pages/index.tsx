@@ -35,6 +35,17 @@ export default function Home({
   const refSkillsTexts = useRef<HTMLInputElement>(null);
   const isInViewSkillstTexts = useInView(refSkillsTexts, { once: true });
 
+  const refSkillsTextsVersioning = useRef<HTMLInputElement>(null);
+  const isInViewSkillstTextsVersioning = useInView(refSkillsTextsVersioning, {
+    once: true,
+  });
+
+  const refSkillsTextsCurrentFocus = useRef<HTMLInputElement>(null);
+  const isInViewSkillstTextsCurrentFocus = useInView(
+    refSkillsTextsCurrentFocus,
+    { once: true }
+  );
+
   const refBottomPage = useRef<HTMLInputElement>(null);
 
   const isInViewBottomPage = useInView(refBottomPage, {
@@ -67,24 +78,22 @@ export default function Home({
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className=" relative min-h-screen w-screen flex flex-col justify-center bg-primary-color font-Montserrat_regular  sm:px-16 xl:px-48  ">
-        <div className="h-screen flex flex-col justify-between sm:justify-evenly">
-          <div className="font-NotoSansGeorgian tracking-widest text-3xl w-full p-2 md:text-6xl  xl:w-3/5  ">
+      <main className=" relative min-h-screen w-screen flex flex-col justify-center bg-primary-color font-Montserrat_regular  sm:px-5rem xl:px-48  ">
+        <div className="h-screen flex flex-col justify-evenly">
+          <div className="font-NotoSansGeorgian tracking-widest text-3xl w-full p-2 pr-16 sm:pr-0 md:text-5xl  xl:w-4/5 2xl:w-3/5  ">
             <LayoutText delay={0.5} timeAnimation={0.04}>
               Hello, I'm Matthieu, a front-end developer specialized, with
               modern technologies built around the Javascript framework.
             </LayoutText>
           </div>
 
-          <div className="min-w-full p-2 font-Montserrat_thin  md:pl-20 xl:pl-40vw text-2xl md:text-4xl">
+          <div className="min-w-full p-2 font-Montserrat_thin pr-16 sm:pr-0  md:pl-20 xl:pl-40vw text-2xl md:text-4xl">
             <LayoutText delay={1.3} timeAnimation={0.03}>
               As a front-end developer with expertise in React, Next.js, and
               TypeScript, I'm passionate about crafting user-friendly interfaces
               that bring ideas to life.
             </LayoutText>
           </div>
-
-    
         </div>
 
         <div className="2xl:h-90v mb-5">
@@ -94,34 +103,33 @@ export default function Home({
             </LayoutText>
           </div>
           {dataSkills?.map((skill: articleSkills, index) => {
-          return (
-            <ArticleSkillsComponent
-              key={index}
-              title={skill.title}
-              image={skill.image}
-              text={skill.text}
-              mobilVersion={mobilVersion}
-            />
-          );
+            return (
+              <ArticleSkillsComponent
+                key={index}
+                title={skill.title}
+                image={skill.image}
+                text={skill.text}
+                mobilVersion={mobilVersion}
+              />
+            );
           })}
         </div>
-     
 
         <div
           ref={refSkillsTexts}
-          className="relative w-full md:h-90v 2xl:h-60v flex flex-col md:flex-row "
+          className="relative w-full md:h-75v 2xl:h-60v flex flex-col md:flex-row "
         >
-            {/* border top horyzontale */}
-            <div
-              className="absolute h-px w-full top-0 left-0 bg-slate-400 z-50 scale-0"
-              style={{
-                transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
-                transformOrigin: "center",
-                transform: isInViewSkillstTexts ? "scaleX(1)" : "scaleX(0)",
-              }}
-            ></div>
+          {/* border top horyzontale */}
           <div
-            className="relative h-full  pt-4 pb-4 flex flex-col "
+            className="absolute h-px md:w-full  top-0 left-0 bg-slate-400 z-50 scale-0"
+            style={{
+              transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
+              transformOrigin: "center",
+              transform: isInViewSkillstTexts ? "scaleX(1)" : "scaleX(0)",
+            }}
+          ></div>
+          <div
+            className="relative h-full pt-4 pb-4 xl:pr-10 flex flex-col "
             style={{
               transform: isInViewSkillstTexts ? "none" : "translateX(-200px)",
               opacity: isInViewSkillstTexts ? 1 : 0,
@@ -130,14 +138,14 @@ export default function Home({
           >
             <h3>Back-end:</h3>
             <h4>
-              API creation: Experienced in building scalable APIs
-              using Node.js and Express.js, with a deep understanding of RESTful
-              API design principles and best practices.
+              API creation: Experienced in building scalable APIs using Node.js
+              and Express.js, with RESTful API design principles and good
+              practices.
             </h4>
             <h4>
-              Database basics: Familiar with implementing database
-              schemas and queries using SQL. Experienced in working with
-              PostgreSQL, SupaBase and MongoDB.
+              Database basics: Familiar with implementing database schemas and
+              queries using SQL. Experienced in working with PostgreSQL,
+              SupaBase and MongoDB.
             </h4>
             {/* border middle-bottom-left hozyzontale */}
             <div
@@ -169,23 +177,26 @@ export default function Home({
             <div
               className="relative h-3/6   pt-4 pb-4 flex flex-col "
               style={{
-                transform: isInViewSkillstTexts ? "none" : "translateX(200px)",
-                opacity: isInViewSkillstTexts ? 1 : 0,
+                transform: isInViewSkillstTextsVersioning
+                  ? "none"
+                  : "translateX(200px)",
+                opacity: isInViewSkillstTextsVersioning ? 1 : 0,
                 transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
               }}
             >
-              <h3>Versioning:</h3>
+              <h3 ref={refSkillsTextsVersioning}>Versioning:</h3>
               <h4>
-                Experienced in using Git, GitHub, and Azur for version control,
-                ensuring efficient collaboration with team members and
-                maintaining codebase integrity. Proficient in managing
-                repositories, branches, and pull requests.
+                Experienced in using Git, GitHub, and Azue for version control,
+                ensuring collaboration with team members and maintaining
+                codebase integrity. Proficient in managing repositories,
+                branches, and pull requests.
               </h4>
               {/* border middle hozyzontale */}
               <div
                 className="absolute  md:h-px  top-0 left-0 bg-slate-400 z-50 transition-all duration-1000"
                 style={{
-                  transition: "all 0.75s cubic-bezier(0.17, 0.55, 0.55, 1) 0.45s",
+                  transition:
+                    "all 0.75s cubic-bezier(0.17, 0.55, 0.55, 1) 0.45s",
 
                   width: isInViewSkillstLines ? "100%" : "0%",
                 }}
@@ -214,34 +225,45 @@ export default function Home({
           </div>
         </div>
 
-        <div className="relative md:pt-5 mb-32 pb-5">
-          <h3 className="xl:text-center">Current Focus:</h3>
+        <div
+          className="relative md:pt-5 mb-32 pb-5"
+          style={{
+            transform: isInViewSkillstTextsCurrentFocus
+              ? "none"
+              : "translateY(200px)",
+            opacity: isInViewSkillstTextsCurrentFocus ? 1 : 0,
+            transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+          }}
+        >
+          <h3 ref={refSkillsTextsCurrentFocus} className="xl:text-center">
+            Current Focus:
+          </h3>
           <h4>
             Working on improving my skills in Continuous Integration and
             Deployment (CI/CD) by learning Docker and how to use it to create
             and manage containers for various applications.
           </h4>
           <h4>Unit testing with the Jest library.</h4>
-            {/* border bottom-left vertical */}
+          {/* border bottom-left vertical */}
           <div
-              ref={refSkillsLines}
-              className="absolute w-px md:h-full  bottom-0 left-0 bg-slate-400 z-50 transition-all duration-1000"
-              style={{
-                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 1.3s",
-                transformOrigin: "top",
-                transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
-              }}
-            ></div>
-               {/* border bottom-right vertical */}
-              <div
-              ref={refSkillsLines}
-              className="absolute w-px md:h-full  bottom-0 right-0 bg-slate-400 z-50 transition-all duration-1000"
-              style={{
-                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 1.3s",
-                transformOrigin: "top",
-                transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
-              }}
-            ></div>
+            ref={refSkillsLines}
+            className="absolute w-px md:h-full  bottom-0 left-0 bg-slate-400 z-50 transition-all duration-1000"
+            style={{
+              transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 1.3s",
+              transformOrigin: "top",
+              transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
+            }}
+          ></div>
+          {/* border bottom-right vertical */}
+          <div
+            ref={refSkillsLines}
+            className="absolute w-px md:h-full  bottom-0 right-0 bg-slate-400 z-50 transition-all duration-1000"
+            style={{
+              transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 1.3s",
+              transformOrigin: "top",
+              transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
+            }}
+          ></div>
         </div>
 
         <div className="mt-32 mb-52" ref={refBottomPage}>
