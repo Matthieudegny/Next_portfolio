@@ -1,8 +1,63 @@
 import React, { useRef, useEffect, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
 
 import LayoutNav from "./LayoutNav";
+
+const ItemNavMobile = ({
+  setmenuNavMobile,
+  pageString,
+}: {
+  setmenuNavMobile: Function;
+  pageString: string;
+}) => {
+  const [item_Nav_Animation, setitem_Nav_Animation] = useState<boolean>(false);
+  return (
+    <div className="m-5 w-full ml-20 flex items-center">
+      <Link
+        href=""
+        className={`text-white w-full pl-3 z-50 flex items-center justify-start ${
+          item_Nav_Animation
+            ? "animate-[1.5s_slideOutNavMobile_1s_ease-out_forwards]"
+            : ""
+        }`}
+        onClick={() => {
+          setitem_Nav_Animation(true);
+          // setmenuNavMobile((prev: boolean) => !prev);
+        }}
+      >
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2.5}
+            stroke="white"
+            className={`w-0 h-8 ease-out duration-300 tra ${
+              item_Nav_Animation ? "w-8" : ""
+            } `}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+            />
+          </svg>
+        </div>
+        <div>{pageString}</div>
+      </Link>
+
+      {/* <div
+        className="absolute top-0 left-0 ml-16 skew-x-30d scale-y-100 hover:scale-y-0 origin-left text-transparent "
+        style={{
+          textShadow: "	#41413c 1px 0 5px",
+        }}
+      >
+        {pageString}
+      </div> */}
+    </div>
+  );
+};
 
 const Nav = ({ hideNav }: { hideNav: boolean }) => {
   console.log("hideNav: ", hideNav);
@@ -90,9 +145,6 @@ const Nav = ({ hideNav }: { hideNav: boolean }) => {
                   className={`inline-block leading-9 h-9 transition-transform duration-500   text-3xl ${
                     menuNavMobile ? "-translate-y-full" : ""
                   }`}
-                  style={{
-                    color: menuNavMobile ? "white" : "black",
-                  }}
                 >
                   Menu
                 </div>
@@ -111,7 +163,6 @@ const Nav = ({ hideNav }: { hideNav: boolean }) => {
         )}
       </motion.nav>
 
-      {/* {menuNavMobile ? ( */}
       <div
         className="fixed h-screen w-0 z-40 right-0 top-0 bg-black "
         style={{
@@ -119,11 +170,21 @@ const Nav = ({ hideNav }: { hideNav: boolean }) => {
           width: menuNavMobile ? "100%" : "0%",
         }}
       >
-        <button className="text-white">X</button>
+        <div className="h-full w-full p-10 flex flex-col items-start justify-center font-NotoSansGeorgian text-5xl">
+          <ItemNavMobile
+            setmenuNavMobile={setmenuNavMobile}
+            pageString={"HOME"}
+          />
+          <ItemNavMobile
+            setmenuNavMobile={setmenuNavMobile}
+            pageString={"CONTACT"}
+          />
+          <ItemNavMobile
+            setmenuNavMobile={setmenuNavMobile}
+            pageString={"PROJECTS"}
+          />
+        </div>
       </div>
-      {/* // ) : (
-      //   ""
-      // )} */}
     </>
   );
 };

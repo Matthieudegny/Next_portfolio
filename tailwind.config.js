@@ -39,6 +39,7 @@ module.exports = {
         slideinNav: "0.3s slideinNav 0.1s ease-out forwards",
         slideinNav: "0.3s slideinNav 0.2s ease-out forwards",
         slideinNav: "0.3s slideinNav 0.3s ease-out forwards",
+        slideOutNavMobile: "4s slideOutNavMobile 1s ease-out forwards",
       },
       zIndex: {
         n: "-1",
@@ -60,6 +61,16 @@ module.exports = {
           to: {
             transform: "translateX(0%)",
             opacity: "1",
+          },
+        },
+
+        slideOutNavMobile: {
+          "0%": { transform: "translateX(0%)" },
+          "95%": {
+            transform: "translateX(100%)",
+          },
+          "100%": {
+            transform: "translateX(0%)",
           },
         },
       },
