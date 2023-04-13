@@ -5,7 +5,9 @@
 :root {
   --primary-color: rgb(230, 223, 223);
 }
-
+* {
+  scroll-behavior: smooth;
+}
 /* Firefox */
 * {
   scrollbar-width: none;

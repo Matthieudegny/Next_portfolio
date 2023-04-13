@@ -3,8 +3,8 @@ import Image from "next/image";
 import Head from "next/head";
 import { motion, useInView } from "framer-motion";
 import { useRouter } from "next/router";
-import React, { useRef, useEffect } from "react";
-
+import React, { useState, useRef, useEffect } from "react";
+import { Element } from "react-scroll";
 //components
 import LayoutText from "../components/LayoutText";
 import ArticleSkillsComponent from "@/components/ArticleSkillFrontEnd";
@@ -61,6 +61,26 @@ export default function Home({
     }
   }, [isInViewBottomPage]);
 
+  const handleScrollToBottom = () => {
+    console.log("refBottomPage.current: ", refBottomPage.current);
+    refBottomPage.current.scrollIntoView({ behavior: "smooth" });
+  };
+  //write a function to console.log the scrollY position
+  const [test, settest] = useState(0);
+  const [test2, settest2] = useState(false);
+  const handleScrollAnchor = (e: any) => {
+    console.log("e.pageY: ", e.clientY);
+    if (e.clientY > test) settest2(true);
+    else {
+      settest2(false);
+    }
+
+    settest(e.clientY);
+    // if (isInViewSkillstTextsCurrentFocus) {
+    //   handleScrollToBottom();
+    // }
+  };
+
   return (
     <motion.main
       animate={{ y: "0%" }}
@@ -78,7 +98,16 @@ export default function Home({
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className=" relative min-h-screen w-screen flex flex-col justify-center bg-primary-color font-Montserrat_regular  sm:px-5rem xl:px-48  ">
+      <main
+        onMouseMove={(e) => handleScrollAnchor(e)}
+        className=" relative  min-h-screen w-screen flex flex-col justify-center bg-primary-color font-Montserrat_regular  sm:px-5rem xl:px-48  "
+        style={{
+          scrollSnapType: "y mandatory",
+          overflowY: "scroll",
+        }}
+      >
+        {test2 ? <h1>tttttttttttttttttesgggggggggggggg</h1> : ""}
+        <button onClick={() => handleScrollToBottom()}>ttttttttttessss</button>
         <div className="h-screen flex flex-col justify-evenly">
           <div className="font-NotoSansGeorgian tracking-widest text-3xl w-full p-2 pr-16 sm:pr-0 md:text-5xl  xl:w-4/5 2xl:w-3/5  ">
             <LayoutText delay={0.5} timeAnimation={0.04}>
@@ -278,6 +307,7 @@ export default function Home({
             index={2}
           />
         </div>
+
         <Footer />
         <div>.</div>
       </main>
