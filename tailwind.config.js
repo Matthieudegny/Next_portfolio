@@ -35,7 +35,9 @@ module.exports = {
       },
       margin: {
         "5rem": "5rem",
+        "15rem": "20rem",
       },
+
       minHeight: {
         "40v": "40vh",
       },
@@ -43,22 +45,28 @@ module.exports = {
         "78px": "78px",
       },
       animation: {
-        slidein: "slidein 1s ease-out forwards",
+        slidein: "slidein 0.5s ease-out forwards",
         slideinNav: "0.25s slideinNav 0s ease-out forwards",
         slideinNav: "0.25s slideinNav 0.05s ease-out forwards",
         slideinNav: "0.25s slideinNav 0.1s ease-out forwards",
         slideOutNavMobile: "2.3s slideOutNavMobile 1s ease-in forwards",
+        rotateH3: "1s rotateH3 1s ease-in-out forwards",
       },
       zIndex: {
         n: "-1",
       },
       keyframes: {
+        rotateH3: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(1080deg)" },
+        },
+
         slidein: {
           from: {
-            transform: "translateY(85%)",
+            transform: "translateY(85%) rotate(7deg)",
           },
           to: {
-            transform: "translateY(0%)",
+            transform: "translateY(0%) rotate(0deg)",
           },
         },
         slideinNav: {

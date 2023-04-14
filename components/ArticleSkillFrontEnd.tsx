@@ -1,28 +1,15 @@
-import React, { useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import React, { useState } from "react";
 
 import { articleSkills } from "@/models/typesIndex";
+import LayoutH3 from "../components/LayoutH3";
 
 const ArticleSkillsComponent = ({
-  title,
-  image,
-  text,
   mobilVersion,
+  isInViewrefSection2,
 }: {
-  title: string;
-  image: string;
-  text: string[];
   mobilVersion: boolean;
+  isInViewrefSection2: boolean;
 }) => {
-  const refText = useRef<HTMLInputElement>(null);
-  const isInViewText = useInView(refText, { once: true });
-
-  const refImage = useRef<HTMLInputElement>(null);
-  const isInViewImage = useInView(refImage, { once: true });
-
-  const refbottomLine = useRef<HTMLInputElement>(null);
-  const isInViewBottomLine = useInView(refbottomLine, { once: true });
-
   const [offsetY, setoffsetY] = useState<number>(250);
   const [offsetX, setoffsetX] = useState<number>(205);
 
@@ -32,41 +19,50 @@ const ArticleSkillsComponent = ({
   return (
     <article className="group relative flex flex-col w-full justify-evenly  2xl:flex-row 2xl:justify-between">
       <main
-        ref={refText}
-        className=" flex flex-col justify-center mt-6 xl:mt-0 "
+        className=" flex flex-col  justify-center opacity-0 mt-6 xl:mt-0 rounded-2xl p-6 2xl:w-1/2"
         style={{
-          transform: isInViewText ? "none" : "translateX(-200px)",
-          opacity: isInViewText ? 1 : 0,
-          transition: "all 0.6s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+          transform: isInViewrefSection2 ? "none" : "translateX(-200px)",
+          opacity: isInViewrefSection2 ? 1 : 0,
+          transition:
+            "transform 0.6s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s,opacity 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s",
         }}
       >
-        <h3>
-          {title}:
-          {/* <div className="absolute h-px w-full bottom-0 left-0 bg-slate-400 z-50"></div> */}
-        </h3>
-        {text?.map((text, index) => {
-          return (
-            <React.Fragment key={index}>
-              <h4>{text}</h4>
-            </React.Fragment>
-          );
-        })}
+        <LayoutH3>Front-end:</LayoutH3>
+        <h4>
+          UI/UX and responsive design: Experienced in creating visually
+          appealing and user-friendly interfaces using Figma and CSS (SASS,
+          Tailwind, MUI).
+        </h4>
+        <h4>
+          Performance optimization: Skilled in optimizing application
+          performance with React and dynamic DOM, including reusable components
+          and dynamic updates.
+        </h4>
+        <h4>
+          State management: Proficient in managing application state using
+          Redux, Redux Toolkit, and the useContext hook, allowing for efficient
+          and scalable management of complex data.
+        </h4>
+        <h4>
+          SEO: Skilled in optimizing website content for search engines using
+          Next.js and server-side rendering to ensure optimal performance and
+          search engine rankings.,
+        </h4>
       </main>
 
       <div
-        ref={refImage}
         style={{
-          transform: isInViewImage ? "none" : "translateX(200px)",
-          opacity: isInViewImage ? 1 : 0,
-          transition: "all 0.6s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+          transform: isInViewrefSection2 ? "none" : "translateX(200px)",
+          opacity: isInViewrefSection2 ? 1 : 0,
+          transition:
+            "transform 0.6s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s,opacity 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s",
         }}
         className="m-auto  p-14  md:p-0"
       >
         {/* mobile version => no card 3d animation */}
         {!mobilVersion ? (
           <div
-            ref={refImage}
-            className=" relative m-14"
+            className=" relative m-14 cursor-pointer"
             style={{
               perspective: "1000px",
               perspectiveOrigin: "50% 50%",
@@ -83,23 +79,19 @@ const ArticleSkillsComponent = ({
               setoffsetX(205);
             }}
           >
-            {image ? (
-              <img
-                src={image}
-                alt="my_image"
-                style={{
-                  borderRadius: "10px",
-                  transform: `rotateX(${indiceRotationX}deg) rotateY(${indiceRotationY}deg)`,
-                  transition: "all 0.3s ease",
-                }}
-              />
-            ) : (
-              ""
-            )}
+            <img
+              src="/frontEnd_skills.png"
+              alt="my_image"
+              style={{
+                borderRadius: "10px",
+                transform: `rotateX(${indiceRotationX}deg) rotateY(${indiceRotationY}deg)`,
+                transition: "all 0.3s ease",
+              }}
+            />
           </div>
         ) : (
           <img
-            src={image}
+            src="/frontEnd_skills.png"
             alt="my_image"
             style={{
               borderRadius: "10px",

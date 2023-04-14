@@ -5,7 +5,7 @@ const LayoutText = ({
   delay,
   timeAnimation,
 }: {
-  children: any;
+  children: string;
   delay: number;
   timeAnimation: number;
 }) => {
@@ -22,7 +22,7 @@ const LayoutText = ({
         ? words.map((word: string, index: number) => (
             <div key={index} className="inline-block overflow-hidden">
               <span
-                className="inline-block transition-transform translate-y-full  animate-[slidein_1s_ease-out_forwards] duration-100"
+                className="inline-block transition-transform translate-y-full  animate-[slidein_0.5s_ease-out_forwards] duration-100"
                 style={{
                   animationDelay: `${timeAnimation * index + delay}s`,
                   willChange: "transform",

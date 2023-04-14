@@ -7,16 +7,10 @@ import React, { useState, useRef, useEffect } from "react";
 import { Element } from "react-scroll";
 //components
 import LayoutText from "../components/LayoutText";
+import LayoutH3 from "../components/LayoutH3";
 import ArticleSkillsComponent from "@/components/ArticleSkillFrontEnd";
 import ContainerLinkAnimated from "@/components/ContainerLinkAnimated";
 import Footer from "@/components/Footer";
-
-import {
-  dataSkills,
-  dataSkillsBackend,
-  dataSkillsStructure,
-  dataSkillsVersionning,
-} from "@/utils/skillsData";
 
 import { articleSkills } from "@/models/typesIndex";
 
@@ -46,8 +40,18 @@ export default function Home({
     { once: true }
   );
 
-  const refBottomPage = useRef<HTMLInputElement>(null);
+  const refSection2 = useRef<HTMLDivElement>(null);
+  const isInViewrefSection2 = useInView(refSection2, {
+    amount: 0.3,
+    once: true,
+  });
 
+  const refSection3 = useRef<HTMLDivElement>(null);
+  const isInViewrefSection3 = useInView(refSection3, {
+    amount: 0.3,
+  });
+
+  const refBottomPage = useRef<HTMLDivElement>(null);
   const isInViewBottomPage = useInView(refBottomPage, {
     amount: 0.8,
   });
@@ -61,26 +65,6 @@ export default function Home({
     }
   }, [isInViewBottomPage]);
 
-  const handleScrollToBottom = () => {
-    console.log("refBottomPage.current: ", refBottomPage.current);
-    refBottomPage.current.scrollIntoView({ behavior: "smooth" });
-  };
-  //write a function to console.log the scrollY position
-  const [test, settest] = useState(0);
-  const [test2, settest2] = useState(false);
-  const handleScrollAnchor = (e: any) => {
-    console.log("e.pageY: ", e.clientY);
-    if (e.clientY > test) settest2(true);
-    else {
-      settest2(false);
-    }
-
-    settest(e.clientY);
-    // if (isInViewSkillstTextsCurrentFocus) {
-    //   handleScrollToBottom();
-    // }
-  };
-
   return (
     <motion.main
       animate={{ y: "0%" }}
@@ -90,7 +74,7 @@ export default function Home({
         duration: 0.75,
         ease: "easeOut",
       }}
-      className="text-gray-900 fixed top-0 left-0 w-full h-screen bg-primary-color overflow-y-auto"
+      className="fixed top-0 left-0 w-full h-screen  overflow-y-auto"
     >
       <Head>
         <title>PortFolio</title>
@@ -99,16 +83,17 @@ export default function Home({
       </Head>
 
       <main
-        onMouseMove={(e) => handleScrollAnchor(e)}
-        className=" relative  min-h-screen w-screen flex flex-col justify-center bg-primary-color font-Montserrat_regular  sm:px-5rem xl:px-48  "
+        className={`${
+          isInViewrefSection3
+            ? "text-white bg-black duration-200"
+            : "text-gray-900 bg-primary-color duration-200"
+        } relative text-gray-900   min-h-screen w-screen flex flex-col justify-center  font-Montserrat_regular  sm:px-5rem xl:px-48`}
         style={{
-          scrollSnapType: "y mandatory",
-          overflowY: "scroll",
+          transition:
+            "background-color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s, color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
         }}
       >
-        {test2 ? <h1>tttttttttttttttttesgggggggggggggg</h1> : ""}
-        <button onClick={() => handleScrollToBottom()}>ttttttttttessss</button>
-        <div className="h-screen flex flex-col justify-evenly">
+        <section className="h-screen flex flex-col justify-evenly">
           <div className="font-NotoSansGeorgian tracking-widest text-3xl w-full p-2 pr-16 sm:pr-0 md:text-5xl  xl:w-4/5 2xl:w-3/5  ">
             <LayoutText delay={0.5} timeAnimation={0.04}>
               Hello, I'm Matthieu, a front-end developer specialized, with
@@ -123,193 +108,163 @@ export default function Home({
               that bring ideas to life.
             </LayoutText>
           </div>
-        </div>
+        </section>
 
-        <div className="2xl:h-90v mb-5">
-          <div className="mb-5 mt-8 p-2 text-xl font-Montserrat_thin md:text-4xl sm:mb-0">
+        <section ref={refSection2} className="2xl:h-90v mb-5">
+          <div
+            className="mb-5 mt-8 p-2 text-xl opacity-0 font-Montserrat_thin md:text-4xl sm:mb-0"
+            style={{
+              transform: isInViewrefSection2 ? "none" : "translateX(-200px)",
+              opacity: isInViewrefSection2 ? 1 : 0,
+              transition:
+                "transform 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s,opacity 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
+            }}
+          >
             <LayoutText delay={1.6} timeAnimation={0.03}>
               What i can bring to you:
             </LayoutText>
           </div>
-          {dataSkills?.map((skill: articleSkills, index) => {
-            return (
-              <ArticleSkillsComponent
-                key={index}
-                title={skill.title}
-                image={skill.image}
-                text={skill.text}
-                mobilVersion={mobilVersion}
-              />
-            );
-          })}
-        </div>
+          <ArticleSkillsComponent
+            mobilVersion={mobilVersion}
+            isInViewrefSection2={isInViewrefSection2}
+          />
+        </section>
 
-        <div
-          ref={refSkillsTexts}
-          className="relative w-full md:h-75v 2xl:h-60v flex flex-col md:flex-row "
-        >
-          {/* border top horyzontale */}
+        <section className="mt-24" ref={refSection3}>
           <div
-            className="absolute h-px md:w-full  top-0 left-0 bg-slate-400 z-50 scale-0"
-            style={{
-              transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
-              transformOrigin: "center",
-              transform: isInViewSkillstTexts ? "scaleX(1)" : "scaleX(0)",
-            }}
-          ></div>
-          <div
-            className="relative h-full pt-4 pb-4 xl:pr-10 flex flex-col "
-            style={{
-              transform: isInViewSkillstTexts ? "none" : "translateX(-200px)",
-              opacity: isInViewSkillstTexts ? 1 : 0,
-              transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
-            }}
+            className="relative w-full mb-15rem md:h-75v 2xl:h-60v flex flex-col md:flex-row "
+            ref={refSkillsTexts}
           >
-            <h3>Back-end:</h3>
-            <h4>
-              API creation: Experienced in building scalable APIs using Node.js
-              and Express.js, with RESTful API design principles and good
-              practices.
-            </h4>
-            <h4>
-              Database basics: Familiar with implementing database schemas and
-              queries using SQL. Experienced in working with PostgreSQL,
-              SupaBase and MongoDB.
-            </h4>
-            {/* border middle-bottom-left hozyzontale */}
+            {/* border top horyzontale */}
             <div
-              className="absolute  md:w-full h-px  bottom-0 left-0 bg-slate-400 z-50 transition-all duration-1000"
+              className="absolute h-px md:w-full  top-0 left-0 bg-slate-400 z-50 scale-0"
               style={{
-                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s",
-                transformOrigin: "right",
-                transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
+                transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
+                transformOrigin: "center",
+                transform: isInViewSkillstTexts ? "scaleX(1)" : "scaleX(0)",
               }}
             ></div>
-          </div>
-          <div className="relative h-full">
             <div
-              className="relative h-3/6  pt-4 pb-4 flex flex-col "
+              className="relative h-full pt-4 pb-4 xl:pr-10 flex flex-col "
               style={{
-                transform: isInViewSkillstTexts ? "none" : "translateX(200px)",
+                transform: isInViewSkillstTexts ? "none" : "translateX(-200px)",
                 opacity: isInViewSkillstTexts ? 1 : 0,
-                transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+                transition:
+                  "transform 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s, opacity 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
               }}
             >
-              <h3>Structure:</h3>
+              <LayoutH3>Back-end:</LayoutH3>
               <h4>
-                Clean coding: Skilled in writing maintainable and scalable code
-                using the MVC design pattern and TypeScript, ensuring code
-                reliability and type safety.
+                API creation: Experienced in building scalable APIs using
+                Node.js and Express.js, with RESTful API design principles and
+                good practices.
               </h4>
-              <h4>AGILE: Experienced in working in an AGILE environment.</h4>
-            </div>
-            <div
-              className="relative h-3/6   pt-4 pb-4 flex flex-col "
-              style={{
-                transform: isInViewSkillstTextsVersioning
-                  ? "none"
-                  : "translateX(200px)",
-                opacity: isInViewSkillstTextsVersioning ? 1 : 0,
-                transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
-              }}
-            >
-              <h3 ref={refSkillsTextsVersioning}>Versioning:</h3>
               <h4>
-                Experienced in using Git, GitHub, and Azue for version control,
-                ensuring collaboration with team members and maintaining
-                codebase integrity. Proficient in managing repositories,
-                branches, and pull requests.
+                Database basics: Familiar with implementing database schemas and
+                queries using SQL. Experienced in working with PostgreSQL,
+                SupaBase and MongoDB.
               </h4>
-              {/* border middle hozyzontale */}
+              {/* border middle-bottom-left hozyzontale */}
               <div
-                className="absolute  md:h-px  top-0 left-0 bg-slate-400 z-50 transition-all duration-1000"
+                className="absolute  md:w-full h-px  bottom-0 left-0 bg-slate-400 z-50 transition-all duration-1000"
                 style={{
                   transition:
-                    "all 0.75s cubic-bezier(0.17, 0.55, 0.55, 1) 0.45s",
-
-                  width: isInViewSkillstLines ? "100%" : "0%",
+                    "transform 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s",
+                  transformOrigin: "right",
+                  transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
                 }}
               ></div>
             </div>
-            {/* border middle vertical */}
-            <div
-              ref={refSkillsLines}
-              className="absolute w-px md:h-full  bottom-0 left-0 bg-slate-400 z-50 transition-all duration-1000"
-              style={{
-                transition: "all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
-                transformOrigin: "top",
-                transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
-              }}
-            ></div>
-            {/* border middle-bottom-right horyzontal */}
-            <div
-              ref={refSkillsLines}
-              className="absolute md:w-full h-px bottom-0 left-0 bg-slate-400 transition-all duration-1000"
-              style={{
-                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s",
-                transformOrigin: "left",
-                transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
-              }}
-            ></div>
+            <div className="relative h-full">
+              <div
+                className="relative h-3/6  pt-4 pb-4 flex flex-col "
+                style={{
+                  transform: isInViewSkillstTexts
+                    ? "none"
+                    : "translateX(200px)",
+                  opacity: isInViewSkillstTexts ? 1 : 0,
+                  transition:
+                    "transform 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s,opacity 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+                }}
+              >
+                <LayoutH3>Structure:</LayoutH3>
+                <h4>
+                  Clean coding: Skilled in writing maintainable and scalable
+                  code using the MVC design pattern and TypeScript, ensuring
+                  code reliability and type safety.
+                </h4>
+                <h4>AGILE: Experienced in working in an AGILE environment.</h4>
+              </div>
+              <div
+                ref={refSkillsTextsVersioning}
+                className="relative h-3/6   pt-4 pb-4 flex flex-col "
+                style={{
+                  transform: isInViewSkillstTextsVersioning
+                    ? "none"
+                    : "translateX(200px)",
+                  opacity: isInViewSkillstTextsVersioning ? 1 : 0,
+                  transition:
+                    "transform 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s,opacity 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+                }}
+              >
+                <LayoutH3>Versioning:</LayoutH3>
+                <h4>
+                  Experienced in using Git, GitHub, and Azue for version
+                  control, ensuring collaboration with team members and
+                  maintaining codebase integrity. Proficient in managing
+                  repositories, branches, and pull requests.
+                </h4>
+                {/* border middle hozyzontale */}
+                <div
+                  className="absolute  md:h-px  top-0 left-0 bg-slate-400 z-50 transition-transform duration-1000"
+                  style={{
+                    transition:
+                      "transform 0.75s cubic-bezier(0.17, 0.55, 0.55, 1) 0.45s",
+
+                    width: isInViewSkillstLines ? "100%" : "0%",
+                  }}
+                ></div>
+              </div>
+              {/* border middle vertical */}
+              <div
+                ref={refSkillsLines}
+                className="absolute w-px md:h-full  bottom-0 left-0 bg-slate-400 z-50 transition-transform duration-1000"
+                style={{
+                  transition:
+                    "transform 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
+                  transformOrigin: "top",
+                  transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
+                }}
+              ></div>
+              {/* border middle-bottom-right horyzontal */}
+              <div
+                ref={refSkillsLines}
+                className="absolute md:w-full h-px bottom-0 left-0 bg-slate-400 transition-all duration-1000"
+                style={{
+                  transition:
+                    "transform 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s",
+                  transformOrigin: "left",
+                  transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
+                }}
+              ></div>
+            </div>
           </div>
-        </div>
 
-        <div
-          className="relative md:pt-5 mb-32 pb-5"
-          style={{
-            transform: isInViewSkillstTextsCurrentFocus
-              ? "none"
-              : "translateY(200px)",
-            opacity: isInViewSkillstTextsCurrentFocus ? 1 : 0,
-            transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
-          }}
-        >
-          <h3 ref={refSkillsTextsCurrentFocus} className="xl:text-center">
-            Current Focus:
-          </h3>
-          <h4>
-            Working on improving my skills in Continuous Integration and
-            Deployment (CI/CD) by learning Docker and how to use it to create
-            and manage containers for various applications.
-          </h4>
-          <h4>Unit testing with the Jest library.</h4>
-          {/* border bottom-left vertical */}
-          <div
-            ref={refSkillsLines}
-            className="absolute w-px md:h-full  bottom-0 left-0 bg-slate-400 z-50 transition-all duration-1000"
-            style={{
-              transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 1.3s",
-              transformOrigin: "top",
-              transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
-            }}
-          ></div>
-          {/* border bottom-right vertical */}
-          <div
-            ref={refSkillsLines}
-            className="absolute w-px md:h-full  bottom-0 right-0 bg-slate-400 z-50 transition-all duration-1000"
-            style={{
-              transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 1.3s",
-              transformOrigin: "top",
-              transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
-            }}
-          ></div>
-        </div>
+          <div ref={refBottomPage} className="mt-36 mb-52 bg-red-400">
+            <ContainerLinkAnimated
+              title={"Projects / works"}
+              linkImage={"/wave.png"}
+              index={1}
+            />
+            <ContainerLinkAnimated
+              title={"Contact"}
+              linkImage={"/bubble.png"}
+              index={2}
+            />
+          </div>
 
-        <div className="mt-32 mb-52" ref={refBottomPage}>
-          <ContainerLinkAnimated
-            title={"Projects / works"}
-            linkImage={"/wave.png"}
-            index={1}
-          />
-          <ContainerLinkAnimated
-            title={"Contact"}
-            linkImage={"/bubble.png"}
-            index={2}
-          />
-        </div>
-
-        <Footer />
-        <div>.</div>
+          <Footer />
+        </section>
       </main>
     </motion.main>
   );
