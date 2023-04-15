@@ -17,9 +17,11 @@ import { articleSkills } from "@/models/typesIndex";
 export default function Home({
   mobilVersion,
   setHideNav,
+  setlightTemeNav,
 }: {
   mobilVersion: boolean;
   setHideNav: Function;
+  setlightTemeNav: Function;
 }) {
   const router = useRouter();
 
@@ -48,7 +50,7 @@ export default function Home({
 
   const refSection3 = useRef<HTMLDivElement>(null);
   const isInViewrefSection3 = useInView(refSection3, {
-    amount: 0.3,
+    amount: 0.1,
   });
 
   const refBottomPage = useRef<HTMLDivElement>(null);
@@ -57,13 +59,16 @@ export default function Home({
   });
 
   useEffect(() => {
-    console.log("isInViewBottomPage: ", isInViewBottomPage);
     if (isInViewBottomPage) {
       setHideNav(true);
     } else {
       setHideNav(false);
     }
   }, [isInViewBottomPage]);
+
+  useEffect(() => {
+    setlightTemeNav(isInViewrefSection3);
+  }, [isInViewrefSection3]);
 
   return (
     <motion.main
@@ -90,7 +95,7 @@ export default function Home({
         } relative text-gray-900   min-h-screen w-screen flex flex-col justify-center  font-Montserrat_regular  sm:px-5rem xl:px-48`}
         style={{
           transition:
-            "background-color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s, color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+            "background-color 1.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s, color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
         }}
       >
         <section className="h-screen flex flex-col justify-evenly">
@@ -219,7 +224,7 @@ export default function Home({
                   className="absolute  md:h-px  top-0 left-0 bg-slate-400 z-50 transition-transform duration-1000"
                   style={{
                     transition:
-                      "transform 0.75s cubic-bezier(0.17, 0.55, 0.55, 1) 0.45s",
+                      "width 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
 
                     width: isInViewSkillstLines ? "100%" : "0%",
                   }}

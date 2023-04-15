@@ -8,10 +8,6 @@ const Skills = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  useEffect(() => {
-    console.log("isInView", isInView);
-  }, [isInView]);
-
   return (
     <motion.div
       animate={{ y: "0%" }}

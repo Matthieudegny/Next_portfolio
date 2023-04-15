@@ -1,78 +1,27 @@
 import React, { useRef, useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { animate, motion } from "framer-motion";
 
-import LayoutNav from "./LayoutNav";
-// animate-[2.3s_slideOutNavMobile_1s_ease-in_forwards]
-const ItemNavMobile = ({
-  setmenuNavMobile,
-  setmobilAnimationLink,
-  mobilAnimationLink,
-  pageString,
-  link,
+import ItemNavDesktop from "./ItemNavDesktop";
+import ItemNavMobile from "./ItemNavMobile";
+
+const Nav = ({
+  hideNav,
+  lightTemeNav,
 }: {
-  setmenuNavMobile: Function;
-  setmobilAnimationLink: Function;
-  mobilAnimationLink: string;
-  pageString: string;
-  link: string;
+  hideNav: boolean;
+  lightTemeNav: boolean;
 }) => {
-  return (
-    <div className="m-5 p-1 w-full ml-20 flex items-center overflow-hidden">
-      <div
-        className={`text-white w-full pl-3 z-50 flex items-center justify-start ease-in duration-700
-        ${
-          mobilAnimationLink !== pageString && mobilAnimationLink
-            ? "translate-y-full"
-            : ""
-        }
-
-        `}
-        onClick={() => {
-          if (typeof pageString === "string") setmobilAnimationLink(pageString);
-          const timeOutOffMenuTurnOff = setTimeout(() => {
-            setmenuNavMobile(false);
-          }, 600);
-          const timeOutOffAnimation = setTimeout(() => {
-            setmobilAnimationLink(false);
-          }, 1100);
-          return () => {
-            clearTimeout(timeOutOffMenuTurnOff);
-            clearTimeout(timeOutOffAnimation);
-          };
-        }}
-      >
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2.5}
-            stroke="white"
-            className={`w-0 h-8  duration-1000 ${
-              mobilAnimationLink === pageString ? "w-8" : ""
-            } `}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-            />
-          </svg>
-        </div>
-        <Link href={link}>{pageString}</Link>
-      </div>
-    </div>
-  );
-};
-
-const Nav = ({ hideNav }: { hideNav: boolean }) => {
-  console.log("hideNav: ", hideNav);
-  const [Home, setHome] = useState(false);
-  const [Projects, setProjects] = useState(false);
-  const [Contact, setContact] = useState(false);
-  const [menuNavMobile, setmenuNavMobile] = useState(false);
+  const router = useRouter();
+  const [currentPage, setcurrentPage] = useState<string>("/");
+  const [Home, setHome] = useState<boolean>(false);
+  const [Projects, setProjects] = useState<boolean>(false);
+  const [Contact, setContact] = useState<boolean>(false);
+  const [menuNavMobile, setmenuNavMobile] = useState<boolean>(false);
   const [mobilAnimationLink, setmobilAnimationLink] = useState<any>(false);
+  //turn on menu nav for mobile
+  const [width, setWidth] = useState<string>("desktopWidth");
 
   const turnOffAnimation = (setstate: Function) => {
     const timeOutOffAnimation = setTimeout(() => {
@@ -81,7 +30,6 @@ const Nav = ({ hideNav }: { hideNav: boolean }) => {
     return () => clearTimeout(timeOutOffAnimation);
   };
 
-  const [width, setWidth] = useState<string>("desktopWidth");
   const updateWidth = () => {
     if (window.innerWidth < 1280) {
       setWidth("mobileWidth");
@@ -95,15 +43,59 @@ const Nav = ({ hideNav }: { hideNav: boolean }) => {
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
+  useEffect(() => {
+    setcurrentPage(router.pathname);
+    if (router.pathname === "/") {
+      setHome(true);
+    } else {
+      setHome(false);
+    }
+    if (router.pathname === "/contact") {
+      setContact(true);
+    } else {
+      setContact(false);
+    }
+    if (router.pathname === "/projects") {
+      setProjects(true);
+    } else {
+      setProjects(false);
+    }
+  }, [router]);
+
+  const diplsayNavdesktop = (
+    link: string,
+    stateAnimation: boolean,
+    seStateAnimation: Function,
+    title: string
+  ) => {
+    return (
+      <Link
+        onMouseEnter={() => {
+          if (link !== currentPage) seStateAnimation(true);
+        }}
+        onMouseLeave={() => {
+          if (link !== currentPage) turnOffAnimation(seStateAnimation);
+        }}
+        className={styleNav + "animate-[0.25s_slideinNav_0s_ease-out_forwards]"}
+        href={link}
+      >
+        <ItemNavDesktop Anim={stateAnimation} lightTemeNav={lightTemeNav}>
+          <h1>{title}</h1>
+        </ItemNavDesktop>
+      </Link>
+    );
+  };
+
   const styleNav =
-    "inline-block translate-x-full opacity-0 leading-9 h-9 overflow-hidden mb-3 ";
+    "inline-block translate-x-full opacity-0 leading-9 h-9 overflow-hidden mb-5 ";
 
   return (
     <>
       <motion.nav>
         {width === "desktopWidth" && !hideNav ? (
-          <div className="fixed flex flex-col z-50 right-7 top-7">
-            <Link
+          // desktop nav
+          <div className="fixed flex flex-col z-50 right-7 top-7 w-40">
+            {/* <Link
               onMouseEnter={() => setHome(true)}
               onMouseLeave={() => turnOffAnimation(setHome)}
               className={
@@ -111,12 +103,15 @@ const Nav = ({ hideNav }: { hideNav: boolean }) => {
               }
               href="/"
             >
-              <LayoutNav Anim={Home}>
+              <ItemNavDesktop Anim={Home} lightTemeNav={lightTemeNav}>
                 <h1>HOME</h1>
-              </LayoutNav>
-            </Link>
+              </ItemNavDesktop>
+            </Link> */}
+            {diplsayNavdesktop("/", Home, setHome, "HOME")}
+            {diplsayNavdesktop("/projects", Projects, setProjects, "PROJECTS")}
+            {diplsayNavdesktop("/contact", Contact, setContact, "CONTACT")}
 
-            <Link
+            {/* <Link
               onMouseEnter={() => setProjects(true)}
               onMouseLeave={() => turnOffAnimation(setProjects)}
               className={
@@ -124,11 +119,11 @@ const Nav = ({ hideNav }: { hideNav: boolean }) => {
               }
               href="/projects"
             >
-              <LayoutNav Anim={Projects}>
+              <ItemNavDesktop Anim={Projects} lightTemeNav={lightTemeNav}>
                 <h1>PROJECTS</h1>
-              </LayoutNav>
-            </Link>
-
+              </ItemNavDesktop>
+            </Link> */}
+            {/* 
             <Link
               onMouseEnter={() => setContact(true)}
               onMouseLeave={() => turnOffAnimation(setContact)}
@@ -137,12 +132,13 @@ const Nav = ({ hideNav }: { hideNav: boolean }) => {
               }
               href="/contact"
             >
-              <LayoutNav Anim={Contact}>
+              <ItemNavDesktop Anim={Contact} lightTemeNav={lightTemeNav}>
                 <h1>CONTACT</h1>
-              </LayoutNav>
-            </Link>
+              </ItemNavDesktop>
+            </Link> */}
           </div>
         ) : !hideNav ? (
+          // mobile nav
           <div className="fixed flex flex-col z-50 right-3 top-5">
             <Link
               href=""

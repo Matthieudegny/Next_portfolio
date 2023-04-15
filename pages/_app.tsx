@@ -3,13 +3,15 @@ import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
 import React, { useRef, useEffect, useState } from "react";
 
-import Nav from "../components/Nav";
+import Nav from "../components/Nav/Nav";
 
 import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps, router }: AppProps) {
+  //turn off animation card section2
   const [mobilVersion, setmobilVersion] = useState<boolean>(false);
   const [hideNav, setHideNav] = useState(false);
+  const [lightTemeNav, setlightTemeNav] = useState(false);
 
   const updateWidth = () => {
     if (window.innerWidth < 768) {
@@ -32,11 +34,12 @@ export default function App({ Component, pageProps, router }: AppProps) {
     <div className="relative min-h-screen h-full overflow-y-auto py-24 px-12 lg:px-48">
       {/* initial false => at the mount of the component no animation */}
       <AnimatePresence initial={false}>
-        <Nav hideNav={hideNav} />
+        <Nav hideNav={hideNav} lightTemeNav={lightTemeNav} />
         <Component
           key={router.pathname}
           mobilVersion={mobilVersion}
           setHideNav={setHideNav}
+          setlightTemeNav={setlightTemeNav}
           {...pageProps}
         />
       </AnimatePresence>
