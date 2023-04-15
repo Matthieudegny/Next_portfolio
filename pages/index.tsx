@@ -50,7 +50,7 @@ export default function Home({
 
   const refSection3 = useRef<HTMLDivElement>(null);
   const isInViewrefSection3 = useInView(refSection3, {
-    amount: 0.1,
+    amount: 0.3,
   });
 
   const refBottomPage = useRef<HTMLDivElement>(null);
@@ -95,7 +95,7 @@ export default function Home({
         } relative text-gray-900   min-h-screen w-screen flex flex-col justify-center  font-Montserrat_regular  sm:px-5rem xl:px-48`}
         style={{
           transition:
-            "background-color 1.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s, color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+            "background-color 1.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s, color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
         }}
       >
         <section className="h-screen flex flex-col justify-evenly">

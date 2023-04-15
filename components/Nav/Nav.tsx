@@ -95,47 +95,9 @@ const Nav = ({
         {width === "desktopWidth" && !hideNav ? (
           // desktop nav
           <div className="fixed flex flex-col z-50 right-7 top-7 w-40">
-            {/* <Link
-              onMouseEnter={() => setHome(true)}
-              onMouseLeave={() => turnOffAnimation(setHome)}
-              className={
-                styleNav + "animate-[0.25s_slideinNav_0s_ease-out_forwards]"
-              }
-              href="/"
-            >
-              <ItemNavDesktop Anim={Home} lightTemeNav={lightTemeNav}>
-                <h1>HOME</h1>
-              </ItemNavDesktop>
-            </Link> */}
             {diplsayNavdesktop("/", Home, setHome, "HOME")}
             {diplsayNavdesktop("/projects", Projects, setProjects, "PROJECTS")}
             {diplsayNavdesktop("/contact", Contact, setContact, "CONTACT")}
-
-            {/* <Link
-              onMouseEnter={() => setProjects(true)}
-              onMouseLeave={() => turnOffAnimation(setProjects)}
-              className={
-                styleNav + " animate-[0.25s_slideinNav_0.05s_ease-out_forwards]"
-              }
-              href="/projects"
-            >
-              <ItemNavDesktop Anim={Projects} lightTemeNav={lightTemeNav}>
-                <h1>PROJECTS</h1>
-              </ItemNavDesktop>
-            </Link> */}
-            {/* 
-            <Link
-              onMouseEnter={() => setContact(true)}
-              onMouseLeave={() => turnOffAnimation(setContact)}
-              className={
-                styleNav + " animate-[0.25s_slideinNav_0.1s_ease-out_forwards]"
-              }
-              href="/contact"
-            >
-              <ItemNavDesktop Anim={Contact} lightTemeNav={lightTemeNav}>
-                <h1>CONTACT</h1>
-              </ItemNavDesktop>
-            </Link> */}
           </div>
         ) : !hideNav ? (
           // mobile nav

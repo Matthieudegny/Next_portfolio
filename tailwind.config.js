@@ -93,6 +93,17 @@ module.exports = {
       translateX: {
         "custom-translate-x": "10rem",
       },
+      transitionProperty: {
+        "background-color": "background-color 2s ease-in-out",
+      },
+      transitionDelay: {
+        "400ms": "400ms",
+      },
+    },
+  },
+  variants: {
+    extend: {
+      backgroundColor: ["hover"], // enable hover variant for background-color
     },
   },
   plugins: [],

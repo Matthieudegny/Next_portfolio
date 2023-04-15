@@ -26,10 +26,6 @@ export default function App({ Component, pageProps, router }: AppProps) {
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
-  useEffect(() => {
-    console.log("mobilVersion: ", mobilVersion);
-  }, [mobilVersion]);
-
   return (
     <div className="relative min-h-screen h-full overflow-y-auto py-24 px-12 lg:px-48">
       {/* initial false => at the mount of the component no animation */}

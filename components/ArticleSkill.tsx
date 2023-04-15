@@ -12,7 +12,7 @@ const ArticleSkill = ({
   sideLine: "top" | "bottom" | "none";
 }) => {
   const backEndDiv = sideLine === "bottom";
-  console.log("backEndDiv", backEndDiv);
+
   return (
     <div className="relative h-full  pt-4 pb-4 flex flex-col justify-center">
       {sideLine === "top" ? (

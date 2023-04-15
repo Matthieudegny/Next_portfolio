@@ -12,7 +12,7 @@ const ItemNavDesktop = ({
   for (let i = 0; i < string.length; i++) {
     array.push(string.charAt(i));
   }
-  console.log("lightTemeNav", lightTemeNav);
+
   return (
     <>
       <div>
