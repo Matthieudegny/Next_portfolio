@@ -29,7 +29,7 @@ const LayoutH3 = ({ children }: { children: string }) => {
   function splitWordIntoLetters(word: string) {
     const wordsplited = word.split("");
     const spans = wordsplited.map((letter, index) => {
-      return <Letter letter={letter} />;
+      return <Letter key={index} letter={letter} />;
     });
     return spans;
   }

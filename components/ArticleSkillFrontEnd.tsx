@@ -2,26 +2,9 @@ import React, { useState, ReactNode } from "react";
 
 import { articleSkills } from "@/models/typesIndex";
 import LayoutH3 from "../components/LayoutH3";
+import DiplayContainerh4 from "../components/DisplayContainerh4";
 
-const DiplayContainerh4 = ({
-  title,
-  text,
-  children,
-}: {
-  title: string;
-  text: string;
-  children?: ReactNode;
-}) => {
-  return (
-    <div className="group/item cursor-pointer  rounded-xl overflow-hidden">
-      <h4>
-        <span className="block">{title}</span>
-        {text}
-      </h4>
-      <div className="leading-7 h-7 ">{children}</div>
-    </div>
-  );
-};
+import { frontEndSkills } from "@/data/itemsSkills";
 
 const ArticleSkillsComponent = ({
   mobilVersion,
@@ -36,21 +19,8 @@ const ArticleSkillsComponent = ({
   let indiceRotationX = (offsetY - 250) / -25;
   let indiceRotationY = (offsetX - 210) / -20.75;
 
-  const displaylanguagesSkills = (text: string, hoverReference: string, color: string, delay: string) => {
-    return (
-      <span
-        className={`inline-block text-lg group-hover/${hoverReference}:-translate-y-1 translate-y-7  ${color}  ml-6`}
-        style={{
-          transition: `transform 0.9s cubic-bezier(0.17, 0.55, 0.55, 1)${delay}`,
-        }}
-      >
-        {text}
-      </span>
-    );
-  };
-
   return (
-    <article className="group relative flex flex-col w-full justify-evenly  2xl:flex-row 2xl:justify-between">
+    <section className="group relative flex flex-col w-full justify-evenly  2xl:flex-row 2xl:justify-between">
       <main
         className=" flex flex-col  justify-center opacity-0 mt-6 xl:mt-0 rounded-2xl p-6 2xl:w-1/2"
         style={{
@@ -67,43 +37,31 @@ const ArticleSkillsComponent = ({
           text={
             "Experienced in creating visually appealing and user-friendly interfaces using Figma and CSS (SASS, Tailwind, MUI)"
           }
-        >
-          {displaylanguagesSkills("FIGMA", "item", "text-purple-400", "0.1s")}
-          {displaylanguagesSkills("CSS", "item", "text-blue-500", "0.2s")}
-          {displaylanguagesSkills("SASS", "item", "text-pink-500", "0.3s")}
-          {displaylanguagesSkills("TAILWIND", "item", "text-blue-600", "0.4s")}
-          {displaylanguagesSkills("MUI", "item", "text-blue-700", "0.5s")}
-        </DiplayContainerh4>
+          items={frontEndSkills.uiUX}
+        />
         <DiplayContainerh4
           title={"Performance optimization:"}
           text={
             "Skilled in optimizing application performance with React and dynamic DOM, including reusable components and dynamic updates."
           }
-        >
-          {displaylanguagesSkills("REACT", "item", "text-blue-600", "0.1s")}
-          {displaylanguagesSkills("REACT-ROUTER", "item", "text-red-500", "0.2s")}
-          {displaylanguagesSkills("REACT-QUERY", "item", "text-blue-500", "0.3s")}
-        </DiplayContainerh4>
+          items={frontEndSkills.perfOpti}
+        />
         <DiplayContainerh4
           title={"State management:"}
           text={
             "Proficient in managing application state using Redux, Redux Toolkit, and the useContext hook, allowing for efficient and scalable management of complex data."
           }
-        >
-          {displaylanguagesSkills("REDUX", "item", "text-blue-500", "0.1s")}
-          {displaylanguagesSkills("REDUX-DEV-TOOLS", "item", "text-blue-600", "0.2s")}
-          {displaylanguagesSkills("USE-CONTEXT", "item", "text-blue-800", "0.3s")}
-        </DiplayContainerh4>
+          items={frontEndSkills.stateManagement}
+        />
         <DiplayContainerh4
           title={"SEO:"}
           text={
             "Skilled in optimizing website content for search engines using Next.js and server-side rendering to ensure optimal performance and search engine rankings."
           }
-        >
-          {displaylanguagesSkills("NEXT.JS", "item", "text-gray-500", "0.1s")}
-        </DiplayContainerh4>
+          items={frontEndSkills.SEO}
+        />
       </main>
-
+      {/* image card */}
       <div
         style={{
           transform: isInViewrefSection2 ? "none" : "translateX(200px)",
@@ -155,7 +113,7 @@ const ArticleSkillsComponent = ({
           />
         )}
       </div>
-    </article>
+    </section>
   );
 };
 

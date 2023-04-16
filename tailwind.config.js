@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
@@ -24,6 +21,7 @@ module.exports = {
         "50v": "50vh",
         "60v": "60vh",
         "65v": "65vh",
+        "70v": "70vh",
         "75v": "75vh",
         "80v": "80vh",
         "90v": "90vh",
