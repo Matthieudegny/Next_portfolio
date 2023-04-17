@@ -13,7 +13,7 @@ export const frontEndSkills: { [key: string]: itemsSkills } = {
   },
   stateManagement: {
     titles: ["REDUX", "REDUX-TOOLKIT", "CONTEXT-API"],
-    colors: ["#764ABC", "#764ABC", "#FFA500"],
+    colors: ["#764ABC", "#764ABC", "#0081CB"],
     delays: ["0.1s", "0.2s", "0.3s"],
   },
   SEO: {

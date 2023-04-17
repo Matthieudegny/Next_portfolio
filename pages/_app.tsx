@@ -30,7 +30,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
     <div className="relative min-h-screen h-full overflow-y-auto py-24 px-12 lg:px-48">
       {/* initial false => at the mount of the component no animation */}
       <AnimatePresence initial={false}>
-        <Nav hideNav={hideNav} lightThemeNav={lightThemeNav} />
+        <Nav hideNav={hideNav} setHideNav={setHideNav} lightThemeNav={lightThemeNav} />
         <Component
           key={router.pathname}
           mobilVersion={mobilVersion}

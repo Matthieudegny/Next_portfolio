@@ -6,7 +6,15 @@ import { animate, motion } from "framer-motion";
 import ItemNavDesktop from "./ItemNavDesktop";
 import ItemNavMobile from "./ItemNavMobile";
 
-const Nav = ({ hideNav, lightThemeNav }: { hideNav: boolean; lightThemeNav: boolean }) => {
+const Nav = ({
+  hideNav,
+  lightThemeNav,
+  setHideNav,
+}: {
+  hideNav: boolean;
+  lightThemeNav: boolean;
+  setHideNav: Function;
+}) => {
   const router = useRouter();
   const [currentPage, setcurrentPage] = useState<string>("/");
   const [Home, setHome] = useState<boolean>(false);
@@ -46,11 +54,13 @@ const Nav = ({ hideNav, lightThemeNav }: { hideNav: boolean; lightThemeNav: bool
     }
     if (router.pathname === "/contact") {
       setContact(true);
+      setHideNav(false);
     } else {
       setContact(false);
     }
     if (router.pathname === "/projects") {
       setProjects(true);
+      setHideNav(false);
     } else {
       setProjects(false);
     }

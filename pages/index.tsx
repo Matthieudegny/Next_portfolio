@@ -94,7 +94,7 @@ export default function Home({
             "background-color 1.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
         }}
       >
-        <section className="min-h-screen mb-10  flex flex-col justify-evenly ">
+        <section className="min-h-screen   flex flex-col justify-evenly ">
           <h1 className="font-NotoSansGeorgian tracking-widest text-3xl w-full p-2 pr-16 sm:pr-0 md:text-5xl  xl:w-4/5 2xl:w-3/5  ">
             <LayoutText delay={0.5} timeAnimation={0.04} animationColor={true}>
               Hello, I'm Matthieu, a front-end developer specialized, with modern technologies built around
