@@ -91,10 +91,10 @@ export default function Home({
         } relative text-gray-900   min-h-screen w-screen flex flex-col justify-center  font-Montserrat_regular  sm:px-5rem xl:px-48`}
         style={{
           transition:
-            "background-color 1.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s, color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+            "background-color 1.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
         }}
       >
-        <section className="h-screen flex flex-col justify-evenly ">
+        <section className="min-h-screen mb-10  flex flex-col justify-evenly ">
           <h1 className="font-NotoSansGeorgian tracking-widest text-3xl w-full p-2 pr-16 sm:pr-0 md:text-5xl  xl:w-4/5 2xl:w-3/5  ">
             <LayoutText delay={0.5} timeAnimation={0.04} animationColor={true}>
               Hello, I'm Matthieu, a front-end developer specialized, with modern technologies built around
@@ -110,7 +110,7 @@ export default function Home({
           </h2>
         </section>
 
-        <section ref={refSection2} className="2xl:h-screen mt-5  flex flex-col justify-evenly">
+        <section ref={refSection2} className="2xl:h-screen mt-5  flex flex-col justify-center">
           <div
             className="mb-5 mt-8 p-2 text-xl opacity-0 font-Montserrat_thin md:text-4xl sm:mb-0"
             style={{
@@ -126,119 +126,125 @@ export default function Home({
         </section>
 
         <section className="mt-24 " ref={refSection3}>
-          <div
-            className="relative w-full h-screen mb-15rem mt-14 md:h-90v 2xl:h-75v flex flex-col md:flex-row "
-            ref={refSkillsTexts}
-          >
-            {/* border top horyzontale */}
+          <div className="h-screen flex flex-col mt-5 justify-center m-auto ">
             <div
-              className="absolute h-px md:w-full  top-0 left-0 bg-slate-400 z-50 scale-0"
-              style={{
-                transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s",
-                transformOrigin: "center",
-                transform: isInViewSkillstTexts ? "scaleX(1)" : "scaleX(0)",
-              }}
-            ></div>
-            <div
-              className="relative md:h-full pt-4 pb-4 xl:pr-10  flex flex-col "
-              style={{
-                transform: isInViewSkillstTexts ? "none" : "translateX(-200px)",
-                opacity: isInViewSkillstTexts ? 1 : 0,
-                transition:
-                  "transform 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s, opacity 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s",
-              }}
+              className="relative w-full h-screen  md:h-90v 2xl:h-75v flex flex-col md:flex-row "
+              ref={refSkillsTexts}
             >
-              <LayoutH3>Back-end:</LayoutH3>
-              <DiplayContainerh4
-                title={"API creation:"}
-                text={
-                  "Experienced in building scalable APIs using Node.js and Express.js, with RESTful API design principles and good practices."
-                }
-                items={API}
-              />
-              {/* border middle-bottom-left hozyzontale */}
+              {/* border top horyzontale */}
               <div
-                className="absolute  md:w-full h-px  bottom-0 left-0 bg-slate-400 z-50 transition-all duration-1000"
+                className="absolute h-px md:w-full  top-0 left-0 bg-slate-400 z-50 scale-0"
                 style={{
-                  transition: "transform 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 1.2s",
-                  transformOrigin: "right",
-                  transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
+                  transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+                  transformOrigin: "center",
+                  transform: isInViewSkillstLines ? "scaleX(1)" : "scaleX(0)",
                 }}
               ></div>
-            </div>
-            <div className="relative h-full">
               <div
-                className="relative md:h-3/6  pt-4 pb-4 flex flex-col "
+                className="relative md:h-full pt-4 pb-4 xl:pr-10  flex flex-col "
                 style={{
-                  transform: isInViewSkillstTexts ? "none" : "translateX(200px)",
+                  transform: isInViewSkillstTexts ? "none" : "translateX(-200px)",
                   opacity: isInViewSkillstTexts ? 1 : 0,
                   transition:
-                    "transform 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s,opacity 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s",
+                    "transform 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s, opacity 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s",
                 }}
               >
-                <LayoutH3>Structure:</LayoutH3>
+                <LayoutH3>Back-end:</LayoutH3>
                 <DiplayContainerh4
-                  title={"Clean coding:"}
+                  title={"API creation:"}
                   text={
-                    "Skilled in writing maintainable and scalable code using the MVC design pattern and TypeScript, ensuring code reliability and type safety."
+                    "Experienced in building scalable APIs using Node.js and Express.js, with RESTful API design principles and good practices."
                   }
-                  items={cleanCode}
+                  items={API}
                 />
-              </div>
-              <div
-                ref={refSkillsTextsVersioning}
-                className="relative h-3/6    pt-4 pb-4 flex flex-col "
-                style={{
-                  transform: isInViewSkillstTextsVersioning ? "none" : "translateX(200px)",
-                  opacity: isInViewSkillstTextsVersioning ? 1 : 0,
-                  transition:
-                    "transform 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s,opacity 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s",
-                }}
-              >
-                <LayoutH3>Versioning:</LayoutH3>
-                <DiplayContainerh4
-                  title={"version control:"}
-                  text={
-                    " Experienced in using Git, GitHub, and Azue for version control, ensuring collaboration with team members and maintaining codebase integrity. Proficient in managing repositories, branches, and pull requests."
-                  }
-                  items={versioning}
-                />
-                {/* border middle hozyzontale */}
+                {/* border bottom-left hozyzontale */}
                 <div
-                  className="absolute  md:h-px  top-0 left-0 bg-slate-400 z-50 transition-transform duration-1000"
+                  className="absolute  md:w-full h-px  bottom-0 left-0 bg-slate-400 z-50 transition-all duration-1000"
                   style={{
-                    transition: "width 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.8s",
-
-                    width: isInViewSkillstLines ? "100%" : "0%",
+                    transition: "transform 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 1.2s",
+                    transformOrigin: "right",
+                    transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
                   }}
                 ></div>
               </div>
-              {/* border middle vertical */}
-              <div
-                ref={refSkillsLines}
-                className="absolute w-px md:h-full  bottom-0 left-0 bg-slate-400 z-50 transition-transform duration-1000"
-                style={{
-                  transition: "transform 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-                  transformOrigin: "top",
-                  transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
-                }}
-              ></div>
-              {/* border middle-bottom-right horyzontal */}
-              <div
-                ref={refSkillsLines}
-                className="absolute md:w-full h-px bottom-0 left-0 bg-slate-400 transition-all duration-1000"
-                style={{
-                  transition: "transform 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 1.2s",
-                  transformOrigin: "left",
-                  transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
-                }}
-              ></div>
+              <div className="relative h-full">
+                <div
+                  className="relative md:h-3/6  pt-4 pb-4 flex flex-col "
+                  style={{
+                    transform: isInViewSkillstTexts ? "none" : "translateX(200px)",
+                    opacity: isInViewSkillstTexts ? 1 : 0,
+                    transition:
+                      "transform 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s,opacity 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s",
+                  }}
+                >
+                  <LayoutH3>Structure:</LayoutH3>
+                  <DiplayContainerh4
+                    title={"Clean coding:"}
+                    text={
+                      "Skilled in writing maintainable and scalable code using the MVC design pattern and TypeScript, ensuring code reliability and type safety."
+                    }
+                    items={cleanCode}
+                  />
+                </div>
+                <div
+                  ref={refSkillsTextsVersioning}
+                  className="relative h-3/6    pt-4 pb-4 flex flex-col "
+                  style={{
+                    transform: isInViewSkillstTextsVersioning ? "none" : "translateX(200px)",
+                    opacity: isInViewSkillstTextsVersioning ? 1 : 0,
+                    transition:
+                      "transform 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s,opacity 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s",
+                  }}
+                >
+                  <LayoutH3>Versioning:</LayoutH3>
+                  <DiplayContainerh4
+                    title={"version control:"}
+                    text={
+                      " Experienced in using Git, GitHub, and Azue for version control, ensuring collaboration with team members and maintaining codebase integrity. Proficient in managing repositories, branches, and pull requests."
+                    }
+                    items={versioning}
+                  />
+                  {/* border middle hozyzontale */}
+                  <div
+                    className="absolute  md:h-px  top-0 left-0 bg-slate-400 z-50 transition-transform duration-1000"
+                    style={{
+                      transition: "width 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.8s",
+
+                      width: isInViewSkillstLines ? "100%" : "0%",
+                    }}
+                  ></div>
+                </div>
+                {/* border middle vertical */}
+                <div
+                  ref={refSkillsLines}
+                  className="absolute w-px md:h-full  bottom-0 left-0 bg-slate-400 z-50 transition-transform duration-1000"
+                  style={{
+                    transition: "transform 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+                    transformOrigin: "top",
+                    transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
+                  }}
+                ></div>
+                {/* border bottom-right horyzontal */}
+                <div
+                  ref={refSkillsLines}
+                  className="absolute md:w-full h-px bottom-0 left-0 bg-slate-400 transition-all duration-1000"
+                  style={{
+                    transition: "transform 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 1.2s",
+                    transformOrigin: "left",
+                    transform: isInViewSkillstLines ? "scaleY(1)" : "scaleY(0)",
+                  }}
+                ></div>
+              </div>
             </div>
           </div>
 
           <div ref={refBottomPage} className="mt-36 mb-52">
-            <ContainerLinkAnimated title={"Projects / works"} linkImage={"/wave.png"} index={1} />
-            <ContainerLinkAnimated title={"Contact"} linkImage={"/bubble.png"} index={2} />
+            <Link href="/projects">
+              <ContainerLinkAnimated title={"Projects / works"} linkImage={"/wave.png"} index={1} />
+            </Link>
+            <Link href="/contact">
+              <ContainerLinkAnimated title={"Contact"} linkImage={"/bubble.png"} index={2} />
+            </Link>
           </div>
 
           <Footer />

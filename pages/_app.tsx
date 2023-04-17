@@ -11,7 +11,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
   //turn off animation card section2
   const [mobilVersion, setmobilVersion] = useState<boolean>(false);
   const [hideNav, setHideNav] = useState(false);
-  const [lightTemeNav, setlightTemeNav] = useState(false);
+  const [lightThemeNav, setlightThemeNav] = useState(false);
 
   const updateWidth = () => {
     if (window.innerWidth < 768) {
@@ -30,12 +30,12 @@ export default function App({ Component, pageProps, router }: AppProps) {
     <div className="relative min-h-screen h-full overflow-y-auto py-24 px-12 lg:px-48">
       {/* initial false => at the mount of the component no animation */}
       <AnimatePresence initial={false}>
-        <Nav hideNav={hideNav} lightTemeNav={lightTemeNav} />
+        <Nav hideNav={hideNav} lightThemeNav={lightThemeNav} />
         <Component
           key={router.pathname}
           mobilVersion={mobilVersion}
           setHideNav={setHideNav}
-          setlightTemeNav={setlightTemeNav}
+          setlightTemeNav={setlightThemeNav}
           {...pageProps}
         />
       </AnimatePresence>

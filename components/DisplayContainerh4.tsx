@@ -23,7 +23,7 @@ const DiplayContainerh4 = ({ title, text, items }: { title: string; text: string
       clearTimeout(timeout);
     };
   };
-  console.log("items", items);
+
   return (
     <div
       onMouseEnter={() => {
@@ -44,8 +44,9 @@ const DiplayContainerh4 = ({ title, text, items }: { title: string; text: string
           return (
             <span
               key={index}
-              className={`inline-block text-sm sm:text-lg   ${items.colors[index]}  ml-6 overflow-hidden`}
+              className={`inline-block text-sm sm:text-lg ml-6 overflow-hidden`}
               style={{
+                color: items.colors[index],
                 transition: `transform 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) ${items.delays[index]}`,
                 transform: !showskillsitems ? "translateY(120%)" : "translateY(-20%)",
               }}

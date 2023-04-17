@@ -1,17 +1,23 @@
+import { useEffect } from "react";
+
 const ItemNavDesktop = ({
   children,
   Anim,
-  lightTemeNav,
+  lightThemeNav,
+  currentPage,
 }: {
   children: any;
   Anim: boolean;
-  lightTemeNav: boolean;
+  lightThemeNav: boolean;
+  currentPage: string;
 }) => {
   const string = children.props.children;
   let array: string[] = [];
   for (let i = 0; i < string.length; i++) {
     array.push(string.charAt(i));
   }
+
+  let conditions_ToSet_NAv_In_White = lightThemeNav && currentPage === "/";
 
   return (
     <>
@@ -20,7 +26,7 @@ const ItemNavDesktop = ({
           <span
             key={index}
             className={`${
-              lightTemeNav ? "text-white" : "text-black"
+              conditions_ToSet_NAv_In_White ? "text-white" : "text-black"
             } inline-block transition-transform duration-500  font-Montserrat_thin font-light text-3xl ${
               Anim ? "-translate-y-full" : ""
             }`}
@@ -39,7 +45,7 @@ const ItemNavDesktop = ({
           <span
             key={index}
             className={`${
-              lightTemeNav ? "text-white" : "text-black"
+              conditions_ToSet_NAv_In_White ? "text-white" : "text-black"
             } inline-block transition-transform duration-500 font-NotoSansGeorgian text-3xl -mt-5   ${
               Anim ? "-translate-y-full " : ""
             }`}

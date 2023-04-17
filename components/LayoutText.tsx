@@ -19,7 +19,7 @@ const Letter = ({ letter }: { letter: string }) => {
   const turnOffAnimation = () => {
     const timeOutOffAnimation = setTimeout(() => {
       setColorLetter("text-gray-500");
-    }, 600);
+    }, 900);
     return () => clearTimeout(timeOutOffAnimation);
   };
   return (
@@ -29,6 +29,7 @@ const Letter = ({ letter }: { letter: string }) => {
       className={`inline-block cursor-pointer transition-transform  duration-100 ${colorLetter}`}
       style={{
         willChange: "transform",
+        transition: " 0.2s color 0s ease-out",
       }}
     >
       {letter}
@@ -38,7 +39,7 @@ const Letter = ({ letter }: { letter: string }) => {
 
 const Display_Letter_With_Animation = ({ word }: { word: string }) => {
   const letters = word.split("");
-  console.log(letters);
+
   return (
     <>
       {letters.map((letter: string, index: number) => (
@@ -70,7 +71,7 @@ const LayoutText = ({
     <div>
       {words.length > 0
         ? words.map((word: string, index: number) => (
-            <div key={index} className="inline-block  overflow-hidden">
+            <div key={index} className="inline-block  overflow-hidden leading-78px">
               <span
                 className="inline-block transition-transform translate-y-full  animate-[slidein_0.5s_ease-out_forwards] duration-100"
                 style={{

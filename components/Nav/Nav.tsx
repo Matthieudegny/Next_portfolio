@@ -6,13 +6,7 @@ import { animate, motion } from "framer-motion";
 import ItemNavDesktop from "./ItemNavDesktop";
 import ItemNavMobile from "./ItemNavMobile";
 
-const Nav = ({
-  hideNav,
-  lightTemeNav,
-}: {
-  hideNav: boolean;
-  lightTemeNav: boolean;
-}) => {
+const Nav = ({ hideNav, lightThemeNav }: { hideNav: boolean; lightThemeNav: boolean }) => {
   const router = useRouter();
   const [currentPage, setcurrentPage] = useState<string>("/");
   const [Home, setHome] = useState<boolean>(false);
@@ -79,15 +73,14 @@ const Nav = ({
         className={styleNav + "animate-[0.25s_slideinNav_0s_ease-out_forwards]"}
         href={link}
       >
-        <ItemNavDesktop Anim={stateAnimation} lightTemeNav={lightTemeNav}>
+        <ItemNavDesktop Anim={stateAnimation} lightThemeNav={lightThemeNav} currentPage={currentPage}>
           <h1>{title}</h1>
         </ItemNavDesktop>
       </Link>
     );
   };
 
-  const styleNav =
-    "inline-block translate-x-full opacity-0 leading-9 h-9 overflow-hidden mb-5 ";
+  const styleNav = "inline-block translate-x-full opacity-0 leading-9 h-9 overflow-hidden mb-5 ";
 
   return (
     <>
@@ -102,11 +95,7 @@ const Nav = ({
         ) : !hideNav ? (
           // mobile nav
           <div className="fixed flex flex-col z-50 right-3 top-5">
-            <Link
-              href=""
-              className="font-NotoSansGeorgian"
-              onClick={() => setmenuNavMobile((prev) => !prev)}
-            >
+            <Link href="" className="font-NotoSansGeorgian" onClick={() => setmenuNavMobile((prev) => !prev)}>
               <div className="flex flex-col opacity-1 leading-9 h-9 mb-3 overflow-hidden ">
                 <div
                   className={`inline-block leading-9 h-9 transition-transform duration-1000   text-2xl ${

@@ -16,21 +16,20 @@ const ItemNavMobile = ({
     <div className="m-5 p-1 w-full ml-20 flex items-center overflow-hidden">
       <div
         className={`text-white w-full pl-3 z-50 flex items-center justify-start ease-in duration-700
-          ${
-            mobilAnimationLink !== pageString && mobilAnimationLink
-              ? "translate-y-full"
-              : ""
-          }
+          ${mobilAnimationLink !== pageString && mobilAnimationLink ? "translate-y-full" : ""}
   
           `}
         onClick={() => {
+          //the goal it is to turn off the animation just aftter the menu is closed
           if (typeof pageString === "string") setmobilAnimationLink(pageString);
+          //pop up menu nav mobile
           const timeOutOffMenuTurnOff = setTimeout(() => {
             setmenuNavMobile(false);
           }, 600);
+          //animation link
           const timeOutOffAnimation = setTimeout(() => {
             setmobilAnimationLink(false);
-          }, 1100);
+          }, 1200);
           return () => {
             clearTimeout(timeOutOffMenuTurnOff);
             clearTimeout(timeOutOffAnimation);
@@ -44,9 +43,7 @@ const ItemNavMobile = ({
             viewBox="0 0 24 24"
             strokeWidth={2.5}
             stroke="white"
-            className={`w-0 h-8  duration-1000 ${
-              mobilAnimationLink === pageString ? "w-8" : ""
-            } `}
+            className={`w-0 h-8  duration-1000 ${mobilAnimationLink === pageString ? "w-8" : ""} `}
           >
             <path
               strokeLinecap="round"
