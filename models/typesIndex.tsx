@@ -6,3 +6,10 @@ export type itemsSkills = {
   colors: string[];
   delays: string[];
 };
+
+export type itemsProjects = {
+  image: string;
+  link: string;
+  title: string;
+  marginBottom: boolean;
+};
