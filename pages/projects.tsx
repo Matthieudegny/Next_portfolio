@@ -1,81 +1,65 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef,forwardRef } from "react";
 import Link from "next/link";
 import { motion, useInView, useScroll } from "framer-motion";
 
 //components
 import LayoutText from "../components/LayoutText";
+import ItemProject from "../components/Projects/ItemProject" ;
+import Item_Numero_SideBar_Project from "@/components/Projects/Item_Numero_SideBar_Project";
 
 //data
 import { projectsItems } from "../data/itemsProjects";
 
-const ItemProject = ({
-  image,
-  link,
-  index,
-  title,
-  marginBottom,
-}: {
-  image: string;
-  link: string;
-  index: number;
-  title: string;
-  marginBottom: boolean;
-}) => {
-  const [animationON, setanimationON] = useState(false);
-  return (
-    <div className={`h-70v w-full flex justify-center ${marginBottom ? "mb-64" : "mb-0"} p-10 `}>
-      <div className="w-2/6 h-full flex flex-col justify-center  ">
-        <Link href={link} className="w-full cursor-pointer">
-          <h4>Project n° {index} :</h4>
-          <h2 className="text-5xl ">{title}</h2>
-        </Link>
-      </div>
+//type
+import { ItemProjectProps } from "@/models/typesIndex";
 
-      <div
-        onMouseEnter={() => {
-          setanimationON(true);
-        }}
-        onMouseLeave={() => {
-          setanimationON(false);
-        }}
-        className="h-full w-2/6 relative "
-      >
-        <Link href={link} className="cursor-pointer h-4/6">
-          <img
-            src={image}
-            alt="my_image"
-            className="hover:scale-105 absolute top-0 left-0 h-full w-full rounded-xl z-30"
-            style={{
-              transition: "all 0.6s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s",
-            }}
-          />
-        </Link>
-        <div
-          style={{
-            left: "-10%",
-            top: animationON ? "60%" : "-10%",
-            transition: "all 0.6s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s",
-          }}
-          className="absolute h-50% w-50% bottom-0 rounded-xl border-4 border-gray-700 z-10 "
-        ></div>
-        <div
-          style={{
-            right: "-10%",
-            bottom: animationON ? "60%" : "-10%",
-            transition: "all 0.6s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s",
-          }}
-          className="absolute h-50% w-50% bottom-0 rounded-xl border-4 border-gray-700 z-10 "
-        ></div>
-      </div>
-    </div>
-  );
-};
+
 
 const projects = () => {
-  const reftest = useRef<HTMLInputElement>(null);
+  const refSectionProjects = useRef<HTMLInputElement>(null);
+  const isInViewSectionProjects = useInView(refSectionProjects, {
+    amount: 0.2,
+  });
+
+  const project1 = useRef<HTMLInputElement>(null);
+  const isInViewproject1 = useInView(project1, {
+    amount: 0.8,
+  });
+
+  const project2 = useRef<HTMLInputElement>(null);
+  const isInViewproject2 = useInView(project2, {
+    amount: 0.8,
+  });
+
+  const project3 = useRef<HTMLInputElement>(null);
+  const isInViewproject3 = useInView(project3, {
+    amount: 0.8,
+  });
+
+
+  useEffect(() => {
+   console.log("isInViewproject1",isInViewproject1);
+  }, [isInViewproject1])
+  
 
   return (
+    <>
+  <div 
+      style={{
+        position:"fixed",
+        transform: !isInViewSectionProjects ? "translateX(-200%)" : "translateX(0%)",
+        transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s"
+      }}
+      className="fixed left-10 top-0 h-screen z-50">
+        <div className="h-full flex flex-col justify-center items-center ">
+         <Item_Numero_SideBar_Project isInView={isInViewproject1} number={1}/>
+         <Item_Numero_SideBar_Project isInView={isInViewproject2} number={2}/>
+         <Item_Numero_SideBar_Project isInView={isInViewproject3} number={3}/>
+        </div>
+           
+      </div>
+    
     <motion.div
       animate={{ y: "0%" }}
       exit={{ opacity: 1 }}
@@ -86,6 +70,8 @@ const projects = () => {
       }}
       className="fixed top-0 left-0 w-full h-screen  overflow-y-auto"
     >
+     
+
       <main className="relative bg-orange-100 text-gray-900 min-h-screen w-screen  font-Montserrat_regular pb-36">
         <h1 className="font-NotoSansGeorgian h-80v tracking-widest text-2xl w-full p-2 pr-8 sm:pr-0 md:text-3xl  xl:w-4/5  sm:px-5rem xl:px-48 xl:pt-48 ">
           <LayoutText delay={1} timeAnimation={0.04} animationColor={false}>
@@ -95,20 +81,47 @@ const projects = () => {
           </LayoutText>
         </h1>
 
-        <section className="w-screen h-full">
-          {projectsItems?.map((item, index) => (
+          
+        <section 
+        ref={refSectionProjects}
+        className="w-screen h-full relative">
+
             <ItemProject
-              key={item.title}
-              image={item.image}
-              link={item.link}
-              title={item.title}
-              index={index + 1}
-              marginBottom={item.marginBottom}
+              ref={project1}
+              isInView={isInViewproject1}
+              key={projectsItems[0].title}
+              image={projectsItems[0].image}
+              link={projectsItems[0].link}
+              title={projectsItems[0].title}
+        
+              marginBottom={projectsItems[0].marginBottom}
             />
-          ))}
+
+<ItemProject
+              ref={project2}
+              isInView={isInViewproject2}
+              key={projectsItems[1].title}
+              image={projectsItems[1].image}
+              link={projectsItems[1].link}
+              title={projectsItems[1].title}
+        
+              marginBottom={projectsItems[1].marginBottom}
+            />
+
+<ItemProject
+              ref={project3}
+              isInView={isInViewproject3}
+              key={projectsItems[2].title}
+              image={projectsItems[2].image}
+              link={projectsItems[2].link}
+              title={projectsItems[2].title}
+           
+              marginBottom={projectsItems[2].marginBottom}
+            />
         </section>
       </main>
     </motion.div>
+    </>
   );
 };
 

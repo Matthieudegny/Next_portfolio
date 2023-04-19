@@ -13,3 +13,11 @@ export type itemsProjects = {
   title: string;
   marginBottom: boolean;
 };
+
+export type ItemProjectProps = {
+  image: string;
+  link: string;
+  title: string;
+  marginBottom: boolean;
+  isInView:boolean
+}

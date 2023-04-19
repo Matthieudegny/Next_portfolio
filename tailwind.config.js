@@ -8,6 +8,7 @@ module.exports = {
         Montserrat_thin: "Montserrat_thin",
         Montserrat_regular: "Montserrat_regular",
         Montserrat_semibold: "Montserrat_semibold",
+        Ultra: "Ultra",
       },
       colors: {
         "primary-color": "var(--primary-color)",
@@ -97,6 +98,7 @@ module.exports = {
       },
       translateX: {
         "custom-translate-x": "10rem",
+        "125%": "125%",
       },
       transitionProperty: {
         "background-color": "background-color 2s ease-in-out",
