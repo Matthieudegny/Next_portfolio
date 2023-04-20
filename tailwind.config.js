@@ -8,7 +8,7 @@ module.exports = {
         Montserrat_thin: "Montserrat_thin",
         Montserrat_regular: "Montserrat_regular",
         Montserrat_semibold: "Montserrat_semibold",
-        Ultra: "Ultra",
+        Playfair: "Playfair",
       },
       colors: {
         "primary-color": "var(--primary-color)",
@@ -28,11 +28,15 @@ module.exports = {
         "90v": "90vh",
         "100v": "100vh",
         "50%": "50%",
+        "120%": "120%",
       },
       width: {
         "50%": "50%",
       },
       left: {
+        "50%": "50%",
+      },
+      top: {
         "50%": "50%",
       },
       padding: {

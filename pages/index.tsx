@@ -94,7 +94,7 @@ export default function Home({
             "background-color 1.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
         }}
       >
-        <section className="min-h-screen   flex flex-col justify-evenly ">
+        <section className="min-h-screen  flex flex-col justify-evenly mb-8">
           <h1 className="font-NotoSansGeorgian tracking-widest text-3xl w-full p-2 pr-16 sm:pr-0 md:text-5xl  xl:w-4/5 2xl:w-3/5  ">
             <LayoutText delay={0.5} timeAnimation={0.04} animationColor={true}>
               Hello, I'm Matthieu, a front-end developer specialized, with modern technologies built around
@@ -110,7 +110,7 @@ export default function Home({
           </h2>
         </section>
 
-        <section ref={refSection2} className="2xl:h-screen mt-5  flex flex-col justify-center">
+        <section ref={refSection2} className="2xl:min-h-screen mt-5 pb-8  flex flex-col justify-center">
           <div
             className="mb-5 mt-8 p-2 text-xl opacity-0 font-Montserrat_thin md:text-4xl sm:mb-0"
             style={{
@@ -125,8 +125,8 @@ export default function Home({
           <ArticleSkillsComponent mobilVersion={mobilVersion} isInViewrefSection2={isInViewrefSection2} />
         </section>
 
-        <section className="mt-24 " ref={refSection3}>
-          <div className="h-screen flex flex-col mt-5 justify-center m-auto ">
+        <section className=" " ref={refSection3}>
+          <div className="h-screen flex flex-col  justify-center m-auto ">
             <div
               className="relative w-full h-screen  md:h-90v 2xl:h-75v flex flex-col md:flex-row "
               ref={refSkillsTexts}
