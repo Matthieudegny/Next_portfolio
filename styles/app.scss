@@ -10,6 +10,7 @@
 }
 /* Firefox */
 * {
+  scroll-behavior: smooth;
   scrollbar-width: none;
 }
 
@@ -70,7 +71,7 @@ h4 {
 //h4 responsive
 //line-height: 1.5rem;
 
-@media (max-width: 1250px) {
+@media (max-width: 1280px) {
   h3 {
     font-size: 2rem;
     line-height: 2rem;

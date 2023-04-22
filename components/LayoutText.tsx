@@ -71,7 +71,7 @@ const LayoutText = ({
     <div>
       {words.length > 0
         ? words.map((word: string, index: number) => (
-            <div key={index} className="inline-block  overflow-hidden leading-78px">
+            <div key={index} className="inline-block  overflow-hidden md:leading-50px">
               <span
                 className="inline-block transition-transform translate-y-full  animate-[slidein_0.5s_ease-out_forwards] duration-100"
                 style={{

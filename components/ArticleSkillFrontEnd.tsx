@@ -22,7 +22,7 @@ const ArticleSkillsComponent = ({
   return (
     <section className="group relative flex flex-col w-full justify-evenly  2xl:flex-row 2xl:justify-between">
       <main
-        className=" flex flex-col  justify-center opacity-0 mt-6 xl:mt-0 rounded-2xl p-6 2xl:w-1/2"
+        className=" flex flex-col  justify-center opacity-0 mt-6 xl:mt-0 rounded-2xl p-6 pb-0 2xl:w-1/2"
         style={{
           transform: isInViewrefSection2 ? "none" : "translateX(-200px)",
           opacity: isInViewrefSection2 ? 1 : 0,

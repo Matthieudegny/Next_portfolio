@@ -94,7 +94,7 @@ export default function Home({
             "background-color 1.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
         }}
       >
-        <section className="min-h-screen  flex flex-col justify-evenly mb-8">
+        <section className="min-h-screen lg:h-screen  flex flex-col justify-evenly mb-8">
           <h1 className="font-NotoSansGeorgian tracking-widest text-3xl w-full p-2 pr-16 sm:pr-0 md:text-5xl  xl:w-4/5 2xl:w-3/5  ">
             <LayoutText delay={0.5} timeAnimation={0.04} animationColor={true}>
               Hello, I'm Matthieu, a front-end developer specialized, with modern technologies built around
@@ -110,7 +110,10 @@ export default function Home({
           </h2>
         </section>
 
-        <section ref={refSection2} className="2xl:min-h-screen mt-5 pb-8  flex flex-col justify-center">
+        <section
+          ref={refSection2}
+          className="2xl:h-screen 2xl:-mt-8 mt-5 pb-8  flex flex-col justify-center items-center"
+        >
           <div
             className="mb-5 mt-8 p-2 text-xl opacity-0 font-Montserrat_thin md:text-4xl sm:mb-0"
             style={{
@@ -126,9 +129,9 @@ export default function Home({
         </section>
 
         <section className=" " ref={refSection3}>
-          <div className="h-screen flex flex-col  justify-center m-auto ">
+          <div className="h-screen flex flex-col xl:-mt-12  justify-center items-center m-auto ">
             <div
-              className="relative w-full h-screen  md:h-90v 2xl:h-75v flex flex-col md:flex-row "
+              className="relative w-full   md:h-70v lg:h-60v xl:h-70v 2xl:h-70v flex flex-col md:flex-row "
               ref={refSkillsTexts}
             >
               {/* border top horyzontale */}
@@ -169,7 +172,7 @@ export default function Home({
               </div>
               <div className="relative h-full">
                 <div
-                  className="relative md:h-3/6  pt-4 pb-4 flex flex-col "
+                  className="relative md:h-45% lg:h-45% xl:h-3/6 pt-4   flex flex-col "
                   style={{
                     transform: isInViewSkillstTexts ? "none" : "translateX(200px)",
                     opacity: isInViewSkillstTexts ? 1 : 0,
@@ -188,7 +191,7 @@ export default function Home({
                 </div>
                 <div
                   ref={refSkillsTextsVersioning}
-                  className="relative h-3/6    pt-4 pb-4 flex flex-col "
+                  className="relative h-3/6  mb-8 md:mb-0  pt-4 pb-4 flex flex-col "
                   style={{
                     transform: isInViewSkillstTextsVersioning ? "none" : "translateX(200px)",
                     opacity: isInViewSkillstTextsVersioning ? 1 : 0,
@@ -238,7 +241,7 @@ export default function Home({
             </div>
           </div>
 
-          <div ref={refBottomPage} className="mt-36 mb-52">
+          <div ref={refBottomPage} className="mt-52 mb-52">
             <Link href="/projects">
               <ContainerLinkAnimated title={"Projects / works"} linkImage={"/wave.png"} index={1} />
             </Link>

@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import ItemNavDesktop from "./ItemNavDesktop";
 import ItemNavMobile from "./ItemNavMobile";
@@ -64,7 +64,7 @@ const Nav = ({
     } else {
       setProjects(false);
     }
-  }, [router]);
+  }, [router, currentPage]);
 
   const diplsayNavdesktop = (
     link: string,
@@ -91,6 +91,7 @@ const Nav = ({
   };
 
   const styleNav = "inline-block translate-x-full opacity-0 leading-9 h-9 overflow-hidden mb-5 ";
+  const conditions_ToSet_NAv_In_White = lightThemeNav && currentPage === "/";
 
   return (
     <>
@@ -105,10 +106,12 @@ const Nav = ({
         ) : !hideNav ? (
           // mobile nav
           <div className="fixed flex flex-col z-50 right-3 top-5">
-            <Link href="" className="font-NotoSansGeorgian" onClick={() => setmenuNavMobile((prev) => !prev)}>
+            <div className="font-NotoSansGeorgian" onClick={() => setmenuNavMobile((prev) => !prev)}>
               <div className="flex flex-col opacity-1 leading-9 h-9 mb-3 overflow-hidden ">
                 <div
-                  className={`inline-block leading-9 h-9 transition-transform duration-1000   text-2xl ${
+                  className={`${
+                    conditions_ToSet_NAv_In_White ? "text-white" : "text-black"
+                  } inline-block leading-9 h-9 transition-transform duration-1000   text-2xl ${
                     menuNavMobile ? "-translate-y-full" : ""
                   }`}
                 >
@@ -122,7 +125,7 @@ const Nav = ({
                   Close
                 </div>
               </div>
-            </Link>
+            </div>
           </div>
         ) : (
           ""

@@ -19,6 +19,7 @@ module.exports = {
         "20v": "20vh",
         "30v": "30vh",
         "40v": "40vh",
+        "45v": "45vh",
         "50v": "50vh",
         "60v": "60vh",
         "65v": "65vh",
@@ -27,6 +28,7 @@ module.exports = {
         "80v": "80vh",
         "90v": "90vh",
         "100v": "100vh",
+        "45%": "45%",
         "50%": "50%",
         "120%": "120%",
       },
@@ -52,7 +54,11 @@ module.exports = {
         "40v": "40vh",
       },
       lineHeight: {
-        "78px": "78px",
+        "50px": "50px",
+      },
+      backgroundImage: {
+        hero: "url('../public/images/hero.jpg')",
+        "footer-texture": "url('../public/dalleAssistant.png')",
       },
       animation: {
         slidein: "slidein 0.5s ease-out forwards",
@@ -61,11 +67,20 @@ module.exports = {
         slideinNav: "0.25s slideinNav 0.1s ease-out forwards",
         slideOutNavMobile: "2.3s slideOutNavMobile 1s ease-in forwards",
         rotateH3: "1s rotateH3 1s ease-in-out forwards",
+        slideinProjectsItems: "0.5s slidein 0.5s ease-out forwards",
       },
       zIndex: {
         n: "-1",
       },
       keyframes: {
+        slideinProjectsItems: {
+          from: {
+            transform: "translateY(85%)",
+          },
+          to: {
+            transform: "translateY(0%))",
+          },
+        },
         rotateH3: {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(1080deg)" },

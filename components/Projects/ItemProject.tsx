@@ -1,10 +1,13 @@
 "use client";
-import React, { useState, forwardRef, useRef } from "react";
+import React, { forwardRef, useRef } from "react";
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 
 //type
 import { ItemProjectProps } from "@/models/typesIndex";
+
+//data
+import { projectsItems } from "@/data/itemsProjects";
 
 const ItemProject = forwardRef<HTMLDivElement, ItemProjectProps>((props, ref) => {
   const projectTitle = useRef<HTMLInputElement>(null);
@@ -16,16 +19,21 @@ const ItemProject = forwardRef<HTMLDivElement, ItemProjectProps>((props, ref) =>
 
   return (
     <div
-      className={`relative h-50v w-full flex justify-center ${props.marginBottom ? "mb-10" : "mb-0"} p-10 `}
+      className={`relative h-45v sm:h-50v w-full flex justify-center ${
+        props.marginBottom ? "mb-10" : "mb-0"
+      } p-10 `}
     >
       <div className="w-full flex justify-center items-center z-50">
         <Link
-          href={props.link}
+          href={{
+            pathname: `projects/${projectsItems[props.index].id}}`,
+          }}
+          as={`projects/${projectsItems[props.index].id}`}
           className="w-full font-Playfair  cursor-pointer flex justify-center items-center"
         >
           <h2
             ref={ref}
-            className="text-7xl "
+            className="text-4xl sm:text-5xl xl:text-7xl "
             style={{
               opacity: isInViewprojectTitlte ? "1" : "0",
               transform: `scaleX(${isInViewprojectTitlte ? 1 : 0})`,
@@ -39,7 +47,7 @@ const ItemProject = forwardRef<HTMLDivElement, ItemProjectProps>((props, ref) =>
         <span ref={projectTitle}></span>
       </div>
 
-      <div className="absolute -top-10 left-50% h-120% w-2/6 ">
+      <div className="absolute -top-0  sm:-top-10 left-50% h-full  sm:h-120% w-2/6 ">
         <Link href={props.link} className="cursor-pointer h-4/6">
           <img
             src={props.image}

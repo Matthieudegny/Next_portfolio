@@ -1,3 +1,5 @@
+import { Url } from "next/dist/shared/lib/router/router";
+
 export type articleSkills = {
   mobileVersion: boolean;
 };
@@ -12,6 +14,11 @@ export type itemsProjects = {
   link: string;
   title: string;
   marginBottom: boolean;
+  description: string;
+  frontEnd: string;
+  backEnd: string;
+  linkwebsite: string;
+  id: number;
 };
 
 export type ItemProjectProps = {
@@ -19,5 +26,6 @@ export type ItemProjectProps = {
   link: string;
   title: string;
   marginBottom: boolean;
-  isInView:boolean
-}
+  isInView: boolean;
+  index: number;
+};
