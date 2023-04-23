@@ -19,6 +19,7 @@ export type itemsProjects = {
   backEnd: string;
   linkwebsite: string;
   id: number;
+  imageTailwind: string;
 };
 
 export type ItemProjectProps = {
@@ -27,5 +28,5 @@ export type ItemProjectProps = {
   title: string;
   marginBottom: boolean;
   isInView: boolean;
-  index: number;
+  id: number;
 };

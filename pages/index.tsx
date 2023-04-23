@@ -72,7 +72,7 @@ export default function Home({
       exit={{ opacity: 1 }}
       initial={{ y: "100%" }}
       transition={{
-        duration: 0.75,
+        duration: 1,
         ease: "easeOut",
       }}
       className="fixed top-0 left-0 w-full h-screen  overflow-y-auto"

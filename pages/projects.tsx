@@ -61,12 +61,12 @@ const projects = () => {
         exit={{ opacity: 1 }}
         initial={{ y: "100%" }}
         transition={{
-          duration: 0.7,
+          duration: 1,
           ease: "easeOut",
         }}
         className="fixed top-0 left-0 w-full h-screen  overflow-y-auto"
       >
-        <main className="relative bg-orange-100 text-gray-900 min-h-screen w-screen  font-Montserrat_regular pb-44">
+        <main className="relative bg-primary-color text-gray-900 min-h-screen w-screen  font-Montserrat_regular pb-44">
           <h1 className="font-NotoSansGeorgian h-70v tracking-widest text-2xl p-2 pr-8 sm:pr-0 md:text-3xl  w-3/5  sm:px-5rem px-24 pt-14 ">
             <LayoutText delay={0.5} timeAnimation={0.02} animationColor={false}>
               As a web developer, I thrive on combining purposeful design with powerful user interfaces,
@@ -84,7 +84,7 @@ const projects = () => {
               link={projectsItems[0].link}
               title={projectsItems[0].title}
               marginBottom={projectsItems[0].marginBottom}
-              index={0}
+              id={projectsItems[0].id}
             />
 
             <ItemProject
@@ -95,7 +95,7 @@ const projects = () => {
               link={projectsItems[1].link}
               title={projectsItems[1].title}
               marginBottom={projectsItems[1].marginBottom}
-              index={1}
+              id={projectsItems[1].id}
             />
 
             <ItemProject
@@ -106,7 +106,7 @@ const projects = () => {
               link={projectsItems[2].link}
               title={projectsItems[2].title}
               marginBottom={projectsItems[2].marginBottom}
-              index={2}
+              id={projectsItems[2].id}
             />
           </section>
         </main>

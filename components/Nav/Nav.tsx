@@ -58,7 +58,8 @@ const Nav = ({
     } else {
       setContact(false);
     }
-    if (router.pathname === "/projects") {
+
+    if (router.pathname.includes("projects")) {
       setProjects(true);
       setHideNav(false);
     } else {
@@ -132,6 +133,7 @@ const Nav = ({
         )}
       </motion.nav>
 
+      {/* mobil nav display */}
       <div
         className="fixed h-screen w-0 z-40 right-0 top-0 bg-black "
         style={{
@@ -151,15 +153,15 @@ const Nav = ({
             setmenuNavMobile={setmenuNavMobile}
             setmobilAnimationLink={setmobilAnimationLink}
             mobilAnimationLink={mobilAnimationLink}
-            pageString={"CONTACT"}
-            link={"/contact"}
+            pageString={"PROJECTS"}
+            link={"/projects"}
           />
           <ItemNavMobile
             setmenuNavMobile={setmenuNavMobile}
             setmobilAnimationLink={setmobilAnimationLink}
             mobilAnimationLink={mobilAnimationLink}
-            pageString={"PROJECTS"}
-            link={"/projects"}
+            pageString={"CONTACT"}
+            link={"/contact"}
           />
         </div>
       </div>

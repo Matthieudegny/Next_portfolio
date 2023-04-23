@@ -57,8 +57,9 @@ module.exports = {
         "50px": "50px",
       },
       backgroundImage: {
-        hero: "url('../public/images/hero.jpg')",
-        "footer-texture": "url('../public/dalleAssistant.png')",
+        dalleAssistant: "url('../public/dalleAssistant.png')",
+        shareYourPrompt: "url('../public/shareYourPrompt.png')",
+        myDashboard: "url('../public/myDashboard.png')",
       },
       animation: {
         slidein: "slidein 0.5s ease-out forwards",

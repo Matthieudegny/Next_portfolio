@@ -32,7 +32,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
       <AnimatePresence initial={false}>
         <Nav hideNav={hideNav} setHideNav={setHideNav} lightThemeNav={lightThemeNav} />
         <Component
-          key={router.pathname}
+          key={router.asPath}
           mobilVersion={mobilVersion}
           setHideNav={setHideNav}
           setlightTemeNav={setlightThemeNav}

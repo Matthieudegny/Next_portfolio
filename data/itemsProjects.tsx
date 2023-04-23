@@ -12,6 +12,7 @@ export const projectsItems: itemsProjects[] = [
     backEnd: "Node.js, Express.js, MongoDB,openAI API, cloudinary API",
     linkwebsite: "https://dalle-app.vercel.app/",
     id: 1,
+    imageTailwind: "bg-dalleAssistant",
   },
   {
     image: "/shareYourPrompt.png",
@@ -24,6 +25,7 @@ export const projectsItems: itemsProjects[] = [
     backEnd: "Next.js, Supabase",
     linkwebsite: "https://share-your-prompt.vercel.app/",
     id: 2,
+    imageTailwind: "bg-shareYourPrompt",
   },
   {
     image: "/myDashboard.png",
@@ -36,5 +38,6 @@ export const projectsItems: itemsProjects[] = [
     backEnd: "Node.js, Express.js, MongoDB, bcryptjs",
     linkwebsite: "https://my-dash-board-md.vercel.app/",
     id: 3,
+    imageTailwind: "bg-myDashboard",
   },
 ];

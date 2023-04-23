@@ -26,9 +26,9 @@ const ItemProject = forwardRef<HTMLDivElement, ItemProjectProps>((props, ref) =>
       <div className="w-full flex justify-center items-center z-50">
         <Link
           href={{
-            pathname: `projects/${projectsItems[props.index].id}}`,
+            pathname: `projects/${props.id}`,
           }}
-          as={`projects/${projectsItems[props.index].id}`}
+          as={`projects/${props.id}`}
           className="w-full font-Playfair  cursor-pointer flex justify-center items-center"
         >
           <h2
@@ -52,7 +52,7 @@ const ItemProject = forwardRef<HTMLDivElement, ItemProjectProps>((props, ref) =>
           <img
             src={props.image}
             alt="my_image"
-            className="hover:scale-105 absolute top-0 left-0 h-full w-full rounded-xl z-30"
+            className="hover:scale-105 absolute top-0 left-0 h-full w-full rounded-md z-30"
             style={{
               opacity: props.isInView ? "0.6" : "0",
               transform: `scaleX(${props.isInView ? 1 : 0})`,
