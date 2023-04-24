@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, forwardRef, useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -11,13 +11,15 @@ const Contact = () => {
       exit={{ opacity: 1 }}
       initial={{ y: "100%" }}
       transition={{
-        duration: 0.7,
+        duration: 1,
         ease: "easeOut",
       }}
-      className="text-gray-900 absolute top-0 left-0 w-full h-full bg-red-400 lg:px-48 px-16"
+      className="fixed top-0 left-0 w-full h-screen  overflow-y-auto"
     >
-      <motion.h1>Contact</motion.h1>
-      <Link href="/">Home</Link>
+      <main className="relative bg-primary-color text-gray-900 min-h-screen w-screen  font-Montserrat_regular">
+        <motion.h1>Contact</motion.h1>
+        <Link href="/">Home</Link>
+      </main>
     </motion.main>
   );
 };

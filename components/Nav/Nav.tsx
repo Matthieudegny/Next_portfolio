@@ -25,6 +25,17 @@ const Nav = ({
   //turn on menu nav for mobile
   const [width, setWidth] = useState<string>("desktopWidth");
 
+  useEffect(() => {
+    console.log("Home", Home);
+  }, [Home]);
+
+  useEffect(() => {
+    console.log("Projects", Projects);
+  }, [Projects]);
+  useEffect(() => {
+    console.log("Contact", Contact);
+  }, [Contact]);
+
   const turnOffAnimation = (setstate: Function) => {
     const timeOutOffAnimation = setTimeout(() => {
       setstate(false);
@@ -65,7 +76,7 @@ const Nav = ({
     } else {
       setProjects(false);
     }
-  }, [router, currentPage]);
+  }, [router]);
 
   const diplsayNavdesktop = (
     link: string,

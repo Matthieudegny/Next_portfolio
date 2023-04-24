@@ -14,7 +14,7 @@ const projects = () => {
   const refSectionProjects = useRef<HTMLInputElement>(null);
   const isInViewSectionProjects = useInView(refSectionProjects, {
     margin: "0px 0px 0px 0px",
-    amount: 0.2,
+    amount: 0.25,
   });
 
   const project1 = useRef<HTMLInputElement>(null);
@@ -32,7 +32,7 @@ const projects = () => {
   const project3 = useRef<HTMLInputElement>(null);
   const isInViewproject3 = useInView(project3, {
     margin: "-210px 100px -210px 0px",
-    amount: 0.7,
+    amount: 0.4,
   });
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const projects = () => {
           transform: !isInViewSectionProjects ? "translateX(200%)" : "translateX(0%)",
           transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
         }}
-        className="fixed right-5 top-14 h-screen z-40 pb-24"
+        className="fixed -right-5 md:right-5 top-14 h-screen z-40 pb-24"
       >
         <div className="h-full flex flex-col justify-center items-center ">
           <Item_Numero_SideBar_Project isInView={isInViewproject1} number={1} />
@@ -67,7 +67,7 @@ const projects = () => {
         className="fixed top-0 left-0 w-full h-screen  overflow-y-auto"
       >
         <main className="relative bg-primary-color text-gray-900 min-h-screen w-screen  font-Montserrat_regular pb-44">
-          <h1 className="font-NotoSansGeorgian h-70v tracking-widest text-2xl p-2 pr-8 sm:pr-0 md:text-3xl  w-3/5  sm:px-5rem px-24 pt-14 ">
+          <h1 className="font-NotoSansGeorgian min-h-60v mb-20 xl:mb-0 w-4/5 lg:w-3/5   md:tracking-widest text-2xl p-1 pr-8 sm:pr-0 md:text-3xl pl-5  sm:px-5rem px-24 pt-14 ">
             <LayoutText delay={0.5} timeAnimation={0.02} animationColor={false}>
               As a web developer, I thrive on combining purposeful design with powerful user interfaces,
               continually pushing the boundaries of what's possible through my deep understanding of

@@ -20,10 +20,10 @@ const ItemProject = forwardRef<HTMLDivElement, ItemProjectProps>((props, ref) =>
   return (
     <div
       className={`relative h-45v sm:h-50v w-full flex justify-center ${
-        props.marginBottom ? "mb-10" : "mb-0"
+        props.marginBottom ? "mb-14 md:mb-10" : "mb-0"
       } p-10 `}
     >
-      <div className="w-full flex justify-center items-center z-50">
+      <div className="w-full flex justify-center items-center ">
         <Link
           href={{
             pathname: `projects/${props.id}`,
@@ -33,7 +33,7 @@ const ItemProject = forwardRef<HTMLDivElement, ItemProjectProps>((props, ref) =>
         >
           <h2
             ref={ref}
-            className="text-4xl sm:text-5xl xl:text-7xl "
+            className="text-3xl sm:text-5xl xl:text-7xl cursor-pointer z-50 "
             style={{
               opacity: isInViewprojectTitlte ? "1" : "0",
               transform: `scaleX(${isInViewprojectTitlte ? 1 : 0})`,
@@ -47,12 +47,12 @@ const ItemProject = forwardRef<HTMLDivElement, ItemProjectProps>((props, ref) =>
         <span ref={projectTitle}></span>
       </div>
 
-      <div className="absolute -top-0  sm:-top-10 left-50% h-full  sm:h-120% w-2/6 ">
+      <div className="absolute -top-0  sm:-top-10 h-full  sm:h-120% w-4/6 lg:w-3/6 ">
         <Link href={props.link} className="cursor-pointer h-4/6">
           <img
             src={props.image}
             alt="my_image"
-            className="hover:scale-105 absolute top-0 left-0 h-full w-full rounded-md z-30"
+            className="hover:scale-105 absolute top-0 left-0 h-full w-full rounded-md z-30 cursor-pointer"
             style={{
               opacity: props.isInView ? "0.6" : "0",
               transform: `scaleX(${props.isInView ? 1 : 0})`,

@@ -31,11 +31,13 @@ module.exports = {
         "45%": "45%",
         "50%": "50%",
         "120%": "120%",
+        "180v": "180vh",
       },
       width: {
         "50%": "50%",
       },
       left: {
+        "15%": "15%",
         "50%": "50%",
       },
       top: {
@@ -52,6 +54,7 @@ module.exports = {
 
       minHeight: {
         "40v": "40vh",
+        "60v": "60vh",
       },
       lineHeight: {
         "50px": "50px",
@@ -66,9 +69,7 @@ module.exports = {
         slideinNav: "0.25s slideinNav 0s ease-out forwards",
         slideinNav: "0.25s slideinNav 0.05s ease-out forwards",
         slideinNav: "0.25s slideinNav 0.1s ease-out forwards",
-        slideOutNavMobile: "2.3s slideOutNavMobile 1s ease-in forwards",
         rotateH3: "1s rotateH3 1s ease-in-out forwards",
-        slideinProjectsItems: "0.5s slidein 0.5s ease-out forwards",
       },
       zIndex: {
         n: "-1",

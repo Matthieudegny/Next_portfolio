@@ -36,7 +36,7 @@ const DiplayContainerh4 = ({ title, text, items }: { title: string; text: string
       className="group/item cursor-pointer  rounded-xl overflow-hidden "
     >
       <h4>
-        <span className="block">{title}</span>
+        <span className="block mb-2 text-2xl tracking-wider">{title}</span>
         {text}
       </h4>
       <div className="leading-7 h-7 ">

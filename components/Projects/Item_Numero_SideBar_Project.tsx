@@ -4,7 +4,7 @@ const Item_Numero_SideBar_Project = ({ isInView, number }: { isInView: boolean; 
       <div
         className="text-3xl sm:text-4xl xl:text-6xl"
         style={{
-          transform: isInView ? "translateX(0%)" : "translateX(-200%)",
+          transform: isInView ? "translateX(0%)" : "translateX(200%)",
           opacity: isInView ? "100%" : "0%",
           transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
         }}

@@ -112,7 +112,7 @@ export default function Home({
 
         <section
           ref={refSection2}
-          className="2xl:h-screen 2xl:-mt-8 mt-5 pb-8  flex flex-col justify-center items-center"
+          className="2xl:min-h-screen 2xl:-mt-8 mt-5 pb-8  flex flex-col justify-center items-center"
         >
           <div
             className="mb-5 mt-8 p-2 text-xl opacity-0 font-Montserrat_thin md:text-4xl sm:mb-0"
@@ -131,7 +131,7 @@ export default function Home({
         <section className=" " ref={refSection3}>
           <div className="h-screen flex flex-col xl:-mt-12  justify-center items-center m-auto ">
             <div
-              className="relative w-full   md:h-70v lg:h-60v xl:h-70v 2xl:h-70v flex flex-col md:flex-row "
+              className="relative w-full   md:h-75v lg:h-65v xl:h-75v flex flex-col md:flex-row "
               ref={refSkillsTexts}
             >
               {/* border top horyzontale */}
@@ -191,7 +191,7 @@ export default function Home({
                 </div>
                 <div
                   ref={refSkillsTextsVersioning}
-                  className="relative h-3/6  mb-8 md:mb-0  pt-4 pb-4 flex flex-col "
+                  className="relative h-4/6 xl:h-3/4  md:mb-0  pt-4 pb-4 flex flex-col "
                   style={{
                     transform: isInViewSkillstTextsVersioning ? "none" : "translateX(200px)",
                     opacity: isInViewSkillstTextsVersioning ? 1 : 0,
