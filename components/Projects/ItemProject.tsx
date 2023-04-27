@@ -6,9 +6,6 @@ import { useInView } from "framer-motion";
 //type
 import { ItemProjectProps } from "@/models/typesIndex";
 
-//data
-import { projectsItems } from "@/data/itemsProjects";
-
 const ItemProject = forwardRef<HTMLDivElement, ItemProjectProps>((props, ref) => {
   const projectTitle = useRef<HTMLInputElement>(null);
   const isInViewprojectTitlte = useInView(projectTitle, {
@@ -47,7 +44,7 @@ const ItemProject = forwardRef<HTMLDivElement, ItemProjectProps>((props, ref) =>
         <span ref={projectTitle}></span>
       </div>
 
-      <div className="absolute -top-0  sm:-top-10 h-full  sm:h-120% w-4/6 lg:w-3/6 ">
+      <div className="absolute -top-0  sm:-top-10 h-full  sm:h-120% w-4/6 lg:w-2/6 ">
         <Link href={props.link} className="cursor-pointer h-4/6">
           <img
             src={props.image}

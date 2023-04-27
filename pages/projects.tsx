@@ -6,6 +6,7 @@ import { motion, useInView } from "framer-motion";
 import LayoutText from "../components/LayoutText";
 import ItemProject from "../components/Projects/ItemProject";
 import Item_Numero_SideBar_Project from "@/components/Projects/Item_Numero_SideBar_Project";
+import Footer from "@/components/Footer";
 
 //data
 import { projectsItems } from "../data/itemsProjects";
@@ -64,9 +65,9 @@ const projects = () => {
           duration: 1,
           ease: "easeOut",
         }}
-        className="fixed top-0 left-0 w-full h-screen  overflow-y-auto"
+        className="fixed top-0 left-0 w-full h-screen  overflow-y-auto bg-primary-color text-gray-900"
       >
-        <main className="relative bg-primary-color text-gray-900 min-h-screen w-screen  font-Montserrat_regular pb-44">
+        <main className="relative  min-h-screen w-screen  font-Montserrat_regular pb-0">
           <h1 className="font-NotoSansGeorgian min-h-60v mb-20 xl:mb-0 w-4/5 lg:w-3/5   md:tracking-widest text-2xl p-1 pr-8 sm:pr-0 md:text-3xl pl-5  sm:px-5rem px-24 pt-14 ">
             <LayoutText delay={0.5} timeAnimation={0.02} animationColor={false}>
               As a web developer, I thrive on combining purposeful design with powerful user interfaces,
@@ -110,6 +111,7 @@ const projects = () => {
             />
           </section>
         </main>
+        <Footer />
       </motion.div>
     </>
   );

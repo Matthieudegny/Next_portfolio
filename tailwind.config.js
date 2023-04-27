@@ -12,6 +12,7 @@ module.exports = {
       },
       colors: {
         "primary-color": "var(--primary-color)",
+        "second-color": "var(--second-color)",
       },
       height: {
         "1px": "1px",
@@ -53,14 +54,13 @@ module.exports = {
         "5rem": "5rem",
         "15rem": "20rem",
       },
-
       minHeight: {
         "20v": "20vh",
         "40v": "40vh",
         "60v": "60vh",
       },
       lineHeight: {
-        "50px": "50px",
+        "65px": "65px",
       },
       backgroundImage: {
         dalleAssistant: "url('../public/dalleAssistant.png')",

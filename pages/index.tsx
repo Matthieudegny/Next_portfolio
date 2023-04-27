@@ -8,10 +8,10 @@ import React, { useRef, useEffect } from "react";
 //components
 import LayoutText from "../components/LayoutText";
 import LayoutH3 from "../components/LayoutH3";
-import ArticleSkillsComponent from "@/components/ArticleSkillFrontEnd";
-import ContainerLinkAnimated from "@/components/ContainerLinkAnimated";
+import ArticleSkillsComponent from "@/components/Home/ArticleSkillFrontEnd";
+import ContainerLinkAnimated from "@/components/Home/ContainerLinkAnimated";
 import Footer from "@/components/Footer";
-import DiplayContainerh4 from "@/components/DisplayContainerh4";
+import DiplayContainerh4 from "@/components/Home/DisplayContainerh4";
 
 //data
 import { API, cleanCode, versioning } from "@/data/itemsSkills";
@@ -20,10 +20,12 @@ export default function Home({
   mobilVersion,
   setHideNav,
   setlightTemeNav,
+  setcurrentPage,
 }: {
   mobilVersion: boolean;
   setHideNav: Function;
   setlightTemeNav: Function;
+  setcurrentPage: Function;
 }) {
   const router = useRouter();
 
@@ -46,7 +48,7 @@ export default function Home({
 
   const refSection3 = useRef<HTMLDivElement>(null);
   const isInViewrefSection3 = useInView(refSection3, {
-    amount: 0.1,
+    amount: 0.3,
   });
 
   const refBottomPage = useRef<HTMLDivElement>(null);
@@ -117,15 +119,19 @@ export default function Home({
           <div
             className="mb-5 mt-8 p-2 text-xl opacity-0 font-Montserrat_thin md:text-4xl sm:mb-0"
             style={{
-              transform: isInViewrefSection2 ? "none" : "translateX(-200px)",
+              transform: isInViewrefSection2 ? "none" : "translatey(50px)",
               opacity: isInViewrefSection2 ? 1 : 0,
-              transition:
-                "transform 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s,opacity 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
+              transition: `
+              transform 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s`,
             }}
           >
             What i can bring to you:
           </div>
-          <ArticleSkillsComponent mobilVersion={mobilVersion} isInViewrefSection2={isInViewrefSection2} />
+          <ArticleSkillsComponent
+            mobilVersion={mobilVersion}
+            isInViewrefSection2={isInViewrefSection2}
+            isInViewrefSection3={isInViewrefSection3}
+          />
         </section>
 
         <section className=" " ref={refSection3}>
@@ -159,6 +165,7 @@ export default function Home({
                     "Experienced in building scalable APIs using Node.js and Express.js, with RESTful API design principles and good practices."
                   }
                   items={API}
+                  isInViewrefSection3={isInViewrefSection3}
                 />
                 {/* border bottom-left hozyzontale */}
                 <div
@@ -187,6 +194,7 @@ export default function Home({
                       "Skilled in writing maintainable and scalable code using the MVC design pattern and TypeScript, ensuring code reliability and type safety."
                     }
                     items={cleanCode}
+                    isInViewrefSection3={isInViewrefSection3}
                   />
                 </div>
                 <div
@@ -206,6 +214,7 @@ export default function Home({
                       " Experienced in using Git, GitHub, and Azue for version control, ensuring collaboration with team members and maintaining codebase integrity. Proficient in managing repositories, branches, and pull requests."
                     }
                     items={versioning}
+                    isInViewrefSection3={isInViewrefSection3}
                   />
                   {/* border middle hozyzontale */}
                   <div
@@ -242,10 +251,20 @@ export default function Home({
           </div>
 
           <div ref={refBottomPage} className="mt-52 mb-52">
-            <Link href="/projects">
+            <Link
+              href="/projects"
+              onClick={() => {
+                setcurrentPage("/projects");
+              }}
+            >
               <ContainerLinkAnimated title={"Projects / works"} linkImage={"/wave.png"} index={1} />
             </Link>
-            <Link href="/contact">
+            <Link
+              href="/contact"
+              onClick={() => {
+                setcurrentPage("/contact");
+              }}
+            >
               <ContainerLinkAnimated title={"Contact"} linkImage={"/bubble.png"} index={2} />
             </Link>
           </div>

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const ItemNavDesktop = ({
   children,
@@ -27,7 +27,7 @@ const ItemNavDesktop = ({
             key={index}
             className={`${
               conditions_ToSet_NAv_In_White ? "text-white" : "text-black"
-            } inline-block transition-transform duration-500  font-Montserrat_thin font-light text-3xl ${
+            }  inline-block transition-transform duration-500  font-Montserrat_thin font-light text-3xl ${
               Anim ? "-translate-y-full" : ""
             }`}
             style={{

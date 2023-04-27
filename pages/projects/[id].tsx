@@ -156,7 +156,7 @@ const project = () => {
             pathname: `/projects/${indexProjectNext}`,
           }}
           passHref
-          className="mt-20 md:mt-0 h-44 w-full flex flex-wrap justify-center text-center items-center text-3xl md:text-5xl  hover:bg-gray-200 hover:shadow-2xl ease-in-out duration-300 "
+          className="mt-20 md:mt-0 h-44 w-full flex flex-wrap justify-center text-center items-center text-3xl md:text-5xl  hover:bg-second-color hover:shadow-2xl ease-in-out duration-300 "
         >
           Next Project: {titleNextProject}
           <svg

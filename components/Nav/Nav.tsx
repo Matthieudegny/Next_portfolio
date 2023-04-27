@@ -10,13 +10,16 @@ const Nav = ({
   hideNav,
   lightThemeNav,
   setHideNav,
+  currentPage,
+  setcurrentPage,
 }: {
   hideNav: boolean;
   lightThemeNav: boolean;
   setHideNav: Function;
+  currentPage: string;
+  setcurrentPage: Function;
 }) => {
   const router = useRouter();
-  const [currentPage, setcurrentPage] = useState<string>("/");
   const [Home, setHome] = useState<boolean>(false);
   const [Projects, setProjects] = useState<boolean>(false);
   const [Contact, setContact] = useState<boolean>(false);
@@ -25,21 +28,10 @@ const Nav = ({
   //turn on menu nav for mobile
   const [width, setWidth] = useState<string>("desktopWidth");
 
-  useEffect(() => {
-    console.log("Home", Home);
-  }, [Home]);
-
-  useEffect(() => {
-    console.log("Projects", Projects);
-  }, [Projects]);
-  useEffect(() => {
-    console.log("Contact", Contact);
-  }, [Contact]);
-
   const turnOffAnimation = (setstate: Function) => {
     const timeOutOffAnimation = setTimeout(() => {
       setstate(false);
-    }, 600);
+    }, 300);
     return () => clearTimeout(timeOutOffAnimation);
   };
 
@@ -57,26 +49,33 @@ const Nav = ({
   }, []);
 
   useEffect(() => {
-    setcurrentPage(router.pathname);
-    if (router.pathname === "/") {
+    if (router.pathname === "/contact" || router.pathname.includes("projects")) setHideNav(false);
+  }, [router.pathname]);
+
+  useEffect(() => {
+    console.log("hideNav", hideNav);
+  }, [hideNav]);
+
+  useEffect(() => {
+    if (currentPage === "/") {
       setHome(true);
     } else {
       setHome(false);
     }
-    if (router.pathname === "/contact") {
+    if (currentPage === "/contact") {
       setContact(true);
       setHideNav(false);
     } else {
       setContact(false);
     }
 
-    if (router.pathname.includes("projects")) {
+    if (currentPage.includes("projects")) {
       setProjects(true);
       setHideNav(false);
     } else {
       setProjects(false);
     }
-  }, [router]);
+  }, [currentPage]);
 
   const diplsayNavdesktop = (
     link: string,
@@ -84,7 +83,6 @@ const Nav = ({
     seStateAnimation: Function,
     title: string
   ) => {
-    
     return (
       <Link
         onMouseEnter={() => {
@@ -95,6 +93,7 @@ const Nav = ({
         }}
         className={styleNav + "animate-[0.25s_slideinNav_0s_ease-out_forwards]"}
         href={link}
+        onClick={() => setcurrentPage(link)}
       >
         <ItemNavDesktop Anim={stateAnimation} lightThemeNav={lightThemeNav} currentPage={currentPage}>
           <h1>{title}</h1>
@@ -104,13 +103,11 @@ const Nav = ({
   };
 
   useEffect(() => {
-   console.log("currentPage",currentPage)
-  }, [currentPage])
-  
+    console.log("currentPage", currentPage);
+  }, [currentPage]);
 
   const styleNav = "inline-block translate-x-full opacity-0 leading-9 h-9 overflow-hidden mb-5 ";
   const conditions_ToSet_NAv_In_White = (lightThemeNav && currentPage === "/") || currentPage === "/contact";
-
 
   return (
     <>

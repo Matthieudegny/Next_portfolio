@@ -13,7 +13,7 @@ const ItemNavMobile = ({
   link: string;
 }) => {
   return (
-    <div className="m-5 p-1 w-full ml-20 flex items-center overflow-hidden">
+    <div className="m-5 p-1 w-full ml-5 sm:ml-20 flex items-center overflow-hidden">
       <div
         className={`text-white w-full pl-3 z-50 flex items-center justify-start ease-in duration-700
           ${mobilAnimationLink !== pageString && mobilAnimationLink ? "translate-y-full" : ""}
@@ -52,7 +52,9 @@ const ItemNavMobile = ({
             />
           </svg>
         </div>
-        <Link href={link}>{pageString}</Link>
+        <Link className="text-2xl sm:text-4xl lg:text-5xl" href={link}>
+          {pageString}
+        </Link>
       </div>
     </div>
   );

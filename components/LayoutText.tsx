@@ -1,32 +1,43 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 
 const Letter = ({ letter }: { letter: string }) => {
   const [colorLetter, setColorLetter] = useState<string>("text-gray-500");
-  const randomColor = () => {
-    const colors = [
-      "text-blue-500",
-      "text-red-500",
-      "text-green-500",
-      "text-yellow-500",
-      "text-purple-500",
-      "text-pink-500",
-      "text-gray-500",
-    ];
-    const random = Math.floor(Math.random() * colors.length);
-    return colors[random];
-  };
+
+  const animatioColor = "text-sky-600";
+
   const turnOffAnimation = () => {
     const timeOutOffAnimation = setTimeout(() => {
+      setColorLetter("text-sky-500");
+    }, 200);
+    const timeOutOffAnimation2 = setTimeout(() => {
+      setColorLetter("text-sky-400");
+    }, 400);
+    const timeOutOffAnimation3 = setTimeout(() => {
+      setColorLetter("text-sky-300");
+    }, 600);
+    const timeOutOffAnimation4 = setTimeout(() => {
+      setColorLetter("text-sky-200");
+    }, 800);
+    const timeOutOffAnimation5 = setTimeout(() => {
+      setColorLetter("text-gray-300");
+    }, 1000);
+    const timeOutOffAnimation6 = setTimeout(() => {
       setColorLetter("text-gray-500");
-    }, 900);
-    return () => clearTimeout(timeOutOffAnimation);
+    }, 1200);
+    return () => {
+      clearTimeout(timeOutOffAnimation),
+        clearTimeout(timeOutOffAnimation2),
+        clearTimeout(timeOutOffAnimation3),
+        clearTimeout(timeOutOffAnimation4),
+        clearTimeout(timeOutOffAnimation5),
+        clearTimeout(timeOutOffAnimation6);
+    };
   };
   return (
     <span
-      onMouseEnter={() => setColorLetter(randomColor())}
+      onMouseEnter={() => setColorLetter(animatioColor)}
       onMouseLeave={turnOffAnimation}
-      className={`inline-block cursor-pointer transition-transform  duration-100 ${colorLetter}`}
+      className={`inline-block cursor-pointer transition-transform   duration-100 ${colorLetter}`}
       style={{
         willChange: "transform",
         transition: " 0.2s color 0s ease-out",
@@ -71,9 +82,9 @@ const LayoutText = ({
     <div>
       {words.length > 0
         ? words.map((word: string, index: number) => (
-            <div key={index} className="inline-block  overflow-hidden md:leading-50px">
+            <div key={index} className="inline-block  overflow-hidden md:leading-65px">
               <span
-                className="inline-block transition-transform translate-y-full  animate-[slidein_0.5s_ease-out_forwards] duration-100"
+                className="inline-block transition-transform translate-y-full animate-[slidein_0.5s_ease-out_forwards] duration-100"
                 style={{
                   animationDelay: `${timeAnimation * index + delay}s`,
                   willChange: "transform",
