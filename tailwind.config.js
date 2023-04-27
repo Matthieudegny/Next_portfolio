@@ -14,8 +14,10 @@ module.exports = {
         "primary-color": "var(--primary-color)",
       },
       height: {
+        "1px": "1px",
         "5v": "5vh",
         "10v": "10vh",
+        "15v": "15vh",
         "20v": "20vh",
         "30v": "30vh",
         "40v": "40vh",
@@ -53,6 +55,7 @@ module.exports = {
       },
 
       minHeight: {
+        "20v": "20vh",
         "40v": "40vh",
         "60v": "60vh",
       },

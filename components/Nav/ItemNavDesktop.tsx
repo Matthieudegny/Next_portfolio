@@ -17,7 +17,7 @@ const ItemNavDesktop = ({
     array.push(string.charAt(i));
   }
 
-  const conditions_ToSet_NAv_In_White = lightThemeNav && currentPage === "/";
+  const conditions_ToSet_NAv_In_White = (lightThemeNav && currentPage === "/") || currentPage === "/contact";
 
   return (
     <>

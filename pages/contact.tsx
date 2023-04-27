@@ -1,6 +1,17 @@
-import React, { useRef, forwardRef, useEffect, useState, RefObject } from "react";
+import React, { useRef, useEffect, useState, RefObject } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+
+import { BsGithub } from "react-icons/bs";
+import { SlSocialGithub } from "react-icons/sl";
+import { CiLinkedin } from "react-icons/ci";
+import { TfiTwitter } from "react-icons/tfi";
+
+//components
+import LayoutText from "../components/LayoutText";
+import AnimationButton from "@/components/contact/AnimationButton";
+
+
 
 import styles from "../styles/Contact.module.scss";
 
@@ -33,10 +44,15 @@ interface FormData {
 }
 
 function ContactForm() {
+  const [aniamtionButton, setaniamtionButton] = useState(false)
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     message: "",
+  });
+  const refSectionFormContact = useRef<HTMLInputElement>(null);
+  const isInViewSectionProjects = useInView(refSectionFormContact, {
+    amount: 1,
   });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -67,34 +83,81 @@ function ContactForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const styleDivInput= "flex flex-col mb-10 relative"
+  const styleInput="placeholder:text-gray-500 outline-none h-12 pt-4 pb-4 pl-4 bg-black focus:bg-black";
+  const styleAnimation ={ width: isInViewSectionProjects ? "100%" : "0%",
+  transition: "width 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",}
   return (
-    <form onSubmit={handleSubmit}>
+    <form 
+    autoComplete="off"
+    className="flex flex-col p-20 pb-10"
+    onSubmit={handleSubmit}>
+
+      <div 
+       ref={refSectionFormContact}
+      className={styleDivInput}>
       <label>
-        Name:
-        <input type="text" name="name" value={formData.name} onChange={handleChange} />
+        Your Name:  
       </label>
+      <input 
+      className={styleInput} 
+      placeholder="John Doe" type="text" name="name" value={formData.name} onChange={handleChange} />
+      <div 
+      className="absolute bottom-0 h-1px w-full bg-gray-400"
+      style={styleAnimation}
+     >
+
+      </div>
+      </div>
+
+      <div
+       className={styleDivInput}>
       <label>
-        Email:
-        <input type="email" name="email" value={formData.email} onChange={handleChange} />
+        Your Email:
       </label>
-      <label>
-        Message:
-        <textarea name="message" value={formData.message} onChange={handleChange} />
+      <input 
+      className={styleInput} 
+      placeholder="JohnDoe@gmail.com" type="email" name="email" value={formData.email} onChange={handleChange} />
+      <div 
+      className="absolute bottom-0 h-1px w-full bg-gray-400"
+      style={styleAnimation}></div>
+      </div>
+
+    <div className="flex flex-col relative">
+    <label>
+        Your Message:
+     
       </label>
-      <button type="submit">Send</button>
+      <textarea 
+      className="placeholder:text-gray-500  bg-black resize-none outline-none  pt-4 pb-4 pl-4 min-h-15v"
+      placeholder="Hello Matthieu..." name="message" value={formData.message} onChange={handleChange} />
+    <div className="absolute bottom-0 h-1px w-full bg-gray-400"
+     style={styleAnimation}></div>
+    </div>
+     
+      <button type="submit" className="mt-20">
+        <div 
+        className="overflow-hidden h-8"
+        onMouseEnter={()=>setaniamtionButton(true)}
+        onMouseLeave={()=>setaniamtionButton(false)}>
+        <AnimationButton Anim={aniamtionButton}>
+        SEND MESSAGE
+      </AnimationButton>
+        </div>
+
+
+        </button>
     </form>
   );
 }
 const Contact = () => {
-  const [point, setPoint] = useState({ x: 0, y: 0 });
+
 
   const ref = useRef(null);
   const { x, y } = useFollowPointer(ref);
 
   const customAnimationProps = { x, y };
-  useEffect(() => {
-    console.log("x", x);
-  }, [x]);
+
 
   return (
     <motion.main
@@ -107,7 +170,13 @@ const Contact = () => {
       }}
       className="fixed top-0 left-0 w-full h-screen  overflow-y-auto"
     >
-      <main className="relative bg-primary-color text-gray-900 min-h-screen w-screen  font-Montserrat_regular">
+      <main className="relative bg-black text-white min-h-screen w-screen  font-Montserrat_regular">
+      <h1 className="font-NotoSansGeorgian min-h-30v mb-20 xl:mb-0 w-4/5 lg:w-3/5   md:tracking-widest text-2xl p-1 pr-8 sm:pr-0 md:text-3xl pl-5  sm:px-5rem px-24 pt-14 ">
+            <LayoutText delay={0.5} timeAnimation={0.02} animationColor={false}>
+              Ready to start working together? If you have a project in mind or would like to discuss potential opportunities, please don't hesitate to get in touch. I will do my best to answer you as soon as possible
+            </LayoutText>
+          </h1>
+
         {/* <motion.div
           ref={ref}
           className="w-20 h-20 bg-gray-900  rounded-full "
@@ -119,9 +188,18 @@ const Contact = () => {
             restDelta: 0.001,
           }}
         /> */}
-        <ContactForm />
-        <motion.h1>Contact</motion.h1>
-        <Link href="/">Home</Link>
+        <div className="flex justify-between">
+        <div className="w-4/6 pl-20">
+          <ContactForm />
+        </div>
+        <div className="mr-16 flex flex-col items-center justify-evenly">
+         <SlSocialGithub className="w-20 h-20 cursor-pointer"/> 
+         <CiLinkedin className="w-28 h-28 cursor-pointer"/>
+         <TfiTwitter className="w-20 h-20 cursor-pointer"/>
+        </div>
+        </div>
+
+    
       </main>
     </motion.main>
   );

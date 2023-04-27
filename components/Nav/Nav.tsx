@@ -84,6 +84,7 @@ const Nav = ({
     seStateAnimation: Function,
     title: string
   ) => {
+    
     return (
       <Link
         onMouseEnter={() => {
@@ -102,8 +103,14 @@ const Nav = ({
     );
   };
 
+  useEffect(() => {
+   console.log("currentPage",currentPage)
+  }, [currentPage])
+  
+
   const styleNav = "inline-block translate-x-full opacity-0 leading-9 h-9 overflow-hidden mb-5 ";
-  const conditions_ToSet_NAv_In_White = lightThemeNav && currentPage === "/";
+  const conditions_ToSet_NAv_In_White = (lightThemeNav && currentPage === "/") || currentPage === "/contact";
+
 
   return (
     <>
@@ -123,14 +130,14 @@ const Nav = ({
                 <div
                   className={`${
                     conditions_ToSet_NAv_In_White ? "text-white" : "text-black"
-                  } inline-block leading-9 h-9 transition-transform duration-1000   text-2xl ${
+                  } inline-block leading-9 h-9 transition-transform duration-1000  cursor-pointer text-2xl ${
                     menuNavMobile ? "-translate-y-full" : ""
                   }`}
                 >
                   Menu
                 </div>
                 <div
-                  className={`inline-block text-white leading-9 h-9 transition-transform duration-500  text-2xl   ${
+                  className={`inline-block text-white leading-9 h-9 transition-transform duration-500 cursor-pointer text-2xl   ${
                     menuNavMobile ? "-translate-y-full " : ""
                   }`}
                 >
