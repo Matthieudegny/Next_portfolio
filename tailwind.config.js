@@ -14,6 +14,7 @@ module.exports = {
         "primary-color": "var(--primary-color)",
         "second-color": "var(--second-color)",
       },
+
       height: {
         "1px": "1px",
         "5v": "5vh",
@@ -35,9 +36,11 @@ module.exports = {
         "50%": "50%",
         "120%": "120%",
         "180v": "180vh",
+        "300px": "300px",
       },
       width: {
         "50%": "50%",
+        "600px": "600px",
       },
       left: {
         "15%": "15%",
@@ -53,6 +56,9 @@ module.exports = {
       margin: {
         "5rem": "5rem",
         "15rem": "20rem",
+        "25%": "25%",
+        "50%": "50%",
+        "75%": "75%",
       },
       minHeight: {
         "20v": "20vh",
@@ -69,9 +75,9 @@ module.exports = {
       },
       animation: {
         slidein: "slidein 0.5s ease-out forwards",
-        slideinNav: "0.25s slideinNav 0s ease-out forwards",
-        slideinNav: "0.25s slideinNav 0.05s ease-out forwards",
-        slideinNav: "0.25s slideinNav 0.1s ease-out forwards",
+        slideinNav: "0.25s slideinNav 1s ease-out forwards",
+        slideinNav: "0.25s slideinNav 1.05s ease-out forwards",
+        slideinNav: "0.25s slideinNav 1.1s ease-out forwards",
         rotateH3: "1s rotateH3 1s ease-in-out forwards",
       },
       zIndex: {
@@ -135,6 +141,8 @@ module.exports = {
   variants: {
     extend: {
       backgroundColor: ["hover"], // enable hover variant for background-color
+      transform: ["hover"],
+      backgroundClipText: ["responsive"],
     },
   },
   plugins: [],

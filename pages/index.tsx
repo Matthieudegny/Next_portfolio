@@ -107,26 +107,13 @@ export default function Home({
           <h2 className="min-w-full p-2 font-Montserrat_thin pr-16 sm:pr-0  md:pl-20 xl:pl-40vw text-2xl md:text-4xl">
             <LayoutText delay={1.3} timeAnimation={0.03} animationColor={false}>
               As a front-end developer with expertise in React, Next.js, and TypeScript, I'm passionate about
-              crafting user-friendly interfaces that bring ideas to life.
+              crafting user-friendly interfaces that bring ideas to life. What i can bring to you:
             </LayoutText>
           </h2>
         </section>
 
-        <section
-          ref={refSection2}
-          className="2xl:min-h-screen 2xl:-mt-8 mt-5 pb-8 flex flex-col justify-center items-center"
-        >
-          <div
-            className="mb-5 mt-8 p-2 text-xl opacity-0 font-Montserrat_thin md:text-4xl sm:mb-0"
-            style={{
-              transform: isInViewrefSection2 ? "none" : "translatey(50px)",
-              opacity: isInViewrefSection2 ? 1 : 0,
-              transition: `
-              transform 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s`,
-            }}
-          >
-            What i can bring to you:
-          </div>
+        <section ref={refSection2} className="2xl:min-h-screen 2xl:-mt-8 mt-5 pb-8 flex flex-col ">
+          <LayoutH3>FRONT-END:</LayoutH3>
           <ArticleSkillsComponent
             mobilVersion={mobilVersion}
             isInViewrefSection2={isInViewrefSection2}

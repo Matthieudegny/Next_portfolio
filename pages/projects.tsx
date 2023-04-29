@@ -36,10 +36,6 @@ const projects = () => {
     amount: 0.4,
   });
 
-  useEffect(() => {
-    console.log("isInViewproject1", isInViewproject1);
-  }, [isInViewproject1]);
-
   return (
     <>
       <div

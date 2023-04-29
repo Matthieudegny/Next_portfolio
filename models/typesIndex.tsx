@@ -9,6 +9,13 @@ export type itemsSkills = {
   delays: string[];
 };
 
+export type FrontSkills = {
+  uiUX: string[];
+  perfOpti: string[];
+  stateManagement: string[];
+  SEO: string[];
+};
+
 export type itemsProjects = {
   image: string;
   link: string;

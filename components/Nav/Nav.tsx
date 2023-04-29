@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, use } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
@@ -40,6 +40,7 @@ const Nav = ({
       setWidth("mobileWidth");
     } else {
       setWidth("desktopWidth");
+      setmenuNavMobile(false);
     }
   };
   useEffect(() => {
@@ -50,11 +51,8 @@ const Nav = ({
 
   useEffect(() => {
     if (router.pathname === "/contact" || router.pathname.includes("projects")) setHideNav(false);
+    setcurrentPage(router.pathname);
   }, [router.pathname]);
-
-  useEffect(() => {
-    console.log("hideNav", hideNav);
-  }, [hideNav]);
 
   useEffect(() => {
     if (currentPage === "/") {
@@ -75,6 +73,7 @@ const Nav = ({
     } else {
       setProjects(false);
     }
+    console.log(currentPage);
   }, [currentPage]);
 
   const diplsayNavdesktop = (
@@ -91,7 +90,7 @@ const Nav = ({
         onMouseLeave={() => {
           if (link !== currentPage) turnOffAnimation(seStateAnimation);
         }}
-        className={styleNav + "animate-[0.25s_slideinNav_0s_ease-out_forwards]"}
+        className={styleNav + "animate-[0.25s_slideinNav_1s_ease-out_forwards]"}
         href={link}
         onClick={() => setcurrentPage(link)}
       >
@@ -102,12 +101,16 @@ const Nav = ({
     );
   };
 
+  const styleNav = "inline-block translate-x-full opacity-0 leading-9 h-9 overflow-hidden mb-5 ";
+  const conditions_ToSet_NAv_In_White = (lightThemeNav && currentPage === "/") || currentPage === "/contact";
+
+  useEffect(() => {
+    console.log("lightThemeNav", lightThemeNav);
+  }, [lightThemeNav]);
+
   useEffect(() => {
     console.log("currentPage", currentPage);
   }, [currentPage]);
-
-  const styleNav = "inline-block translate-x-full opacity-0 leading-9 h-9 overflow-hidden mb-5 ";
-  const conditions_ToSet_NAv_In_White = (lightThemeNav && currentPage === "/") || currentPage === "/contact";
 
   return (
     <>
@@ -149,6 +152,7 @@ const Nav = ({
       </motion.nav>
 
       {/* mobil nav display */}
+
       <div
         className="fixed h-screen w-0 z-40 right-0 top-0 bg-black "
         style={{

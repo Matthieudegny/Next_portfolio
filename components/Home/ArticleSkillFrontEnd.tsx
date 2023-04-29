@@ -1,10 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { useInView } from "framer-motion";
 
-import LayoutH3 from "../LayoutH3";
-import DiplayContainerh4 from "./DisplayContainerh4";
+import CubeSkillFront from "./CubeSkillFront.tsx";
 
-import { frontEndSkills } from "@/data/itemsSkills";
+import { frontSkills } from "@/data/itemsSkills";
 
 const ArticleSkillsComponent = ({
   mobilVersion,
@@ -15,78 +14,95 @@ const ArticleSkillsComponent = ({
   isInViewrefSection2: boolean;
   isInViewrefSection3: boolean;
 }) => {
-  const [offsetY, setoffsetY] = useState<number>(250);
-  const [offsetX, setoffsetX] = useState<number>(205);
+  const refskill1 = useRef<HTMLInputElement>(null);
+  const isInViewSkill1 = useInView(refskill1, { amount: 0.7, once: true });
+  const refskill2 = useRef<HTMLInputElement>(null);
+  const isInViewSkill2 = useInView(refskill2, { amount: 0.7, once: true });
+  const refskill3 = useRef<HTMLInputElement>(null);
+  const isInViewSkill3 = useInView(refskill3, { amount: 0.7, once: true });
+  const refskill4 = useRef<HTMLInputElement>(null);
+  const isInViewSkill4 = useInView(refskill4, { amount: 0.7, once: true });
 
-  const refFrontImage = useRef<HTMLInputElement>(null);
-  const isInViewFrontImage = useInView(refFrontImage, { amount: 0.7, once: true });
-
-  let indiceRotationX = (offsetY - 250) / -25;
-  let indiceRotationY = (offsetX - 210) / -20.75;
-
-  const getDivStyles = (delay: number) => ({
-    transform: isInViewrefSection2 ? "none" : "translateX(-200px)",
-    opacity: isInViewrefSection2 ? 1 : 0,
-    transition: `transform 0.6s cubic-bezier(0.17, 0.55, 0.55, 1) ${delay}s,
-                 opacity 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) ${delay}s`,
-  });
+  function getAnimationStyle(isInView: boolean, X: number) {
+    return {
+      transform: isInView ? "none" : `translateX(${X}px)`,
+      opacity: isInView ? 1 : 0,
+      transition: `
+        transform 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0s,
+        opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s`,
+    };
+  }
 
   return (
     <section className="group relative flex flex-col w-full justify-evenly">
-      <main className=" flex flex-col  justify-center mt-6 xl:mt-0 rounded-2xl p-6 pb-0 ">
-        <div
-          style={{
-            transform: isInViewrefSection2 ? "none" : "translatey(50px)",
-            opacity: isInViewrefSection2 ? 1 : 0,
-            transition: `
-            transform 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s`,
-          }}
-        >
-          <LayoutH3>Front-end:</LayoutH3>
-        </div>
-
-        <div className="mt-8" style={getDivStyles(0.4)}>
-          <DiplayContainerh4
-            title={"UI/UX and responsive design:"}
-            text={
-              "Experienced in creating visually appealing and user-friendly interfaces using Figma and CSS (SASS, Tailwind, MUI)."
-            }
-            items={frontEndSkills.uiUX}
+      <div className="flex flex-col items-center">
+        {/* top */}
+        <div ref={refskill1} style={getAnimationStyle(isInViewSkill1, -200)} className="mr-64">
+          <CubeSkillFront
             isInViewrefSection3={isInViewrefSection3}
+            transformCube={
+              "perspective(95000px) rotateY(0deg) rotateX(-90deg) translateZ(160px) translateX(0px) translateY(0px)"
+            }
+            transformFace={"rotateX(90deg) translateZ(150px) translateY(-150px)"}
+            secondColor={"#5300fa"}
+            gradientColor={"linear-gradient(45deg, rgba(52,13,61,1) 30%, rgba(83,0,250,1) 71%)"}
+            title={"UI/UX and responsive design:"}
+            text={"Experienced in creating visually appealing and user-friendly interfaces."}
+            listItems={frontSkills.uiUX}
           />
         </div>
-        <div className="mt-4" style={getDivStyles(0.8)}>
-          <DiplayContainerh4
+        {/* right */}
+        <div ref={refskill2} style={getAnimationStyle(isInViewSkill2, 200)} className="ml-64">
+          <CubeSkillFront
+            isInViewrefSection3={isInViewrefSection3}
+            transformCube={
+              "perspective(95000px) rotateY(-90deg) rotateX(0deg) translateZ(300px) translateX(0px) translateY(0px)"
+            }
+            transformFace={"rotateY(90deg) translateZ(300px) translateX(300px)"}
+            secondColor={"#0717ec"}
+            gradientColor={"linear-gradient(45deg, rgba(27,31,75,1) 30%, rgba(7,23,236,1) 71%)"}
             title={"Performance optimization:"}
             text={
               "Skilled in optimizing application performance with React and dynamic DOM, including reusable components and dynamic updates."
             }
-            items={frontEndSkills.perfOpti}
-            isInViewrefSection3={isInViewrefSection3}
+            listItems={frontSkills.perfOpti}
           />
         </div>
-
-        <div className="mt-4" style={getDivStyles(1.2)}>
-          <DiplayContainerh4
+        {/* bottom */}
+        <div ref={refskill3} style={getAnimationStyle(isInViewSkill3, -200)} className="mr-64">
+          <CubeSkillFront
+            isInViewrefSection3={isInViewrefSection3}
+            transformCube={
+              "perspective(95000px) rotateY(0deg) rotateX(90deg) translateZ(150px) translateX(0px) translateY(0px)"
+            }
+            transformFace={"rotateX(-90deg) translateZ(150px) translateY(150px)"}
+            secondColor={"#00a0f4"}
+            gradientColor={" linear-gradient(45deg, rgba(13,77,110,1) 30%, rgba(14,138,203,1) 71%)"}
             title={"State management:"}
             text={
               "Proficient in managing application state using Redux, Redux Toolkit, and the useContext hook, allowing for efficient and scalable management of complex data."
             }
-            items={frontEndSkills.stateManagement}
-            isInViewrefSection3={isInViewrefSection3}
+            listItems={frontSkills.stateManagement}
           />
         </div>
-        <div className="mt-4" style={getDivStyles(1.6)}>
-          <DiplayContainerh4
+        {/* left */}
+        <div ref={refskill4} style={getAnimationStyle(isInViewSkill4, 200)} className="ml-64 mt-8">
+          <CubeSkillFront
+            isInViewrefSection3={isInViewrefSection3}
+            transformCube={
+              "perspective(95000px) rotateY(90deg) rotateX(0deg) translateZ(300px) translateX(0px) translateY(0px)"
+            }
+            transformFace={"rotateY(-90deg) translateZ(300px) translateX(-300px)"}
+            secondColor={"#00f985"}
+            gradientColor={"linear-gradient(45deg, rgba(20,92,58,1) 30%, rgba(8,182,101,1) 71%)"}
             title={"SEO:"}
             text={
               "Skilled in optimizing website content for search engines using Next.js and server-side rendering to ensure optimal performance and search engine rankings."
             }
-            items={frontEndSkills.SEO}
-            isInViewrefSection3={isInViewrefSection3}
+            listItems={frontSkills.SEO}
           />
         </div>
-      </main>
+      </div>
       {/* image card */}
       {/* mobile version => no card 3d animation */}
       {/* <div

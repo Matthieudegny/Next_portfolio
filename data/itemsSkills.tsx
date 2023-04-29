@@ -1,4 +1,4 @@
-import { itemsSkills } from "../models/typesIndex";
+import { itemsSkills, FrontSkills } from "../models/typesIndex";
 
 export const frontEndSkills: { [key: string]: itemsSkills } = {
   uiUX: {
@@ -21,6 +21,13 @@ export const frontEndSkills: { [key: string]: itemsSkills } = {
     colors: ["#333333"],
     delays: ["0.1s"],
   },
+};
+
+export const frontSkills: FrontSkills = {
+  uiUX: ["FIGMA", "CSS", "SASS", "TAILWIND", "MUI"],
+  perfOpti: ["REACT", "REACT-ROUTER", "RAECT-QUERY"],
+  stateManagement: ["REDUX", "REDUX-TOOLKIT", "CONTEXT-API"],
+  SEO: ["NEXT.JS"],
 };
 
 export const API: itemsSkills = {
