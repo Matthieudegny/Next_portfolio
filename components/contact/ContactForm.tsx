@@ -1,0 +1,114 @@
+import React, { useRef, useState } from "react";
+import { useInView } from "framer-motion";
+
+//components
+import AnimationButton from "@/components/contact/AnimationButton";
+
+//type
+import { FormData } from "@/models/typesIndex";
+
+function ContactForm() {
+  const [aniamtionButton, setaniamtionButton] = useState(false);
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const refSectionFormContact = useRef<HTMLInputElement>(null);
+  const isInViewSectionProjects = useInView(refSectionFormContact, {
+    amount: 1,
+    once: true,
+  });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("There was an error sending your message. Please try again later.");
+      }
+
+      console.log(await response.json());
+      alert("Your message has been sent!");
+    } catch (error) {
+      console.error(error);
+      alert("There was an error sending your message. Please try again later.");
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const styleDivInput = "flex flex-col mb-10 relative";
+  const styleInput = "placeholder:text-gray-500 outline-none h-12 pt-4 pb-4 pl-4 bg-black focus:bg-black";
+  const getNavStyles = (delay: number) => ({
+    width: isInViewSectionProjects ? "100%" : "0%",
+    transition: `width 1s cubic-bezier(0.17, 0.55, 0.55, 1) ${delay}s`,
+  });
+  const styleAnimation = {
+    width: isInViewSectionProjects ? "100%" : "0%",
+    transition: "width 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+  };
+  return (
+    <form autoComplete="off" className="flex flex-col p-20 pb-10" onSubmit={handleSubmit}>
+      <div ref={refSectionFormContact} className={styleDivInput}>
+        <label>Your Name:</label>
+        <input
+          className={styleInput}
+          placeholder="John Doe"
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+        />
+        <div className="absolute bottom-0 h-1px w-full bg-gray-400" style={getNavStyles(1.6)}></div>
+      </div>
+
+      <div className={styleDivInput}>
+        <label>Your Email:</label>
+        <input
+          className={styleInput}
+          placeholder="JohnDoe@gmail.com"
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+        <div className="absolute bottom-0 h-1px w-full bg-gray-400" style={getNavStyles(2)}></div>
+      </div>
+
+      <div className="flex flex-col relative">
+        <label>Your Message:</label>
+        <textarea
+          className="placeholder:text-gray-500  bg-black resize-none outline-none  pt-4 pb-4 pl-4 min-h-15v"
+          placeholder="Hello Matthieu..."
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+        />
+        <div className="absolute bottom-0 h-1px w-full bg-gray-400" style={getNavStyles(2.4)}></div>
+      </div>
+
+      <button type="submit" style={getNavStyles(2.8)} className="mt-20">
+        <div
+          className="overflow-hidden h-8"
+          onMouseEnter={() => setaniamtionButton(true)}
+          onMouseLeave={() => setaniamtionButton(false)}
+        >
+          <AnimationButton Anim={aniamtionButton}>SEND MESSAGE</AnimationButton>
+        </div>
+      </button>
+    </form>
+  );
+}
+
+export default ContactForm;

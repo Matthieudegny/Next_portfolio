@@ -40,6 +40,12 @@ export default function Home({
     once: true,
   });
 
+  const refTitle2 = useRef<HTMLDivElement>(null);
+  const isInViewrefTitle2 = useInView(refTitle2, {
+    amount: 0.3,
+    once: true,
+  });
+
   const refSection2 = useRef<HTMLDivElement>(null);
   const isInViewrefSection2 = useInView(refSection2, {
     amount: 0.3,
@@ -113,7 +119,17 @@ export default function Home({
         </section>
 
         <section ref={refSection2} className="2xl:min-h-screen 2xl:-mt-8 mt-5 pb-8 flex flex-col ">
-          <LayoutH3>FRONT-END:</LayoutH3>
+          <div
+            ref={refTitle2}
+            style={{
+              transform: isInViewrefTitle2 ? "translateX(0)" : "translateX(-200px)",
+              opacity: isInViewrefTitle2 ? 1 : 0,
+              transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+            }}
+            className="pt-10"
+          >
+            <LayoutH3>FRONT-END:</LayoutH3>
+          </div>
           <ArticleSkillsComponent
             mobilVersion={mobilVersion}
             isInViewrefSection2={isInViewrefSection2}

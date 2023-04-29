@@ -10,7 +10,7 @@ const AnimationButton = ({ children, Anim }: { children: any; Anim: boolean }) =
   const array = getLettersAndSpaces(string);
 
   return (
-    <>
+    <div className="inline-block">
       <div>
         {array.map((item: string, index: number) => {
           return (
@@ -47,7 +47,7 @@ const AnimationButton = ({ children, Anim }: { children: any; Anim: boolean }) =
           </span>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

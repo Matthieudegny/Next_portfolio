@@ -37,3 +37,9 @@ export type ItemProjectProps = {
   isInView: boolean;
   id: number;
 };
+
+export type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};

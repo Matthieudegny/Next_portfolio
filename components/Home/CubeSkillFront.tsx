@@ -21,13 +21,20 @@ const CubeSkillFront = ({
 }) => {
   const [animationOn, setAnimationOn] = useState(false);
 
+  const turnAnimationOff = () => {
+    const timeOut = setTimeout(() => {
+      setAnimationOn(false);
+    }, 400);
+    return () => clearTimeout(timeOut);
+  };
+
   return (
     <div
       onMouseEnter={() => {
         setAnimationOn(true);
       }}
       onMouseLeave={() => {
-        setAnimationOn(false);
+        turnAnimationOff();
       }}
       style={{
         transformStyle: "preserve-3d",
@@ -64,6 +71,7 @@ const CubeSkillFront = ({
             style={{
               textShadow: "0px 0px 4px black",
             }}
+            className="leading-10"
           >
             {text}
           </div>
