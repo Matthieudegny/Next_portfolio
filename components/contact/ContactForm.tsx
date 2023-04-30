@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useInView } from "framer-motion";
 
 //components
@@ -8,7 +8,9 @@ import AnimationButton from "@/components/contact/AnimationButton";
 import { FormData } from "@/models/typesIndex";
 
 function ContactForm() {
-  const [aniamtionButton, setaniamtionButton] = useState(false);
+  const [responseEmail, setResponseEmail] = useState<string>("");
+  const [messageToDisplayFromEmailResponse, setmessageToDisplayFromEmailResponse] = useState<string>("");
+  const [aniamtionButton, setaniamtionButton] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -19,6 +21,26 @@ function ContactForm() {
     amount: 1,
     once: true,
   });
+
+  useEffect(() => {
+    if (responseEmail === "success") {
+      setmessageToDisplayFromEmailResponse("Your message has been sent.");
+      setFormData({ name: "", email: "", message: "" });
+    } else if (responseEmail === "error") {
+      setmessageToDisplayFromEmailResponse(
+        "There was an error sending your message. Please try again later,or use the Linkedin link."
+      );
+    }
+    const timeout = setTimeout(() => {
+      setResponseEmail("");
+    }, 5000);
+    const timeout2 = setTimeout(() => {
+      setmessageToDisplayFromEmailResponse("");
+    }, 8000);
+    return () => {
+      clearTimeout(timeout), clearTimeout(timeout2);
+    };
+  }, [responseEmail]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -37,10 +59,10 @@ function ContactForm() {
       }
 
       console.log(await response.json());
-      alert("Your message has been sent!");
+      setResponseEmail("success");
     } catch (error) {
       console.error(error);
-      alert("There was an error sending your message. Please try again later.");
+      setResponseEmail("error");
     }
   };
 
@@ -54,12 +76,19 @@ function ContactForm() {
     width: isInViewSectionProjects ? "100%" : "0%",
     transition: `width 1s cubic-bezier(0.17, 0.55, 0.55, 1) ${delay}s`,
   });
-  const styleAnimation = {
-    width: isInViewSectionProjects ? "100%" : "0%",
-    transition: "width 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-  };
+
   return (
-    <form autoComplete="off" className="flex flex-col p-20 pb-10" onSubmit={handleSubmit}>
+    <form autoComplete="off" className="relative flex flex-col p-20 pb-10" onSubmit={handleSubmit}>
+      <div
+        style={{
+          height: responseEmail !== "" ? "0px" : "50px",
+          transition: "height 2s ease-in-out",
+        }}
+        className="absolute w-50% h-10 duration-1000 top-10 left-1/2 -translate-x-1/2 z-20 bg-black"
+      ></div>
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 z-10 text-center ">
+        {messageToDisplayFromEmailResponse}
+      </div>
       <div ref={refSectionFormContact} className={styleDivInput}>
         <label>Your Name:</label>
         <input
@@ -69,6 +98,7 @@ function ContactForm() {
           name="name"
           value={formData.name}
           onChange={handleChange}
+          required
         />
         <div className="absolute bottom-0 h-1px w-full bg-gray-400" style={getNavStyles(1.6)}></div>
       </div>
@@ -82,6 +112,7 @@ function ContactForm() {
           name="email"
           value={formData.email}
           onChange={handleChange}
+          required
         />
         <div className="absolute bottom-0 h-1px w-full bg-gray-400" style={getNavStyles(2)}></div>
       </div>
@@ -94,6 +125,7 @@ function ContactForm() {
           name="message"
           value={formData.message}
           onChange={handleChange}
+          required
         />
         <div className="absolute bottom-0 h-1px w-full bg-gray-400" style={getNavStyles(2.4)}></div>
       </div>
