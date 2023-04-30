@@ -46,7 +46,7 @@ function ContactForm() {
     e.preventDefault();
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://portfolio-next-chi-six.vercel.app/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
