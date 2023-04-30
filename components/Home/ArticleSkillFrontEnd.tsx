@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useInView } from "framer-motion";
 
-import CubeSkillFront from "./CubeSkillFront.tsx";
+import CubeSkillFront from "@/components/Home/CubeSkillFront";
 
 import { frontSkills } from "@/data/itemsSkills";
 
