@@ -10,13 +10,14 @@ interface infoResponse extends Error {
 }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  console.log(req.body);
   try {
     const message = {
       from: req.body.email,
       to: process.env.GMAIL_EMAIL_ADDRESS,
-      subject: req.body.subject,
+      subject: req.body.name + " " + req.body.email,
       text: req.body.message,
-      html: `<p>${req.body.message}</p>`,
+      html: `<p>${req.body.name}</p><p>${req.body.email}</p><p>${req.body.message}</p>`,
     };
 
     let transporter = nodemailer.createTransport({
