@@ -10,7 +10,6 @@ interface infoResponse extends Error {
 }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  console.log(req.body);
   try {
     const message = {
       from: req.body.email,
