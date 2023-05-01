@@ -7,9 +7,10 @@ import CubeSkillFrontMobile from "@/components/Home/CubeSkillFrontMobile";
 import { frontSkills } from "@/data/itemsSkills";
 
 const ArticleSkillsComponent = ({
+  mobileVersion,
   isInViewrefSection3,
 }: {
-  isInViewrefSection2: boolean;
+  mobileVersion: boolean;
   isInViewrefSection3: boolean;
 }) => {
   const refskill1 = useRef<HTMLInputElement>(null);
@@ -20,8 +21,6 @@ const ArticleSkillsComponent = ({
   const isInViewSkill3 = useInView(refskill3, { amount: 0.7, once: true });
   const refskill4 = useRef<HTMLInputElement>(null);
   const isInViewSkill4 = useInView(refskill4, { amount: 0.7, once: true });
-
-  const [mobileVersion, setmobilVersion] = useState(false);
 
   function getAnimationStyle(isInView: boolean, X: number) {
     if (!mobileVersion) {
@@ -37,25 +36,8 @@ const ArticleSkillsComponent = ({
     }
   }
 
-  const updateWidth = () => {
-    if (window.innerWidth < 640) {
-      setmobilVersion(true);
-    } else {
-      setmobilVersion(false);
-    }
-  };
-  useEffect(() => {
-    updateWidth();
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
-  }, []);
-
-  useEffect(() => {
-    console.log("isInViewSkill1", isInViewSkill1);
-  }, [isInViewSkill1]);
-
   return (
-    <section className="group relative flex flex-col w-full justify-evenly mb-8 sm:mb-0">
+    <section className="group relative flex flex-col w-full justify-evenly mb-28 sm:mb-0">
       <div className="flex flex-col items-center">
         {/* top */}
         <div

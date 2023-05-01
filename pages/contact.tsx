@@ -14,10 +14,10 @@ import Footer from "@/components/Footer";
 import ContactForm from "@/components/contact/ContactForm";
 import ContactLink from "@/components/contact/ContactLink";
 
-const Contact = ({ mobilVersion }: { mobilVersion: boolean }) => {
+const Contact = ({ padVersion }: { padVersion: boolean }) => {
   const refSectionFormContact = useRef<HTMLInputElement>(null);
   const isInViewSectionForm = useInView(refSectionFormContact, {
-    amount: mobilVersion ? 0.5 : 1,
+    amount: padVersion ? 0.5 : 1,
     once: true,
   });
 

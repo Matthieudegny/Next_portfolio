@@ -9,13 +9,19 @@ import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps, router }: AppProps) {
   //turn off animation card section2
-  const [mobilVersion, setmobilVersion] = useState<boolean>(false);
+  const [mobileVersion, setmobilVersion] = useState(false);
+  const [padVersion, setPadVersion] = useState<boolean>(false);
   const [hideNav, setHideNav] = useState(false);
   const [currentPage, setcurrentPage] = useState<string>("/");
   const [lightThemeNav, setlightThemeNav] = useState(false);
 
   const updateWidth = () => {
     if (window.innerWidth < 1024) {
+      setPadVersion(true);
+    } else {
+      setPadVersion(false);
+    }
+    if (window.innerWidth < 640) {
       setmobilVersion(true);
     } else {
       setmobilVersion(false);
@@ -40,7 +46,8 @@ export default function App({ Component, pageProps, router }: AppProps) {
         />
         <Component
           key={router.asPath}
-          mobilVersion={mobilVersion}
+          mobileVersion={mobileVersion}
+          padVersion={padVersion}
           setHideNav={setHideNav}
           setlightTemeNav={setlightThemeNav}
           setcurrentPage={setcurrentPage}

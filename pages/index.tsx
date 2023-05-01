@@ -17,10 +17,12 @@ import DiplayContainerh4 from "@/components/Home/DisplayContainerh4";
 import { API, cleanCode, versioning } from "@/data/itemsSkills";
 
 export default function Home({
+  mobileVersion,
   setHideNav,
   setlightTemeNav,
   setcurrentPage,
 }: {
+  mobileVersion: boolean;
   setHideNav: Function;
   setlightTemeNav: Function;
   setcurrentPage: Function;
@@ -52,8 +54,7 @@ export default function Home({
 
   const refSection3 = useRef<HTMLDivElement>(null);
   const isInViewrefSection3 = useInView(refSection3, {
-    amount: 0.1,
-    // amount: 0.3,
+    amount: mobileVersion ? 0.1 : 0.3,
   });
 
   const refBottomPage = useRef<HTMLDivElement>(null);
@@ -129,10 +130,7 @@ export default function Home({
           >
             <LayoutH3>FRONT-END:</LayoutH3>
           </div>
-          <ArticleSkillsComponent
-            isInViewrefSection2={isInViewrefSection2}
-            isInViewrefSection3={isInViewrefSection3}
-          />
+          <ArticleSkillsComponent mobileVersion={mobileVersion} isInViewrefSection3={isInViewrefSection3} />
         </section>
 
         <section ref={refSection3}>
