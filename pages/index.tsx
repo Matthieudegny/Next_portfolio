@@ -101,9 +101,9 @@ export default function Home({
         style={{
           willChange: "background-color",
           transition: `background-color ${
-            mobileVersion ? "1.7" : "1.7"
+            mobileVersion ? "0.2" : "1.7"
           }s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color ${
-            mobileVersion ? "0.7" : "0.7"
+            mobileVersion ? "0.2" : "0.7"
           }s cubic-bezier(0.17, 0.55, 0.55, 1)  ${mobileVersion ? "0" : "0.3"}s`,
         }}
       >
