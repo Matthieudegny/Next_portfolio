@@ -33,7 +33,7 @@ const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVer
     >
       <main className="relative min-h-screen w-screen  font-Montserrat_regular">
         <Head>
-          <title>My New Page Title</title>
+          <title>Contact - Matthieu Degny Portfolio</title>
         </Head>
         <h5
           ref={refSectionFormContact}

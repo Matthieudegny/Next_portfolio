@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Head from "next/head";
 
 import { motion, useInView } from "framer-motion";
 import { projectsItems } from "@/data/itemsProjects";
@@ -90,6 +91,9 @@ const project = () => {
       className="fixed top-0 left-0 w-full h-screen  overflow-y-auto"
     >
       <main className="relative bg-primary-color text-gray-900 min-h-screen w-screen  overflow-y-auto  font-Montserrat_regular">
+        <Head>
+          <title>{projectObject.title} - Matthieu Degny Portfolio</title>
+        </Head>
         <div className={`md:h-screen w-full  flex flex-col md:flex-row justify-center items-center text-7xl`}>
           <div className={`w-full md:w-3/6 h-screen relative`}>
             {projectObject.image ? (
