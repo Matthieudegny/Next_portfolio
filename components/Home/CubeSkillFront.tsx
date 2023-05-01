@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 const CubeSkillFront = ({
   mobileVersion,
@@ -112,7 +113,10 @@ const CubeSkillFront = ({
           }}
           className={`absolute w-full h-full ${isInViewrefSection3 ? "bg-black" : "bg-primary-color"}`}
         >
-          <div className="h-full flex text-center justify-center items-center text-3xl">{title}</div>
+          <div className="h-full flex flex-col text-center justify-center items-center text-3xl">
+            {title}
+            <BsFillArrowRightCircleFill className="mt-6" />
+          </div>
         </div>
         {/* other */}
         <div

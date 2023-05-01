@@ -156,6 +156,7 @@ const Nav = ({
       <div
         className="fixed h-screen w-0 z-40 right-0 top-0 bg-black "
         style={{
+          willChange: "width",
           transition: "width 1s ease-in-out",
           width: menuNavMobile ? "100%" : "0%",
         }}
