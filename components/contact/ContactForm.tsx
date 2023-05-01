@@ -114,7 +114,7 @@ function ContactForm({
         />
         <div
           className="absolute bottom-0 h-1px w-full bg-gray-400"
-          style={getNavStyles(mobileVersion ? 0.3 : 1.3)}
+          style={getNavStyles(mobileVersion ? 0.3 : 1.5)}
         ></div>
       </div>
 
@@ -131,7 +131,7 @@ function ContactForm({
         />
         <div
           className="absolute bottom-0 h-1px w-full bg-gray-400"
-          style={getNavStyles(mobileVersion ? 0.6 : 1.6)}
+          style={getNavStyles(mobileVersion ? 0.6 : 1.8)}
         ></div>
       </div>
 
@@ -147,11 +147,11 @@ function ContactForm({
         />
         <div
           className="absolute bottom-0 h-1px w-full bg-gray-400"
-          style={getNavStyles(mobileVersion ? 0.9 : 1.9)}
+          style={getNavStyles(mobileVersion ? 0.9 : 2.1)}
         ></div>
       </div>
 
-      <button type="submit" style={getNavStyles(mobileVersion ? 1.2 : 2.2)} className="mt-20">
+      <button type="submit" style={getNavStyles(mobileVersion ? 1.2 : 2.4)} className="mt-20">
         <div
           className="overflow-hidden h-8"
           onMouseEnter={() => setaniamtionButton(true)}

@@ -48,27 +48,31 @@ const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVer
               href={"https://github.com/Matthieudegny"}
               logo={SlSocialGithub}
               isInViewSectionLinksContact={isInViewSectionForm}
-              delay={1.5}
+              delay={mobileVersion ? 0 : 2.8}
             />
             <ContactLink
               href={"https://www.linkedin.com/in/matthieu-degny-49060a238/"}
               logo={CiLinkedin}
               isInViewSectionLinksContact={isInViewSectionForm}
-              delay={1.7}
+              delay={mobileVersion ? 0 : 3}
             />
             <ContactLink
               href={"https://twitter.com/MatthieuDevCode"}
               logo={TfiTwitter}
               isInViewSectionLinksContact={isInViewSectionForm}
-              delay={1.9}
+              delay={mobileVersion ? 0 : 3.2}
             />
             <Link
-              className="p-4 h-28 w-28 flex justify-center items-center hover:bg-gray-400 hover:text-black rounded-lg"
+              className="p-4 h-28 m-4 w-28 flex justify-center items-center hover:bg-gray-400 hover:text-black rounded-lg"
               style={{
                 willChange: "transform, opacity, background",
                 transform: isInViewSectionForm ? "none" : `translateX(200px)`,
                 opacity: isInViewSectionForm ? 1 : 0,
-                transition: `transform 0.5s ease-in-out  2.1s,opacity 0.3s ease-in-out 2.1s,background 0.4s ease-in-out,color 0.4s ease-in-out`,
+                transition: `transform 0.5s ease-in-out  ${
+                  mobileVersion ? 0 : 3.4
+                }s,opacity 0.3s ease-in-out ${
+                  mobileVersion ? 0 : 3.4
+                }s,background 0.4s ease-in-out,color 0.4s ease-in-out`,
               }}
               href="/DegnyMatthieuCV.pdf"
               download
