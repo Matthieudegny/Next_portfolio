@@ -7,7 +7,7 @@ import AnimationButton from "@/components/contact/AnimationButton";
 //type
 import { FormData } from "@/models/typesIndex";
 
-function ContactForm() {
+function ContactForm({ isInViewSectionForm }: { isInViewSectionForm: boolean }) {
   const [responseEmail, setResponseEmail] = useState<string>("");
   const [messageToDisplayFromEmailResponse, setmessageToDisplayFromEmailResponse] = useState<string>("");
   const [aniamtionButton, setaniamtionButton] = useState<boolean>(false);
@@ -15,11 +15,6 @@ function ContactForm() {
     name: "",
     email: "",
     message: "",
-  });
-  const refSectionFormContact = useRef<HTMLInputElement>(null);
-  const isInViewSectionProjects = useInView(refSectionFormContact, {
-    amount: 1,
-    once: true,
   });
 
   useEffect(() => {
@@ -73,23 +68,27 @@ function ContactForm() {
   const styleDivInput = "flex flex-col mb-10 relative";
   const styleInput = "placeholder:text-gray-500 outline-none h-12 pt-4 pb-4 pl-4 bg-black focus:bg-black";
   const getNavStyles = (delay: number) => ({
-    width: isInViewSectionProjects ? "100%" : "0%",
+    width: isInViewSectionForm ? "100%" : "0%",
     transition: `width 1s cubic-bezier(0.17, 0.55, 0.55, 1) ${delay}s`,
   });
 
   return (
-    <form autoComplete="off" className="relative flex flex-col p-20 pb-10" onSubmit={handleSubmit}>
+    <form
+      autoComplete="off"
+      className="relative flex flex-col pt-20 p-5 sm:p-20 pb-10"
+      onSubmit={handleSubmit}
+    >
       <div
         style={{
           height: responseEmail !== "" ? "0px" : "50px",
           transition: "height 2s ease-in-out",
         }}
-        className="absolute w-50% h-10 duration-1000 top-10 left-1/2 -translate-x-1/2 z-20 bg-black"
+        className="absolute w-full h-10 duration-1000 top-0 xl:top-5 left-1/2 -translate-x-1/2 z-20 bg-black"
       ></div>
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 z-10 text-center ">
+      <div className="absolute top-0 xl:top-5 w-4/5 left-1/2 -translate-x-1/2 z-10 text-center ">
         {messageToDisplayFromEmailResponse}
       </div>
-      <div ref={refSectionFormContact} className={styleDivInput}>
+      <div className={styleDivInput}>
         <label>Your Name:</label>
         <input
           className={styleInput}
@@ -100,7 +99,7 @@ function ContactForm() {
           onChange={handleChange}
           required
         />
-        <div className="absolute bottom-0 h-1px w-full bg-gray-400" style={getNavStyles(1.6)}></div>
+        <div className="absolute bottom-0 h-1px w-full bg-gray-400" style={getNavStyles(0.3)}></div>
       </div>
 
       <div className={styleDivInput}>
@@ -114,7 +113,7 @@ function ContactForm() {
           onChange={handleChange}
           required
         />
-        <div className="absolute bottom-0 h-1px w-full bg-gray-400" style={getNavStyles(2)}></div>
+        <div className="absolute bottom-0 h-1px w-full bg-gray-400" style={getNavStyles(0.6)}></div>
       </div>
 
       <div className="flex flex-col relative">
@@ -127,10 +126,10 @@ function ContactForm() {
           onChange={handleChange}
           required
         />
-        <div className="absolute bottom-0 h-1px w-full bg-gray-400" style={getNavStyles(2.4)}></div>
+        <div className="absolute bottom-0 h-1px w-full bg-gray-400" style={getNavStyles(0.9)}></div>
       </div>
 
-      <button type="submit" style={getNavStyles(2.8)} className="mt-20">
+      <button type="submit" style={getNavStyles(1.2)} className="mt-20">
         <div
           className="overflow-hidden h-8"
           onMouseEnter={() => setaniamtionButton(true)}

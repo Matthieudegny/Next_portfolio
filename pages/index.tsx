@@ -17,12 +17,10 @@ import DiplayContainerh4 from "@/components/Home/DisplayContainerh4";
 import { API, cleanCode, versioning } from "@/data/itemsSkills";
 
 export default function Home({
-  mobilVersion,
   setHideNav,
   setlightTemeNav,
   setcurrentPage,
 }: {
-  mobilVersion: boolean;
   setHideNav: Function;
   setlightTemeNav: Function;
   setcurrentPage: Function;
@@ -103,14 +101,14 @@ export default function Home({
         }}
       >
         <section className="min-h-screen lg:h-screen  flex flex-col justify-evenly">
-          <h1 className="font-NotoSansGeorgian tracking-widest text-3xl w-full p-2 pr-16 sm:pr-0 md:text-5xl  xl:w-4/5 2xl:w-3/5  ">
+          <h1 className="font-NotoSansGeorgian tracking-widest text-3xl w-full p-2 pr-16 sm:pr-0 md:text-5xl  2xl:w-3/5  ">
             <LayoutText delay={0.5} timeAnimation={0.04} animationColor={true}>
               Hello, I'm Matthieu, a front-end developer specialized, with modern technologies built around
               the Javascript framework.
             </LayoutText>
           </h1>
 
-          <h2 className="min-w-full p-2 font-Montserrat_thin pr-16 sm:pr-0  md:pl-20 xl:pl-40vw text-2xl md:text-4xl">
+          <h2 className="min-w-full p-2 font-Montserrat_thin pr-16 sm:pr-0  md:pl-20 2xl:pl-30vw text-2xl md:text-4xl ">
             <LayoutText delay={1.3} timeAnimation={0.03} animationColor={false}>
               As a front-end developer with expertise in React, Next.js, and TypeScript, I'm passionate about
               crafting user-friendly interfaces that bring ideas to life. What i can bring to you:
@@ -126,12 +124,11 @@ export default function Home({
               opacity: isInViewrefTitle2 ? 1 : 0,
               transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
             }}
-            className="pt-10"
+            className="pt-10 pb-14"
           >
             <LayoutH3>FRONT-END:</LayoutH3>
           </div>
           <ArticleSkillsComponent
-            mobilVersion={mobilVersion}
             isInViewrefSection2={isInViewrefSection2}
             isInViewrefSection3={isInViewrefSection3}
           />

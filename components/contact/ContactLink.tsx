@@ -18,7 +18,7 @@ function ContactLink({ href, logo, isInViewSectionLinksContact, delay }: Contact
       style={{
         transform: isInViewSectionLinksContact ? "none" : `translateX(200px)`,
         opacity: isInViewSectionLinksContact ? 1 : 0,
-        transition: `transform 1s ease-in-out,opacity ${delay}s ease-in-out,opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) ${delay}s,background 0.4s ease-in-out`,
+        transition: `transform 0.3s ease-in-out  ${delay}s,opacity 0.1s ease-in-out  ${delay}s,background 0.4s ease-in-out`,
         background: "linear-gradient(45deg, rgba(109,112,113,1) 30%, rgba(0,0,0,1) 71%)",
       }}
       href={href}

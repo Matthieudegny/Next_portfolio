@@ -14,16 +14,12 @@ import Footer from "@/components/Footer";
 import ContactForm from "@/components/contact/ContactForm";
 import ContactLink from "@/components/contact/ContactLink";
 
-const Contact = () => {
-  const refSectionLinksContact = useRef<HTMLInputElement>(null);
-  const isInViewSectionLinksContact = useInView(refSectionLinksContact, {
-    amount: 1,
+const Contact = ({ mobilVersion }: { mobilVersion: boolean }) => {
+  const refSectionFormContact = useRef<HTMLInputElement>(null);
+  const isInViewSectionForm = useInView(refSectionFormContact, {
+    amount: mobilVersion ? 0.5 : 1,
     once: true,
   });
-
-  useEffect(() => {
-    console.log(isInViewSectionLinksContact);
-  }, [isInViewSectionLinksContact]);
 
   return (
     <motion.main
@@ -45,38 +41,35 @@ const Contact = () => {
           </LayoutText>
         </h1>
 
-        <div className="flex flex-col lg:flex-row  justify-between">
+        <div ref={refSectionFormContact} className="flex flex-col lg:flex-row  justify-between">
           <div className="w-full lg:w-4/6 lg:pl-20">
-            <ContactForm />
+            <ContactForm isInViewSectionForm={isInViewSectionForm} />
           </div>
-          <div
-            ref={refSectionLinksContact}
-            className="lg:mr-16 pb-24 pt-10 lg:pt-0 lg:pb-0 flex flex-wrap lg:flex-col items-center justify-evenly"
-          >
+          <div className="lg:mr-16 pb-24 pt-10 lg:pt-10 lg:pb-0 flex flex-wrap lg:flex-col items-center justify-evenly">
             <ContactLink
               href={"https://github.com/Matthieudegny"}
               logo={SlSocialGithub}
-              isInViewSectionLinksContact={isInViewSectionLinksContact}
-              delay={1.7}
+              isInViewSectionLinksContact={isInViewSectionForm}
+              delay={1.5}
             />
             <ContactLink
               href={"https://www.linkedin.com/in/matthieu-degny-49060a238/"}
               logo={CiLinkedin}
-              isInViewSectionLinksContact={isInViewSectionLinksContact}
-              delay={2.1}
+              isInViewSectionLinksContact={isInViewSectionForm}
+              delay={1.7}
             />
             <ContactLink
               href={"https://twitter.com/MatthieuDevCode"}
               logo={TfiTwitter}
-              isInViewSectionLinksContact={isInViewSectionLinksContact}
-              delay={2.5}
+              isInViewSectionLinksContact={isInViewSectionForm}
+              delay={1.9}
             />
             <Link
               className="p-4 h-28 w-28 flex justify-center items-center hover:bg-gray-950 rounded-lg"
               style={{
-                transform: isInViewSectionLinksContact ? "none" : `translateX(200px)`,
-                opacity: isInViewSectionLinksContact ? 1 : 0,
-                transition: `transform 1s ease-in-out,opacity 2.9s ease-in-out,opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 2.9s,background 0.4s ease-in-out`,
+                transform: isInViewSectionForm ? "none" : `translateX(200px)`,
+                opacity: isInViewSectionForm ? 1 : 0,
+                transition: `transform 0.5s ease-in-out  2.1s,opacity 0.3s ease-in-out 2.1s,background 0.4s ease-in-out`,
               }}
               href="/DegnyMatthieuCV.pdf"
               download

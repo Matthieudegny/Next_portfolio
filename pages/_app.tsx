@@ -15,7 +15,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
   const [lightThemeNav, setlightThemeNav] = useState(false);
 
   const updateWidth = () => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 1024) {
       setmobilVersion(true);
     } else {
       setmobilVersion(false);

@@ -5,7 +5,7 @@ const CubeSkillFront = ({
   transformCube,
   transformFace,
   secondColor,
-  gradientColor,
+  background,
   title,
   text,
   listItems,
@@ -14,7 +14,7 @@ const CubeSkillFront = ({
   transformCube: string;
   transformFace: string;
   secondColor: string;
-  gradientColor: string;
+  background: string;
   title: string;
   text: string;
   listItems: string[];
@@ -29,6 +29,7 @@ const CubeSkillFront = ({
   };
 
   return (
+    // cube
     <div
       onMouseEnter={() => {
         setAnimationOn(true);
@@ -43,38 +44,29 @@ const CubeSkillFront = ({
       }}
       className="relative w-600px h-300px m-14 cursor-pointer "
     >
+      {/* front faace */}
       <div
         style={{
           transform: "translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)",
-          color: secondColor,
+          color: !animationOn ? secondColor : background,
           transition:
             "background-color 1.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
         }}
-        className={`absolute w-600px h-300px ${
-          isInViewrefSection3
-            ? "text-white bg-black duration-200"
-            : "text-gray-900 bg-primary-color duration-200"
-        } `}
+        className={`absolute w-600px h-300px bg-primary-color`}
       >
         <div className="h-full flex text-center justify-center items-center text-6xl">{title}</div>
       </div>
+      {/* other */}
       <div
         style={{
           transform: transformFace,
-
-          background: gradientColor,
+          background: animationOn ? secondColor : background,
+          transition: `${animationOn ? "2.5" : "1"}s background 0s`,
         }}
-        className="absolute w-600px h-300px rounded-md"
+        className="absolute w-600px h-300px rounded-md animate-[gradient_7s_ease_infinite]"
       >
-        <div className="h-full p-3 text-white underline-offset-8 flex flex-col text-center justify-center items-center text-2xl">
-          <div
-            style={{
-              textShadow: "0px 0px 4px black",
-            }}
-            className="leading-10"
-          >
-            {text}
-          </div>
+        <div className="h-full p-3 text-white flex flex-col text-center justify-center items-center text-2xl">
+          <div className="leading-10">{text}</div>
           <div className="flex mt-5">
             {listItems.map((item, index) => {
               return (
@@ -84,7 +76,7 @@ const CubeSkillFront = ({
                     color: secondColor,
                     boxShadow: "0px 0px 6px white",
                   }}
-                  className="p-1 m-2 bg-primary-color rounded-lg text-xl font-semibold "
+                  className="p-1 m-2 bg-primary-color hover:bg-white duration-200 hover:scale-110 rounded-lg text-xl font-semibold "
                 >
                   {item}
                 </div>

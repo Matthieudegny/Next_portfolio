@@ -50,12 +50,13 @@ module.exports = {
         "50%": "50%",
       },
       padding: {
-        "40vw": "40vw",
+        "30vw": "30vw",
         "5rem": "5rem",
       },
       margin: {
         "5rem": "5rem",
         "15rem": "20rem",
+        "35rem": "35rem",
         "25%": "25%",
         "50%": "50%",
         "75%": "75%",
@@ -74,6 +75,7 @@ module.exports = {
         myDashboard: "url('../public/myDashboard.png')",
       },
       animation: {
+        gradient: "gradient 7s ease infinite",
         slidein: "slidein 0.5s ease-out forwards",
         slideinNav: "0.25s slideinNav 1s ease-out forwards",
         slideinNav: "0.25s slideinNav 1.05s ease-out forwards",
@@ -84,6 +86,18 @@ module.exports = {
         n: "-1",
       },
       keyframes: {
+        gradient: {
+          "0%": {
+            backgroundPosition: "0% 50%",
+          },
+          "50%": {
+            backgroundPosition: "100% 50%",
+          },
+          "100%": {
+            backgroundPosition: "0% 50%",
+          },
+        },
+
         slideinProjectsItems: {
           from: {
             transform: "translateY(85%)",
