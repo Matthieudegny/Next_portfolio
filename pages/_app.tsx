@@ -1,7 +1,6 @@
-import "@/styles/app.scss";
+import "@/styles/app.css";
 import { AnimatePresence } from "framer-motion";
-import { motion } from "framer-motion";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Nav from "../components/Nav/Nav";
 

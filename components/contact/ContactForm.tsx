@@ -1,5 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
-import { useInView } from "framer-motion";
+import React, { useState, useEffect } from "react";
 
 //components
 import AnimationButton from "@/components/contact/AnimationButton";
@@ -7,7 +6,13 @@ import AnimationButton from "@/components/contact/AnimationButton";
 //type
 import { FormData } from "@/models/typesIndex";
 
-function ContactForm({ isInViewSectionForm }: { isInViewSectionForm: boolean }) {
+function ContactForm({
+  mobileVersion,
+  isInViewSectionForm,
+}: {
+  mobileVersion: boolean;
+  isInViewSectionForm: boolean;
+}) {
   const [responseEmail, setResponseEmail] = useState<string>("");
   const [messageToDisplayFromEmailResponse, setmessageToDisplayFromEmailResponse] = useState<string>("");
   const [aniamtionButton, setaniamtionButton] = useState<boolean>(false);
@@ -23,7 +28,7 @@ function ContactForm({ isInViewSectionForm }: { isInViewSectionForm: boolean }) 
       setFormData({ name: "", email: "", message: "" });
     } else if (responseEmail === "error") {
       setmessageToDisplayFromEmailResponse(
-        "There was an error sending your message. Please try again later,or use the Linkedin link."
+        "There was an error sending your message. Please try again later, or use the Linkedin link."
       );
     }
     const timeout = setTimeout(() => {
@@ -31,7 +36,7 @@ function ContactForm({ isInViewSectionForm }: { isInViewSectionForm: boolean }) 
     }, 5000);
     const timeout2 = setTimeout(() => {
       setmessageToDisplayFromEmailResponse("");
-    }, 8000);
+    }, 6000);
     return () => {
       clearTimeout(timeout), clearTimeout(timeout2);
     };
@@ -41,7 +46,7 @@ function ContactForm({ isInViewSectionForm }: { isInViewSectionForm: boolean }) 
     e.preventDefault();
 
     try {
-      const response = await fetch("https://portfolio-next-chi-six.vercel.app/api/contact", {
+      const response = await fetch("https://matthieu-degny-portfolio.vercel.app/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -68,6 +73,7 @@ function ContactForm({ isInViewSectionForm }: { isInViewSectionForm: boolean }) 
   const styleDivInput = "flex flex-col mb-10 relative";
   const styleInput = "placeholder:text-gray-500 outline-none h-12 pt-4 pb-4 pl-4 bg-black focus:bg-black";
   const getNavStyles = (delay: number) => ({
+    willChange: "width",
     width: isInViewSectionForm ? "100%" : "0%",
     transition: `width 1s cubic-bezier(0.17, 0.55, 0.55, 1) ${delay}s`,
   });
@@ -80,12 +86,19 @@ function ContactForm({ isInViewSectionForm }: { isInViewSectionForm: boolean }) 
     >
       <div
         style={{
+          willChange: "height",
           height: responseEmail !== "" ? "0px" : "50px",
           transition: "height 2s ease-in-out",
         }}
-        className="absolute w-full h-10 duration-1000 top-0 xl:top-5 left-1/2 -translate-x-1/2 z-20 bg-black"
+        className={`absolute w-full h-10 duration-1000 ${
+          mobileVersion ? "-bottom-5" : "top-0"
+        }  xl:top-5 left-1/2 -translate-x-1/2 z-20 bg-black`}
       ></div>
-      <div className="absolute top-0 xl:top-5 w-4/5 left-1/2 -translate-x-1/2 z-10 text-center ">
+      <div
+        className={`absolute w-full ${
+          mobileVersion ? "-bottom-5" : "top-0"
+        } xl:top-5 w-4/5 left-1/2 -translate-x-1/2 z-10 text-center `}
+      >
         {messageToDisplayFromEmailResponse}
       </div>
       <div className={styleDivInput}>

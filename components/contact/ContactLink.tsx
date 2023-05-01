@@ -14,7 +14,7 @@ function ContactLink({ href, logo, isInViewSectionLinksContact, delay }: Contact
   const [animationOn, setanimationOn] = useState(false);
   return (
     <Link
-      className="p-4  w-28 h-28 rounded-lg inline-block relative"
+      className="p-4 m-4 w-28 h-28 rounded-lg inline-block relative"
       style={{
         willChange: "transform opacity background",
         transform: isInViewSectionLinksContact ? "none" : `translateX(200px)`,

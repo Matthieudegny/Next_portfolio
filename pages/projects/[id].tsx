@@ -19,6 +19,7 @@ const project = () => {
     frontEnd: "",
     backEnd: "",
     linkwebsite: "",
+    linkRepoGithub: "",
     id: 0,
     imageTailwind: "",
   });
@@ -50,6 +51,7 @@ const project = () => {
 
   const returnAnimation = (delay: number, axe: string) => {
     return {
+      willChange: "transform,opacity",
       opacity: isInViewproject ? "1" : "0",
       transform: `scale${axe}(${isInViewproject ? 1 : 0})`,
       transition: `transform 1s ease-in-out ${delay}s,opacity 1s ease-in-out ${delay}s,background-color 0.3s ease-in-out 0.1s`,
@@ -95,6 +97,7 @@ const project = () => {
             ) : (
               ""
             )}
+            {/*sail hidding the image  */}
             <div
               ref={project}
               style={{
@@ -108,46 +111,53 @@ const project = () => {
           <div className="`w-full min-h-screen md:w-3/6  flex flex-col justify-evenly ">
             <div
               style={animationStyleTitle}
-              className="w-3/5 md:w-4/5 pl-2 md:pl-5 mb-6 md:mb-0 mt-6 md:mt-0 text-2xl md:text-4xl"
+              className="w-4/5 pl-8 md:pl-5 mb-6 md:mb-0 mt-6 md:mt-0 text-2xl md:text-4xl font-bold tracking-widest"
             >
-              {projectObject.title}:
+              {projectObject.title} :
             </div>
             <div
               style={animationStyleDescription}
-              className="w-3/5 md:w-4/5 pl-2  md:pl-5  text-xl  xl:pr-14  leading-7 xl:leading-10"
+              className="w-4/5 pl-8  md:pl-5  text-xl  xl:pr-14  leading-7 xl:leading-10"
             >
-              {projectObject.description}.
+              {projectObject.description}
             </div>
-            <div className="text-2xl p-5">
-              <span style={animationStyleFrontEndTitle} className="block text-2xl">
+            <div className="text-2xl p-8">
+              <span style={animationStyleFrontEndTitle} className="block pb-2 text-2xl">
                 Front-end :
               </span>
-              <div style={animationStyleFrontEnd} className="lg:p-5 text-xl  tracking-widest ">
+              <div style={animationStyleFrontEnd} className="lg:p-5 text-xl  tracking-wide ">
                 {projectObject.frontEnd}.
               </div>
             </div>
-            <div className="text-2xl p-5">
-              <span style={animationStyleBackEndTitle} className="block text-2xl">
+            <div className="text-2xl p-8">
+              <span style={animationStyleBackEndTitle} className="block pb-2 text-2xl">
                 Back-end :
               </span>
-              <div style={animationStyleBackEnd} className="lg:p-5 text-xl  tracking-widest ">
+              <div style={animationStyleBackEnd} className="lg:p-5 text-xl  tracking-wide ">
                 {projectObject.backEnd}.
               </div>
             </div>
 
-            {projectObject.linkwebsite ? (
+            <div className="flex justify-center">
               <a
-                className="text-3xl p-5 text-center"
+                className="text-3xl m-8 text-center font-semibold"
                 target="_blank"
                 href={projectObject.linkwebsite}
                 rel="noopener noreferrer"
                 style={animationStyleLinkWebsite}
               >
-                visit website
+                Visit website
               </a>
-            ) : (
-              "cest quoi ce bordel"
-            )}
+              <a
+                className="text-3xl  m-8 text-center font-semibold"
+                target="_blank"
+                href={projectObject.linkRepoGithub}
+                rel="noopener noreferrer"
+                style={animationStyleLinkWebsite}
+              >
+                Visit code repository
+              </a>
+            </div>
           </div>
         </div>
 
@@ -165,13 +175,9 @@ const project = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-14 h-14 ml-5"
+            className="w-10 h-10 ml-4"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
           </svg>
         </Link>
       </main>

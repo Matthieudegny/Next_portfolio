@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 //components
@@ -64,13 +64,13 @@ const projects = () => {
         className="fixed top-0 left-0 w-full h-screen  overflow-y-auto bg-primary-color text-gray-900"
       >
         <main className="relative  min-h-screen w-screen  font-Montserrat_regular pb-0">
-          <h1 className="font-NotoSansGeorgian min-h-60v mb-20 xl:mb-0 w-4/5 lg:w-3/5   md:tracking-widest text-2xl p-1 pr-8 sm:pr-0 md:text-3xl pl-5  sm:px-5rem px-24 pt-14 ">
+          <h5 className="font-NotoSansGeorgian min-h-60v mb-20 xl:mb-0 w-4/5 lg:w-3/5   md:tracking-widest text-2xl p-1 pr-8 sm:pr-0 md:text-3xl pl-5  sm:px-5rem px-24 pt-14 ">
             <LayoutText delay={0.5} timeAnimation={0.02} animationColor={false}>
               As a web developer, I thrive on combining purposeful design with powerful user interfaces,
               continually pushing the boundaries of what's possible through my deep understanding of
               JavaScript concepts and my ability to work on full-stack projects.
             </LayoutText>
-          </h1>
+          </h5>
 
           <section ref={refSectionProjects} className="w-screen relative pb-32">
             <ItemProject

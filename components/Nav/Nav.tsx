@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, use } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
@@ -95,7 +95,7 @@ const Nav = ({
         onClick={() => setcurrentPage(link)}
       >
         <ItemNavDesktop Anim={stateAnimation} lightThemeNav={lightThemeNav} currentPage={currentPage}>
-          <h1>{title}</h1>
+          <span>{title}</span>
         </ItemNavDesktop>
       </Link>
     );

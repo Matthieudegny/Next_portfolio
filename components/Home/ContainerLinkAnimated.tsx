@@ -5,10 +5,12 @@ const ContainerLinkAnimated = ({
   title,
   linkImage,
   index,
+  mobileVersion,
 }: {
   title: string;
   linkImage: string;
   index: number;
+  mobileVersion: boolean;
 }) => {
   const reftest = useRef<HTMLInputElement>(null);
   const [animationOn, setAnimationOn] = useState<boolean>(false);
@@ -30,7 +32,7 @@ const ContainerLinkAnimated = ({
           style={{
             willChange: "width",
             width: isInViewBorder ? "100%" : "0%",
-            transition: "width 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            transition: `width ${mobileVersion ? "0.5" : "1.5"}s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s`,
           }}
         ></div>
       ) : (
@@ -42,7 +44,7 @@ const ContainerLinkAnimated = ({
         style={{
           willChange: "width",
           width: isInViewBorder ? "100%" : "0%",
-          transition: "width 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          transition: `width  ${mobileVersion ? "0.5" : "1.5"}s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s`,
         }}
       ></div>
 
@@ -79,7 +81,7 @@ const ContainerLinkAnimated = ({
           transition:
             "transform 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s, opacity 0.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s,color 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
         }}
-        className={` flex  items-center h-20v w-full absolute top-0 left-0 z-10 ml-2 sm:ml-16 lg:ml-48 font-NotoSansGeorgian  text-2xl lg:text-5xl tracking-widest`}
+        className={` flex  items-center h-20v w-full absolute top-0 left-0 z-10 ml-8 sm:ml-16 lg:ml-48 font-NotoSansGeorgian  text-2xl lg:text-5xl tracking-widest`}
       >
         {title}
       </div>

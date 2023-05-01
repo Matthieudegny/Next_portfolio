@@ -21,13 +21,11 @@
   height: 0px;
 }
 
-//serif modular
 @font-face {
   font-family: "NotoSansGeorgian";
   src: url("/fonts/Noto_Sans_Georgian/NotoSansGeorgian-VariableFont_wdth,wght.ttf");
 }
 
-//sans-serif
 @font-face {
   font-family: "Montserrat_thin";
   src: url("/fonts/Montserrat/static/Montserrat-ExtraLight.ttf");
@@ -42,7 +40,6 @@
   src: url("/fonts/Montserrat/static/Montserrat-SemiBold.ttf");
 }
 
-//extra font
 @font-face {
   font-family: "Playfair";
   src: url("/fonts/PlayfairDisplay/PlayfairDisplaySC-Bold.ttf");
@@ -68,9 +65,6 @@ h4 {
   font-family: "Montserrat_regular";
   transition: 0s;
 }
-
-//h4 responsive
-//line-height: 1.5rem;
 
 @media (max-width: 1280px) {
   h3 {

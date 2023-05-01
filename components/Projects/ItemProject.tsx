@@ -28,7 +28,7 @@ const ItemProject = forwardRef<HTMLDivElement, ItemProjectProps>((props, ref) =>
           as={`projects/${props.id}`}
           className="w-full font-Playfair  cursor-pointer flex justify-center items-center"
         >
-          <h2
+          <p
             ref={ref}
             className="text-3xl sm:text-5xl xl:text-7xl cursor-pointer z-50 "
             style={{
@@ -40,7 +40,7 @@ const ItemProject = forwardRef<HTMLDivElement, ItemProjectProps>((props, ref) =>
             }}
           >
             {props.title}
-          </h2>
+          </p>
         </Link>
         <span ref={projectTitle}></span>
       </div>

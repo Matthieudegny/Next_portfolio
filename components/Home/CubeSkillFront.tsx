@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 const CubeSkillFront = ({
@@ -68,7 +68,7 @@ const CubeSkillFront = ({
             willChange: "transform background",
             transform: transformFace,
             background: animationOn ? secondColor : background,
-            transition: `${animationOn ? "2.5" : "1"}s background 0s`,
+            transition: `${animationOn ? "2" : "1"}s background 0s`,
           }}
           className="absolute w-600px h-300px rounded-md animate-[gradient_7s_ease_infinite]"
         >

@@ -25,6 +25,7 @@ export type itemsProjects = {
   frontEnd: string;
   backEnd: string;
   linkwebsite: string;
+  linkRepoGithub: string;
   id: number;
   imageTailwind: string;
 };
