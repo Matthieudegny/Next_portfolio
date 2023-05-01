@@ -112,7 +112,10 @@ function ContactForm({
           onChange={handleChange}
           required
         />
-        <div className="absolute bottom-0 h-1px w-full bg-gray-400" style={getNavStyles(0.3)}></div>
+        <div
+          className="absolute bottom-0 h-1px w-full bg-gray-400"
+          style={getNavStyles(mobileVersion ? 0.3 : 1.3)}
+        ></div>
       </div>
 
       <div className={styleDivInput}>
@@ -126,7 +129,10 @@ function ContactForm({
           onChange={handleChange}
           required
         />
-        <div className="absolute bottom-0 h-1px w-full bg-gray-400" style={getNavStyles(0.6)}></div>
+        <div
+          className="absolute bottom-0 h-1px w-full bg-gray-400"
+          style={getNavStyles(mobileVersion ? 0.6 : 1.6)}
+        ></div>
       </div>
 
       <div className="flex flex-col relative">
@@ -139,10 +145,13 @@ function ContactForm({
           onChange={handleChange}
           required
         />
-        <div className="absolute bottom-0 h-1px w-full bg-gray-400" style={getNavStyles(0.9)}></div>
+        <div
+          className="absolute bottom-0 h-1px w-full bg-gray-400"
+          style={getNavStyles(mobileVersion ? 0.9 : 1.9)}
+        ></div>
       </div>
 
-      <button type="submit" style={getNavStyles(1.2)} className="mt-20">
+      <button type="submit" style={getNavStyles(mobileVersion ? 1.2 : 2.2)} className="mt-20">
         <div
           className="overflow-hidden h-8"
           onMouseEnter={() => setaniamtionButton(true)}
