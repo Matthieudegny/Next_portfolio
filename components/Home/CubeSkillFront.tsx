@@ -55,7 +55,7 @@ const CubeSkillFront = ({
             transition:
               "background-color 1.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
           }}
-          className={`absolute w-600px h-300px bg-primary-color`}
+          className={`absolute w-600px h-300px  ${isInViewrefSection3 ? "bg-black" : "bg-primary-color"}`}
         >
           <div className="h-full flex text-center justify-center items-center text-6xl">{title}</div>
         </div>
@@ -104,8 +104,11 @@ const CubeSkillFront = ({
           style={{
             transform: animationOn ? "translateX(-100%)" : "translateX(0%)",
             color: !animationOn ? secondColor : background,
-            transition:
-              "transform 1s,background-color 1.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+            transition: `transform 1s,background-color ${
+              mobileVersion ? "0.4" : "1.7"
+            }s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color  ${
+              mobileVersion ? "0.4" : "0.7"
+            }s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s`,
           }}
           className={`absolute w-full h-full ${isInViewrefSection3 ? "bg-black" : "bg-primary-color"}`}
         >

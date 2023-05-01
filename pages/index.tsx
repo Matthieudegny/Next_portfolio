@@ -101,7 +101,9 @@ export default function Home({
         style={{
           transition: `background-color ${
             mobileVersion ? "0.4" : "1.7"
-          }s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s`,
+          }s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color ${
+            mobileVersion ? "0.4" : "0.7"
+          }s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s`,
         }}
       >
         <section className="min-h-screen lg:h-screen  flex flex-col justify-evenly">
