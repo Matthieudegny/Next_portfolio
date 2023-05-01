@@ -2,11 +2,11 @@ import React, { useRef } from "react";
 import { useInView } from "framer-motion";
 
 import CubeSkillFront from "@/components/Home/CubeSkillFront";
+import CubeSkillFrontMobile from "@/components/Home/CubeSkillFrontMobile";
 
 import { frontSkills } from "@/data/itemsSkills";
 
 const ArticleSkillsComponent = ({
-  isInViewrefSection2,
   isInViewrefSection3,
 }: {
   isInViewrefSection2: boolean;
@@ -84,7 +84,7 @@ const ArticleSkillsComponent = ({
           />
         </div>
         {/* left */}
-        <div ref={refskill4} style={getAnimationStyle(isInViewSkill4, 200)} className="2xl:ml-35rem mt-8">
+        <div ref={refskill4} style={getAnimationStyle(isInViewSkill4, 200)} className="2xl:ml-35rem sm:mt-8">
           <CubeSkillFront
             isInViewrefSection3={isInViewrefSection3}
             transformCube={
@@ -101,59 +101,6 @@ const ArticleSkillsComponent = ({
           />
         </div>
       </div>
-      {/* image card */}
-      {/* mobile version => no card 3d animation */}
-      {/* <div
-        ref={refFrontImage}
-        style={{
-          transform: isInViewFrontImage ? "none" : "translateX(400px)",
-          opacity: isInViewFrontImage ? 1 : 0,
-          transition:
-            "transform 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0s,opacity 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
-        }}
-        className="m-auto  p-14  md:p-0"
-      >
-        {!mobilVersion ? (
-          <div
-            className=" relative m-14 cursor-pointer"
-            style={{
-              perspective: "1000px",
-              perspectiveOrigin: "50% 50%",
-              transform: "rotate3d(0, 0.8, 0, 34deg)",
-              width: "650px",
-              height: "650px",
-            }}
-            onMouseMove={(event) => {
-              setoffsetY(event.nativeEvent.offsetY);
-              setoffsetX(event.nativeEvent.offsetX);
-            }}
-            onMouseLeave={() => {
-              setoffsetY(250);
-              setoffsetX(205);
-            }}
-          >
-            <img
-              src="/frontEnd_skills.png"
-              alt="my_image"
-              style={{
-                borderRadius: "10px",
-                transform: `rotateX(${indiceRotationX}deg) rotateY(${indiceRotationY}deg)`,
-                transition: "all 0.3s ease",
-              }}
-            />
-          </div>
-        ) : (
-          <img
-            src="/frontEnd_skills.png"
-            alt="my_image"
-            style={{
-              borderRadius: "10px",
-              transition: "all 0.5s ease",
-              width: "100%",
-            }}
-          />
-        )}
-      </div> */}
     </section>
   );
 };
