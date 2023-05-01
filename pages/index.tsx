@@ -79,6 +79,10 @@ export default function Home({
       }}
       className="fixed top-0 left-0 w-full h-screen  overflow-y-auto"
     >
+      <Head>
+        <title>My New Page Title</title>
+      </Head>
+
       <main
         className={`${
           isInViewrefSection3

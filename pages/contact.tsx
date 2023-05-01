@@ -31,7 +31,10 @@ const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVer
       className="fixed top-0 left-0 w-full h-screen  overflow-y-auto bg-black text-white"
     >
       <main className="relative min-h-screen w-screen  font-Montserrat_regular">
-        <h5 className="font-NotoSansGeorgian min-h-30v mb-20 xl:mb-0 w-4/5 xl:w-4/5   md:tracking-widest text-2xl p-1 pr-8 sm:pr-0 md:text-3xl pl-5  sm:px-5rem px-24 pt-14 ">
+        <h5
+          ref={refSectionFormContact}
+          className="font-NotoSansGeorgian min-h-30v mb-20 xl:mb-0 w-4/5 xl:w-4/5   md:tracking-widest text-2xl p-1 pr-8 sm:pr-0 md:text-3xl pl-5  sm:px-5rem px-24 pt-14 "
+        >
           <LayoutText delay={0.5} timeAnimation={0.02} animationColor={false}>
             Ready to collaborate with you! Whether you have an idea in mind, a project to discuss, or just
             want to explore potential opportunities, please feel free to get in touch with me. I'll be happy
@@ -39,7 +42,7 @@ const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVer
           </LayoutText>
         </h5>
 
-        <div ref={refSectionFormContact} className="flex flex-col lg:flex-row  justify-between">
+        <div className="flex flex-col lg:flex-row  justify-between">
           <div className="w-full lg:w-4/6 lg:pl-20">
             <ContactForm mobileVersion={mobileVersion} isInViewSectionForm={isInViewSectionForm} />
           </div>
@@ -63,7 +66,7 @@ const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVer
               delay={mobileVersion ? 0 : 3.2}
             />
             <Link
-              className="p-4 h-28 m-4 w-28 flex justify-center items-center hover:bg-gray-400 hover:text-black rounded-lg"
+              className="p-4 h-28 w-28 flex justify-center items-center hover:bg-gray-400 hover:text-black rounded-lg"
               style={{
                 willChange: "transform, opacity, background",
                 transform: isInViewSectionForm ? "none" : `translateX(200px)`,
@@ -71,7 +74,7 @@ const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVer
                 transition: `transform 0.5s ease-in-out  ${
                   mobileVersion ? 0 : 3.4
                 }s,opacity 0.3s ease-in-out ${
-                  mobileVersion ? 0 : 3.4
+                  mobileVersion ? 0 : 3.2
                 }s,background 0.4s ease-in-out,color 0.4s ease-in-out`,
               }}
               href="/DegnyMatthieuCV.pdf"
