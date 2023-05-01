@@ -79,10 +79,6 @@ export default function Home({
       }}
       className="fixed top-0 left-0 w-full h-screen  overflow-y-auto"
     >
-      <Head>
-        <title>My New Page Title</title>
-      </Head>
-
       <main
         className={`${
           isInViewrefSection3
@@ -98,6 +94,9 @@ export default function Home({
           }s cubic-bezier(0.17, 0.55, 0.55, 1)  ${mobileVersion ? "0" : "0.3"}s`,
         }}
       >
+        <Head>
+          <title>Home - Mathhieu Degny Portfolio</title>
+        </Head>
         <section className="min-h-screen lg:h-screen  flex flex-col justify-evenly">
           <h1 className="font-NotoSansGeorgian tracking-widest text-3xl w-full p-2 pr-16 sm:pr-0 md:text-5xl  2xl:w-3/5  ">
             <LayoutText delay={0.5} timeAnimation={0.04} animationColor={true}>

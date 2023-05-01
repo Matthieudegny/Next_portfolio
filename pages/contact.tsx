@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import Link from "next/link";
+import Head from "next/head";
 import { motion, useInView } from "framer-motion";
 
 import { SlSocialGithub } from "react-icons/sl";
@@ -31,6 +32,9 @@ const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVer
       className="fixed top-0 left-0 w-full h-screen  overflow-y-auto bg-black text-white"
     >
       <main className="relative min-h-screen w-screen  font-Montserrat_regular">
+        <Head>
+          <title>My New Page Title</title>
+        </Head>
         <h5
           ref={refSectionFormContact}
           className="font-NotoSansGeorgian min-h-30v mb-20 xl:mb-0 w-4/5 xl:w-4/5   md:tracking-widest text-2xl p-1 pr-8 sm:pr-0 md:text-3xl pl-5  sm:px-5rem px-24 pt-14 "
