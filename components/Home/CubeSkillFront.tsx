@@ -42,6 +42,7 @@ const CubeSkillFront = ({
           turnAnimationOff();
         }}
         style={{
+          willChange: "transform transformStyle",
           transformStyle: "preserve-3d",
           transform: animationOn ? transformCube : "perspective(1000px)",
           transition: "transform 1s",
@@ -51,6 +52,7 @@ const CubeSkillFront = ({
         {/* front faace */}
         <div
           style={{
+            willChange: "transform background color",
             transform: "translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)",
             color: !animationOn ? secondColor : background,
             transition:
@@ -63,6 +65,7 @@ const CubeSkillFront = ({
         {/* other */}
         <div
           style={{
+            willChange: "transform background",
             transform: transformFace,
             background: animationOn ? secondColor : background,
             transition: `${animationOn ? "2.5" : "1"}s background 0s`,

@@ -15,6 +15,7 @@ const Letter = ({ letter }: { letter: any }) => {
       onMouseLeave={turnOffAnimation}
       className="inline-block cursor-pointer"
       style={{
+        willChange: "transform perspective",
         perspective: "1000px",
         transform: animationOn ? "rotate(1080deg)" : "rotateY(0deg)",
         transition: "transform 1s ease-in-out",

@@ -128,6 +128,9 @@ const Nav = ({
             <div className="font-NotoSansGeorgian" onClick={() => setmenuNavMobile((prev) => !prev)}>
               <div className="flex flex-col opacity-1 leading-9 h-9 mb-3 overflow-hidden ">
                 <div
+                  style={{
+                    willChange: "transform, color",
+                  }}
                   className={`${
                     conditions_ToSet_NAv_In_White ? "text-white" : "text-black"
                   } inline-block leading-9 h-9 transition-transform duration-1000  cursor-pointer text-2xl ${
@@ -137,6 +140,9 @@ const Nav = ({
                   Menu
                 </div>
                 <div
+                  style={{
+                    willChange: "transform",
+                  }}
                   className={`inline-block text-white leading-9 h-9 transition-transform duration-500 cursor-pointer text-2xl   ${
                     menuNavMobile ? "-translate-y-full " : ""
                   }`}

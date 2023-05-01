@@ -51,6 +51,7 @@ const DiplayContainerh4 = ({
           {title}
           <span
             style={{
+              willChange: "width background-color",
               width: showskillsitems ? "100%" : "0%",
               transition: `width 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s`,
             }}
@@ -66,6 +67,7 @@ const DiplayContainerh4 = ({
               key={index}
               className={`inline-block text-sm sm:text-lg ml-6 overflow-hidden`}
               style={{
+                willChange: "transform color",
                 color: items.colors[index],
                 transition: `transform 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) ${items.delays[index]}`,
                 transform: !showskillsitems ? "translateY(120%)" : "translateY(-20%)",

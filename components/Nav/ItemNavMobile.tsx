@@ -43,6 +43,9 @@ const ItemNavMobile = ({
             viewBox="0 0 24 24"
             strokeWidth={2.5}
             stroke="white"
+            style={{
+              willChange: "width",
+            }}
             className={`w-0 h-8  duration-1000 ${mobilAnimationLink === pageString ? "w-8" : ""} `}
           >
             <path

@@ -24,6 +24,7 @@ const ArticleSkillsComponent = ({
   function getAnimationStyle(isInView: boolean, X: number) {
     if (!mobileVersion) {
       return {
+        willChange: "transform opacity",
         transform: isInView ? "none" : `translateX(${X}px)`,
         opacity: isInView ? 1 : 0,
         transition: `
@@ -39,11 +40,7 @@ const ArticleSkillsComponent = ({
     <section className="group relative flex flex-col w-full justify-evenly mb-28 sm:mb-0">
       <div className="flex flex-col items-center">
         {/* top */}
-        <div
-          ref={refskill1}
-          style={getAnimationStyle(isInViewSkill1, -200)}
-          className="w-full h-full 2xl:mr-35rem z-20 "
-        >
+        <div ref={refskill1} style={getAnimationStyle(isInViewSkill1, -200)} className="2xl:mr-35rem z-20 ">
           <CubeSkillFront
             mobileVersion={mobileVersion}
             isInViewrefSection3={isInViewrefSection3}
