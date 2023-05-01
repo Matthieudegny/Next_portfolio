@@ -103,7 +103,7 @@ export default function Home({
             mobileVersion ? "0.4" : "1.7"
           }s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color ${
             mobileVersion ? "0.4" : "0.7"
-          }s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s`,
+          }s cubic-bezier(0.17, 0.55, 0.55, 1)  ${mobileVersion ? "0" : "0.3"}s`,
         }}
       >
         <section className="min-h-screen lg:h-screen  flex flex-col justify-evenly">
