@@ -99,6 +99,7 @@ export default function Home({
             : "text-gray-900 bg-primary-color duration-200"
         } relative text-gray-900   min-h-screen w-screen flex flex-col justify-center  font-Montserrat_regular  sm:px-5rem xl:px-48`}
         style={{
+          willChange: "background-color",
           transition: `background-color ${
             mobileVersion ? "0.4" : "1.7"
           }s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color ${
