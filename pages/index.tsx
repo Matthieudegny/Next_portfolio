@@ -52,7 +52,8 @@ export default function Home({
 
   const refSection3 = useRef<HTMLDivElement>(null);
   const isInViewrefSection3 = useInView(refSection3, {
-    amount: 0.3,
+    amount: 0.1,
+    // amount: 0.3,
   });
 
   const refBottomPage = useRef<HTMLDivElement>(null);
@@ -134,7 +135,7 @@ export default function Home({
           />
         </section>
 
-        <section className=" " ref={refSection3}>
+        <section ref={refSection3}>
           <div className="h-screen flex flex-col xl:-mt-12  justify-center items-center m-auto ">
             <div
               className="relative w-full   md:h-75v lg:h-65v xl:h-75v flex flex-col md:flex-row "

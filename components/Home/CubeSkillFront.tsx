@@ -109,20 +109,21 @@ const CubeSkillFront = ({
           }}
           className={`absolute w-full h-full ${isInViewrefSection3 ? "bg-black" : "bg-primary-color"}`}
         >
-          <div className="h-full flex text-center justify-center items-center text-6xl">{title}</div>
+          <div className="h-full flex text-center justify-center items-center text-3xl">{title}</div>
         </div>
         {/* other */}
         <div
           style={{
             transform: animationOn ? "translateX(0%)" : "translateX(100%)",
+            opacity: animationOn ? 1 : 0,
             background: animationOn ? secondColor : background,
-            transition: `transform 1s,${animationOn ? "2.5" : "1"}s background 0s`,
+            transition: `transform 1s,opacity 2.5s,${animationOn ? "2.5" : "1"}s background 0s`,
           }}
-          className="absolute w-full h-full rounded-md animate-[gradient_7s_ease_infinite]"
+          className="absolute w-full h-full animate-[gradient_7s_ease_infinite]"
         >
-          <div className="h-full p-3 text-white flex flex-col text-center justify-center items-center text-2xl">
+          <div className="h-full p-3 text-white flex flex-col text-center justify-center items-center text-xl">
             <div className="leading-10">{text}</div>
-            <div className="flex mt-5">
+            <div className="flex flex-wrap justify-center mt-5">
               {listItems.map((item, index) => {
                 return (
                   <div

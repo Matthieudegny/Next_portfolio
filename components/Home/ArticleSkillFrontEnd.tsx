@@ -55,7 +55,7 @@ const ArticleSkillsComponent = ({
   }, [isInViewSkill1]);
 
   return (
-    <section className="group relative flex flex-col w-full justify-evenly">
+    <section className="group relative flex flex-col w-full justify-evenly mb-8 sm:mb-0">
       <div className="flex flex-col items-center">
         {/* top */}
         <div
