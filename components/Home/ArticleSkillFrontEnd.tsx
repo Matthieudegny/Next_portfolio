@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { useInView } from "framer-motion";
 
 import CubeSkillFront from "@/components/Home/CubeSkillFront";
-import CubeSkillFrontMobile from "@/components/Home/CubeSkillFrontMobile";
 
 import { frontSkills } from "@/data/itemsSkills";
 
