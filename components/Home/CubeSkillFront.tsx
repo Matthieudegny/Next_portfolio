@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const CubeSkillFront = ({
+  mobileVersion,
   isInViewrefSection3,
   transformCube,
   transformFace,
@@ -10,6 +11,7 @@ const CubeSkillFront = ({
   text,
   listItems,
 }: {
+  mobileVersion: boolean;
   isInViewrefSection3: boolean;
   transformCube: string;
   transformFace: string;
@@ -20,20 +22,6 @@ const CubeSkillFront = ({
   listItems: string[];
 }) => {
   const [animationOn, setAnimationOn] = useState(false);
-  const [mobileVersion, setmobilVersion] = useState(false);
-
-  const updateWidth = () => {
-    if (window.innerWidth < 640) {
-      setmobilVersion(true);
-    } else {
-      setmobilVersion(false);
-    }
-  };
-  useEffect(() => {
-    updateWidth();
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
-  }, []);
 
   const turnAnimationOff = () => {
     const timeOut = setTimeout(() => {
@@ -119,7 +107,7 @@ const CubeSkillFront = ({
             transition:
               "transform 1s,background-color 1.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
           }}
-          className={`absolute w-full h-full bg-primary-color`}
+          className={`absolute w-full h-full ${isInViewrefSection3 ? "bg-black" : "bg-primary-color"}`}
         >
           <div className="h-full flex text-center justify-center items-center text-6xl">{title}</div>
         </div>

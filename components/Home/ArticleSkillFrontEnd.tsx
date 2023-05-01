@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useInView } from "framer-motion";
 
 import CubeSkillFront from "@/components/Home/CubeSkillFront";
@@ -21,22 +21,50 @@ const ArticleSkillsComponent = ({
   const refskill4 = useRef<HTMLInputElement>(null);
   const isInViewSkill4 = useInView(refskill4, { amount: 0.7, once: true });
 
+  const [mobileVersion, setmobilVersion] = useState(false);
+
   function getAnimationStyle(isInView: boolean, X: number) {
-    return {
-      transform: isInView ? "none" : `translateX(${X}px)`,
-      opacity: isInView ? 1 : 0,
-      transition: `
-        transform 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0s,
-        opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s`,
-    };
+    if (!mobileVersion) {
+      return {
+        transform: isInView ? "none" : `translateX(${X}px)`,
+        opacity: isInView ? 1 : 0,
+        transition: `
+          transform 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0s,
+          opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s`,
+      };
+    } else {
+      return {};
+    }
   }
+
+  const updateWidth = () => {
+    if (window.innerWidth < 640) {
+      setmobilVersion(true);
+    } else {
+      setmobilVersion(false);
+    }
+  };
+  useEffect(() => {
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
+  useEffect(() => {
+    console.log("isInViewSkill1", isInViewSkill1);
+  }, [isInViewSkill1]);
 
   return (
     <section className="group relative flex flex-col w-full justify-evenly">
       <div className="flex flex-col items-center">
         {/* top */}
-        <div ref={refskill1} style={getAnimationStyle(isInViewSkill1, -200)} className="2xl:mr-35rem">
+        <div
+          ref={refskill1}
+          style={getAnimationStyle(isInViewSkill1, -200)}
+          className="w-full h-full 2xl:mr-35rem z-20 "
+        >
           <CubeSkillFront
+            mobileVersion={mobileVersion}
             isInViewrefSection3={isInViewrefSection3}
             transformCube={
               "perspective(95000px) rotateY(0deg) rotateX(-90deg) translateZ(160px) translateX(0px) translateY(0px)"
@@ -52,6 +80,7 @@ const ArticleSkillsComponent = ({
         {/* right */}
         <div ref={refskill2} style={getAnimationStyle(isInViewSkill2, 200)} className="2xl:ml-35rem">
           <CubeSkillFront
+            mobileVersion={mobileVersion}
             isInViewrefSection3={isInViewrefSection3}
             transformCube={
               "perspective(95000px) rotateY(-90deg) rotateX(0deg) translateZ(300px) translateX(0px) translateY(0px)"
@@ -69,6 +98,7 @@ const ArticleSkillsComponent = ({
         {/* bottom */}
         <div ref={refskill3} style={getAnimationStyle(isInViewSkill3, -200)} className="2xl:mr-35rem">
           <CubeSkillFront
+            mobileVersion={mobileVersion}
             isInViewrefSection3={isInViewrefSection3}
             transformCube={
               "perspective(95000px) rotateY(0deg) rotateX(90deg) translateZ(150px) translateX(0px) translateY(0px)"
@@ -86,6 +116,7 @@ const ArticleSkillsComponent = ({
         {/* left */}
         <div ref={refskill4} style={getAnimationStyle(isInViewSkill4, 200)} className="2xl:ml-35rem sm:mt-8">
           <CubeSkillFront
+            mobileVersion={mobileVersion}
             isInViewrefSection3={isInViewrefSection3}
             transformCube={
               "perspective(95000px) rotateY(90deg) rotateX(0deg) translateZ(300px) translateX(0px) translateY(0px)"
