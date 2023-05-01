@@ -32,6 +32,7 @@ const ItemProject = forwardRef<HTMLDivElement, ItemProjectProps>((props, ref) =>
             ref={ref}
             className="text-3xl sm:text-5xl xl:text-7xl cursor-pointer z-50 "
             style={{
+              willChange: "transform, opacity",
               opacity: isInViewprojectTitlte ? "1" : "0",
               transform: `scaleX(${isInViewprojectTitlte ? 1 : 0})`,
               transition:
@@ -51,6 +52,7 @@ const ItemProject = forwardRef<HTMLDivElement, ItemProjectProps>((props, ref) =>
             alt="my_image"
             className="hover:scale-105 absolute top-0 left-0 h-full w-full rounded-md z-30 cursor-pointer"
             style={{
+              willChange: "transform opacity",
               opacity: props.isInView ? "0.6" : "0",
               transform: `scaleX(${props.isInView ? 1 : 0})`,
               transition: "transform 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0s,opacity 0.8s ease-in-out 0.1s",

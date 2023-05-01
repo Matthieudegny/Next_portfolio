@@ -28,6 +28,7 @@ const ContainerLinkAnimated = ({
         <div
           className="absolute h-0.5 w-full top-0 left-0 bg-white z-50 transition-all duration-1000"
           style={{
+            willChange: "width",
             width: isInViewBorder ? "100%" : "0%",
             transition: "width 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
           }}
@@ -39,6 +40,7 @@ const ContainerLinkAnimated = ({
       <div
         className="absolute h-0.5 w-full bottom-0 left-0 bg-white z-50 transition-all duration-1000"
         style={{
+          willChange: "width",
           width: isInViewBorder ? "100%" : "0%",
           transition: "width 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
         }}
@@ -70,13 +72,14 @@ const ContainerLinkAnimated = ({
           if (reftest.current) reftest.current.style.transform = "translateY(0px)";
         }}
         style={{
+          willChange: "transform, opacity, color",
           transform: isInViewText ? "none" : "translateY(50px)",
           opacity: isInViewText ? 1 : 0,
           color: !animationOn ? "white" : "black",
           transition:
             "transform 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s, opacity 0.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s,color 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
         }}
-        className={` flex  items-center h-20v w-full absolute top-0 left-0 z-10 ml-2 sm:ml-16 lg:ml-48 font-NotoSansGeorgian  text-5xl tracking-widest`}
+        className={` flex  items-center h-20v w-full absolute top-0 left-0 z-10 ml-2 sm:ml-16 lg:ml-48 font-NotoSansGeorgian  text-2xl lg:text-5xl tracking-widest`}
       >
         {title}
       </div>

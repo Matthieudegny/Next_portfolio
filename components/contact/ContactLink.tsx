@@ -16,6 +16,7 @@ function ContactLink({ href, logo, isInViewSectionLinksContact, delay }: Contact
     <Link
       className="p-4  w-28 h-28 rounded-lg inline-block relative"
       style={{
+        willChange: "transform opacity background",
         transform: isInViewSectionLinksContact ? "none" : `translateX(200px)`,
         opacity: isInViewSectionLinksContact ? 1 : 0,
         transition: `transform 0.3s ease-in-out  ${delay}s,opacity 0.1s ease-in-out  ${delay}s,background 0.4s ease-in-out`,
@@ -28,6 +29,7 @@ function ContactLink({ href, logo, isInViewSectionLinksContact, delay }: Contact
     >
       <div
         style={{
+          willChange: "opacity background",
           opacity: animationOn ? 1 : 0,
           background: "linear-gradient(234deg, rgba(109,112,113,1) 30%, rgba(0,0,0,1) 71%)",
           transition: "opacity 0.9s ease-in-out",

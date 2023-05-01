@@ -103,6 +103,7 @@ const CubeSkillFront = ({
         {/* front faace */}
         <div
           style={{
+            willChange: "transform background-color color",
             transform: animationOn ? "translateX(-100%)" : "translateX(0%)",
             color: !animationOn ? secondColor : background,
             transition: `transform 1s,background-color ${
@@ -121,6 +122,7 @@ const CubeSkillFront = ({
         {/* other */}
         <div
           style={{
+            willChange: "transform opacity background",
             transform: animationOn ? "translateX(0%)" : "translateX(100%)",
             opacity: animationOn ? 1 : 0,
             background: animationOn ? secondColor : background,
