@@ -55,6 +55,7 @@ export default function Home({
   const refSection3 = useRef<HTMLDivElement>(null);
   const isInViewrefSection3 = useInView(refSection3, {
     amount: mobileVersion ? 0.1 : 0.3,
+    margin: mobileVersion ? "200px 0px 0px 0px" : "",
   });
 
   const refBottomPage = useRef<HTMLDivElement>(null);
@@ -98,8 +99,9 @@ export default function Home({
             : "text-gray-900 bg-primary-color duration-200"
         } relative text-gray-900   min-h-screen w-screen flex flex-col justify-center  font-Montserrat_regular  sm:px-5rem xl:px-48`}
         style={{
-          transition:
-            "background-color 1.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+          transition: `background-color ${
+            mobileVersion ? "0.4" : "1.7"
+          }s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s`,
         }}
       >
         <section className="min-h-screen lg:h-screen  flex flex-col justify-evenly">
