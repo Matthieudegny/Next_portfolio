@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 
 import { SlSocialGithub } from "react-icons/sl";
 import { CiLinkedin } from "react-icons/ci";
-import { TfiTwitter } from "react-icons/tfi";
+import { BsUpload } from "react-icons/bs";
 
 //components
 import LayoutText from "../components/LayoutText";
@@ -63,12 +63,6 @@ const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVer
               isInViewSectionLinksContact={isInViewSectionForm}
               delay={mobileVersion ? 0 : 3}
             />
-            <ContactLink
-              href={"https://twitter.com/MatthieuDevCode"}
-              logo={TfiTwitter}
-              isInViewSectionLinksContact={isInViewSectionForm}
-              delay={mobileVersion ? 0 : 3.2}
-            />
             <Link
               className="p-4 h-28 w-28 flex justify-center items-center hover:bg-gray-400 hover:text-black rounded-lg"
               style={{
@@ -85,7 +79,10 @@ const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVer
               download
               target="_blank"
             >
-              <button className="text-6xl font-Montserrat_thin">CV</button>
+              <button className="flex flex-col justify-center items-center text-6xl font-Montserrat_thin">
+                CV
+                <BsUpload size={20} />
+              </button>
             </Link>
           </div>
         </div>
