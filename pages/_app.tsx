@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import Nav from "../components/Nav/Nav";
 
 import type { AppProps } from "next/app";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App({ Component, pageProps, router }: AppProps) {
   //turn off animation card section2
@@ -52,6 +53,8 @@ export default function App({ Component, pageProps, router }: AppProps) {
           setcurrentPage={setcurrentPage}
           {...pageProps}
         />
+
+        <Analytics />
       </AnimatePresence>
     </div>
   );
