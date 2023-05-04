@@ -25,6 +25,7 @@ module.exports = {
         "40v": "40vh",
         "45v": "45vh",
         "50v": "50vh",
+        "55v": "55vh",
         "60v": "60vh",
         "65v": "65vh",
         "70v": "70vh",
@@ -41,6 +42,7 @@ module.exports = {
       width: {
         "50%": "50%",
         "600px": "600px",
+        "98%": "98%",
       },
       left: {
         "15%": "15%",
@@ -51,6 +53,7 @@ module.exports = {
       },
       padding: {
         "30vw": "30vw",
+        "4rem": "4rem",
         "5rem": "5rem",
       },
       margin: {

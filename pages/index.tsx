@@ -83,7 +83,7 @@ export default function Home({
           isInViewrefSection3
             ? "text-white bg-black duration-200"
             : "text-gray-900 bg-primary-color duration-200"
-        } relative text-gray-900   min-h-screen w-screen flex flex-col justify-center  font-Montserrat_regular  sm:px-5rem xl:px-48`}
+        } relative text-gray-900   min-h-screen w-screen flex flex-col justify-center  font-Montserrat_regular  sm:px-5rem xl:px-44`}
         style={{
           willChange: "background-color",
           transition: `background-color ${
@@ -133,14 +133,14 @@ export default function Home({
         </section>
 
         <section ref={refSection3}>
-          <div className="h-screen flex flex-col xl:-mt-12  justify-center items-center m-auto ">
+          <div className="h-screen flex flex-col  justify-center items-center m-auto ">
             <div
-              className="relative w-full   md:h-75v lg:h-65v xl:h-75v flex flex-col md:flex-row "
+              className="relative w-full   md:h-60v lg:h-50v xl:h-50v flex flex-col md:flex-row "
               ref={refSkillsTexts}
             >
               {/* border top horyzontale */}
               <div
-                className="absolute h-px md:w-full  top-0 left-0 bg-slate-400 z-50 scale-0"
+                className="absolute h-px md:w-98%  top-0 left-0 bg-slate-400 z-50 scale-0"
                 style={{
                   transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
                   transformOrigin: "center",
@@ -223,7 +223,7 @@ export default function Home({
                     style={{
                       transition: "width 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.8s",
 
-                      width: isInViewSkillstLines ? "100%" : "0%",
+                      width: isInViewSkillstLines ? "98%" : "0%",
                     }}
                   ></div>
                 </div>
@@ -240,7 +240,7 @@ export default function Home({
                 {/* border bottom-right horyzontal */}
                 <div
                   ref={refSkillsLines}
-                  className="absolute md:w-full h-px bottom-0 left-0 bg-slate-400 transition-all duration-1000"
+                  className="absolute md:w-98% h-px bottom-0 left-0 bg-slate-400 transition-all duration-1000"
                   style={{
                     transition: "transform 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 1.2s",
                     transformOrigin: "left",
