@@ -9,7 +9,7 @@ export const projectsItems: itemsProjects[] = [
     description:
       "Please be informed that the app is still available, but the generation of pictures is currently not functional due to the end of the free access to the API. I apologize for any inconvenience this may cause. This web app utilizes the DALL-E API to create unique and personalized images based on user inputs. With a cloud-based storage feature and a visually appealing gallery, users can easily save, share, and browse their creations.",
     frontEnd: "React, Tailwind CSS, react-toastify",
-    backEnd: "Node.js, Express.js, MongoDB,openAI API, cloudinary API",
+    backEnd: "Node.js, Express.js, MongoDB, openAI API, cloudinary API",
     linkwebsite: "https://dalle-app.vercel.app/",
     linkRepoGithub: "https://github.com/Matthieudegny/MERN-IA-App-Front",
     id: 1,
