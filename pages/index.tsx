@@ -5,7 +5,6 @@ import React, { useRef, useEffect } from "react";
 
 //components
 import LayoutText from "../components/LayoutText";
-import LayoutH3 from "../components/LayoutH3";
 import ArticleSkillsComponent from "@/components/Home/ArticleSkillFrontEnd";
 import ContainerLinkAnimated from "@/components/Home/ContainerLinkAnimated";
 import Footer from "@/components/Footer";
@@ -128,7 +127,7 @@ export default function Home({
             }}
             className="pt-10 pb-14"
           >
-            <LayoutH3>FRONT-END:</LayoutH3>
+            FRONT-END:
           </div>
           <ArticleSkillsComponent mobileVersion={mobileVersion} isInViewrefSection3={isInViewrefSection3} />
         </section>
@@ -157,7 +156,7 @@ export default function Home({
                     "transform 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s, opacity 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s",
                 }}
               >
-                <LayoutH3>Back-end:</LayoutH3>
+                Back-end:
                 <DiplayContainerh4
                   title={"API creation:"}
                   text={
@@ -187,7 +186,7 @@ export default function Home({
                       "transform 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s,opacity 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s",
                   }}
                 >
-                  <LayoutH3>Structure:</LayoutH3>
+                  Structure:
                   <DiplayContainerh4
                     title={"Clean coding:"}
                     text={
@@ -209,7 +208,7 @@ export default function Home({
                       "transform 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s,opacity 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s",
                   }}
                 >
-                  <LayoutH3>Versioning:</LayoutH3>
+                  Versioning:
                   <DiplayContainerh4
                     title={"version control:"}
                     text={
