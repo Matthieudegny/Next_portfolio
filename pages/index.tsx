@@ -109,7 +109,7 @@ export default function Home({
 
           <h2 className="min-w-full p-2 font-Montserrat_thin pr-16 sm:pr-0  md:pl-20 2xl:pl-30vw text-2xl md:text-4xl ">
             <LayoutText delay={1.3} timeAnimation={0.03} animationColor={false}>
-              As a full stack developer with expertise in React, Node.js, Next.js, and TypeScript, I'm
+              As a full stack developer with expertise in React, Node.js, Next.js, and TypeScript. I'm
               passionate about crafting user-friendly interfaces that bring ideas to life. What i can bring to
               you:
             </LayoutText>
