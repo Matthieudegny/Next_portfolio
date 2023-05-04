@@ -118,7 +118,7 @@ export default function Home({
         </section>
 
         <section className="2xl:min-h-screen 2xl:-mt-8 mt-5 pb-8 flex flex-col ">
-          <div
+          <h5
             ref={refTitle2}
             style={{
               transform: isInViewrefTitle2 ? "translateX(0)" : "translateX(-200px)",
@@ -128,7 +128,7 @@ export default function Home({
             className="pt-10 pb-14"
           >
             FRONT-END:
-          </div>
+          </h5>
           <ArticleSkillsComponent mobileVersion={mobileVersion} isInViewrefSection3={isInViewrefSection3} />
         </section>
 
@@ -156,7 +156,7 @@ export default function Home({
                     "transform 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s, opacity 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s",
                 }}
               >
-                Back-end:
+                <h5>Back-end:</h5>
                 <DiplayContainerh4
                   title={"API creation:"}
                   text={
@@ -186,7 +186,7 @@ export default function Home({
                       "transform 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s,opacity 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s",
                   }}
                 >
-                  Structure:
+                  <h5>Structure:</h5>
                   <DiplayContainerh4
                     title={"Clean coding:"}
                     text={
@@ -208,7 +208,7 @@ export default function Home({
                       "transform 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s,opacity 0.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s",
                   }}
                 >
-                  Versioning:
+                  <h5>Versioning:</h5>
                   <DiplayContainerh4
                     title={"version control:"}
                     text={

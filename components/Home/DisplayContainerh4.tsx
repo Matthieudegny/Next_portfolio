@@ -47,7 +47,7 @@ const DiplayContainerh4 = ({
       className="group/item cursor-pointer  overflow-hidden "
     >
       <h4>
-        <span className="relative inline-block mb-2 text-3xl tracking-wider">
+        {/* <span className="relative inline-block mb-2 text-2xl tracking-wider">
           {title}
           <span
             style={{
@@ -57,7 +57,7 @@ const DiplayContainerh4 = ({
             }}
             className={`absolute bottom-0 left-0 h-1px ${isInViewrefSection3 ? "bg-white" : "bg-black"}`}
           ></span>
-        </span>
+        </span> */}
         <span className="block">{text}</span>
       </h4>
       <div className="leading-7 h-7 ">

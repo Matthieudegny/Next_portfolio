@@ -66,6 +66,13 @@ h4 {
   transition: 0s;
 }
 
+h5 {
+  font-size: 2rem;
+  font-family: "Montserrat_regular";
+  letter-spacing: 0.2rem;
+  margin-left: 0.7vw;
+}
+
 @media (max-width: 1280px) {
   h3 {
     font-size: 2rem;
@@ -87,6 +94,10 @@ h4 {
     font-size: 1rem;
     line-height: 1.5rem;
     padding-right: 4rem;
+  }
+  h5 {
+    font-size: 1.5rem;
+    margin-left: 4vw;
   }
 }
 html,
