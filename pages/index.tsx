@@ -100,7 +100,7 @@ export default function Home({
           <h1 className="font-NotoSansGeorgian tracking-widest text-3xl w-full p-2 pr-16 sm:pr-0 md:text-5xl  2xl:w-3/5  ">
             <LayoutText delay={0.5} timeAnimation={0.04} animationColor={true}>
               Hello, I'm Matthieu, a full stack developer specialized, with modern technologies built around
-              the Javascript framework.
+              Javascript.
             </LayoutText>
           </h1>
           <h1>
