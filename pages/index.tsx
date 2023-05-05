@@ -99,7 +99,7 @@ export default function Home({
         <section className="min-h-screen lg:h-screen  flex flex-col justify-evenly">
           <h1 className="font-NotoSansGeorgian tracking-widest text-3xl w-full p-2 pr-16 sm:pr-0 md:text-5xl  2xl:w-3/5  ">
             <LayoutText delay={0.5} timeAnimation={0.04} animationColor={true}>
-              Hello, I'm Matthieu, a front end Developer / in progress to be full stack specialized, with
+              Hello, I'm Matthieu, a front end Developer / in progress to be full stack, specialized with
               modern technologies built around Javascript.
             </LayoutText>
           </h1>
@@ -109,7 +109,7 @@ export default function Home({
 
           <h2 className="min-w-full p-2 font-Montserrat_thin pr-16 sm:pr-0  md:pl-20 2xl:pl-30vw text-2xl md:text-4xl ">
             <LayoutText delay={1.3} timeAnimation={0.03} animationColor={false}>
-              As a full stack developer with expertise in React, Node.js, Next.js, and TypeScript. I'm
+              As a futur full stack developer with expertise in React, Node.js, Next.js, and TypeScript. I'm
               passionate about crafting user-friendly interfaces that bring ideas to life. What i can bring to
               you:
             </LayoutText>
