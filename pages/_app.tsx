@@ -1,6 +1,7 @@
 import "@/styles/app.css";
 import { AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import Head from "next/head";
 
 import Nav from "../components/Nav/Nav";
 
@@ -35,6 +36,10 @@ export default function App({ Component, pageProps, router }: AppProps) {
 
   return (
     <div className="relative min-h-screen h-full overflow-y-auto py-24 px-12 lg:px-48">
+      <Head>
+        <title>Matthieu DEGNY Portfolio</title>
+        <meta name="Matthieu DEGNY Portfolio" content="Matthieu DEGNY Portfolio" />
+      </Head>
       {/* initial false => at the mount of the component no animation */}
       <AnimatePresence initial={false}>
         <Nav
