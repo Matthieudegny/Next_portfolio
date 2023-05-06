@@ -70,7 +70,7 @@ const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVer
                 transform: isInViewSectionForm ? "none" : `translateX(200px)`,
                 opacity: isInViewSectionForm ? 1 : 0,
                 transition: `transform 0.5s ease-in-out  ${
-                  mobileVersion ? 0 : 3.4
+                  mobileVersion ? 0 : 3.2
                 }s,opacity 0.3s ease-in-out ${
                   mobileVersion ? 0 : 3.2
                 }s,background 0.4s ease-in-out,color 0.4s ease-in-out`,
