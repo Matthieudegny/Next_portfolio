@@ -94,7 +94,7 @@ export default function Home({
         }}
       >
         <Head>
-          <title>Home - Mathhieu Degny Portfolio</title>
+          <title>Home - Matthieu Degny Portfolio</title>
         </Head>
         <section className="min-h-screen lg:h-screen  flex flex-col justify-evenly">
           <h1 className="font-NotoSansGeorgian tracking-widest text-3xl w-full p-2 pr-16 sm:pr-0 md:text-5xl  2xl:w-3/5  ">
