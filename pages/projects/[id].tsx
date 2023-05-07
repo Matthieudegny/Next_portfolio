@@ -157,15 +157,20 @@ const project = () => {
             </div>
 
             <div className="flex justify-center">
-              <a
-                className="text-3xl m-8 text-center font-semibold"
-                target="_blank"
-                href={projectObject.linkwebsite}
-                rel="noopener noreferrer"
-                style={animationStyleLinkWebsite}
-              >
-                Visit website
-              </a>
+              {projectObject.linkwebsite !== "" ? (
+                <a
+                  className="text-3xl m-8 text-center font-semibold"
+                  target="_blank"
+                  href={projectObject.linkwebsite}
+                  rel="noopener noreferrer"
+                  style={animationStyleLinkWebsite}
+                >
+                  Visit website
+                </a>
+              ) : (
+                ""
+              )}
+
               <a
                 className="text-3xl  m-8 text-center font-semibold"
                 target="_blank"
