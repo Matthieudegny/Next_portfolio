@@ -104,14 +104,6 @@ const Nav = ({
   const styleNav = "inline-block translate-x-full opacity-0 leading-9 h-9 overflow-hidden mb-5 ";
   const conditions_ToSet_NAv_In_White = (lightThemeNav && currentPage === "/") || currentPage === "/contact";
 
-  useEffect(() => {
-    console.log("lightThemeNav", lightThemeNav);
-  }, [lightThemeNav]);
-
-  useEffect(() => {
-    console.log("currentPage", currentPage);
-  }, [currentPage]);
-
   return (
     <>
       <motion.nav>

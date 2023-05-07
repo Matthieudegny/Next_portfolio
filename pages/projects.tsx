@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 //data
 import { projectsItems } from "../data/itemsProjects";
 
-const projects = () => {
+const projects = ({ lastPositionXY }: { lastPositionXY: any }) => {
   const refSectionProjects = useRef<HTMLInputElement>(null);
   const isInViewSectionProjects = useInView(refSectionProjects, {
     margin: "0px 0px 0px 0px",

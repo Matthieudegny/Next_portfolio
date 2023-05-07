@@ -12,6 +12,7 @@ import LayoutText from "../components/LayoutText";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/contact/ContactForm";
 import ContactLink from "@/components/contact/ContactLink";
+import CursorAnim from "@/components/CursorAnim";
 
 const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVersion: boolean }) => {
   const refSectionFormContact = useRef<HTMLInputElement>(null);
@@ -35,9 +36,11 @@ const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVer
         <Head>
           <title>Contact - Matthieu Degny Portfolio</title>
         </Head>
+        {!mobileVersion && !padVersion && <CursorAnim />}
+
         <h5
           ref={refSectionFormContact}
-          className="font-NotoSansGeorgian min-h-30v mb-20 xl:mb-0 w-4/5 xl:w-4/5   md:tracking-widest text-2xl p-1 pr-8 sm:pr-0 md:text-3xl pl-5  sm:px-5rem px-24 pt-14 "
+          className="font-NotoSansGeorgian min-h-30v mb-20 xl:mb-0 w-4/5 xl:w-4/5   md:tracking-widest text-2xl p-1 pr-8 sm:pr-0 md:text-3xl pl-5  sm:px-5rem px-24 pt-14 cursor-default"
         >
           <LayoutText delay={0.5} timeAnimation={0.02} animationColor={false}>
             Ready to collaborate with you! Whether you have an idea in mind, a project to discuss, or just
@@ -46,7 +49,7 @@ const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVer
           </LayoutText>
         </h5>
 
-        <div className="flex flex-col lg:flex-row  justify-between">
+        <div className="flex flex-col lg:flex-row  justify-between 2xl:mt-36">
           <div className="w-full lg:w-4/6 lg:pl-20">
             <ContactForm mobileVersion={mobileVersion} isInViewSectionForm={isInViewSectionForm} />
           </div>

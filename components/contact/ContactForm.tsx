@@ -33,10 +33,10 @@ function ContactForm({
     }
     const timeout = setTimeout(() => {
       setResponseEmail("");
-    }, 5000);
+    }, 10000);
     const timeout2 = setTimeout(() => {
       setmessageToDisplayFromEmailResponse("");
-    }, 6000);
+    }, 12000);
     return () => {
       clearTimeout(timeout), clearTimeout(timeout2);
     };
@@ -78,6 +78,15 @@ function ContactForm({
     transition: `width 1s cubic-bezier(0.17, 0.55, 0.55, 1) ${delay}s`,
   });
 
+  const animationOff = () => {
+    const timeout = setTimeout(() => {
+      setaniamtionButton(false);
+    }, 1000);
+    return () => {
+      clearTimeout(timeout);
+    };
+  };
+
   return (
     <form
       autoComplete="off"
@@ -97,7 +106,7 @@ function ContactForm({
       <div
         className={`absolute w-full ${
           mobileVersion ? "-bottom-5" : "top-0"
-        } xl:top-5 w-4/5 left-1/2 -translate-x-1/2 z-10 text-center `}
+        } xl:top-5 w-4/5 left-1/2 -translate-x-1/2 z-10 text-center md:text-2xl `}
       >
         {messageToDisplayFromEmailResponse}
       </div>
@@ -146,7 +155,7 @@ function ContactForm({
         <div
           className="overflow-hidden h-8"
           onMouseEnter={() => setaniamtionButton(true)}
-          onMouseLeave={() => setaniamtionButton(false)}
+          onMouseLeave={animationOff}
         >
           <AnimationButton Anim={aniamtionButton}>SEND MESSAGE</AnimationButton>
         </div>
