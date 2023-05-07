@@ -12,7 +12,7 @@ import LayoutText from "../components/LayoutText";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/contact/ContactForm";
 import ContactLink from "@/components/contact/ContactLink";
-import CursorAnim from "@/components/CursorAnim";
+import CursorAnim from "@/components/contact/CursorAnim";
 
 const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVersion: boolean }) => {
   const refSectionFormContact = useRef<HTMLInputElement>(null);

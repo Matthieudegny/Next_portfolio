@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 
 import Nav from "../components/Nav/Nav";
-import CursorAnim from "../components/CursorAnim";
+import CursorAnim from "../components/contact/CursorAnim";
 
 import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/react";

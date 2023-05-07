@@ -2,16 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 
 interface CursorProps {}
 
-function Circle({
-  size,
-  transition,
-  difference,
-}: {
-  size: number;
-  transition: number;
-  lightThemeNav: boolean;
-  difference: number;
-}) {
+function Circle({ size, transition, difference }: { size: number; transition: number; difference: number }) {
   const circleRef = useRef<HTMLDivElement>(null);
   const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
 
