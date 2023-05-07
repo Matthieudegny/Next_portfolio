@@ -20,7 +20,7 @@ const projects = ({ lastPositionXY }: { lastPositionXY: any }) => {
 
   const project1 = useRef<HTMLInputElement>(null);
   const isInViewproject1 = useInView(project1, {
-    margin: "-210px 100px -180px 0px",
+    margin: "-300px 100px -300px 0px",
     amount: 0.7,
   });
 
