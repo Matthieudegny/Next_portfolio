@@ -1,5 +1,3 @@
-import { Url } from "next/dist/shared/lib/router/router";
-
 export type articleSkills = {
   mobileVersion: boolean;
 };
@@ -28,6 +26,7 @@ export type itemsProjects = {
   linkRepoGithub: string;
   id: number;
   imageTailwind: string;
+  goal: string;
 };
 
 export type ItemProjectProps = {

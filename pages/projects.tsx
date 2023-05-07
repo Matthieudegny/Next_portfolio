@@ -33,7 +33,13 @@ const projects = () => {
   const project3 = useRef<HTMLInputElement>(null);
   const isInViewproject3 = useInView(project3, {
     margin: "-210px 100px -210px 0px",
-    amount: 0.4,
+    amount: 0.7,
+  });
+
+  const project4 = useRef<HTMLInputElement>(null);
+  const isInViewproject4 = useInView(project4, {
+    margin: "-210px 100px -210px 0px",
+    amount: 0.7,
   });
 
   return (
@@ -50,6 +56,7 @@ const projects = () => {
           <Item_Numero_SideBar_Project isInView={isInViewproject1} number={1} />
           <Item_Numero_SideBar_Project isInView={isInViewproject2} number={2} />
           <Item_Numero_SideBar_Project isInView={isInViewproject3} number={3} />
+          <Item_Numero_SideBar_Project isInView={isInViewproject4} number={4} />
         </div>
       </div>
 
@@ -107,6 +114,17 @@ const projects = () => {
               title={projectsItems[2].title}
               marginBottom={projectsItems[2].marginBottom}
               id={projectsItems[2].id}
+            />
+
+            <ItemProject
+              ref={project4}
+              isInView={isInViewproject4}
+              key={projectsItems[3].title}
+              image={projectsItems[3].image}
+              link={projectsItems[3].link}
+              title={projectsItems[3].title}
+              marginBottom={projectsItems[3].marginBottom}
+              id={projectsItems[3].id}
             />
           </section>
         </main>

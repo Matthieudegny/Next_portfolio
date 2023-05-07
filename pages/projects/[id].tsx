@@ -23,6 +23,7 @@ const project = () => {
     linkRepoGithub: "",
     id: 0,
     imageTailwind: "",
+    goal: "",
   });
   const [titleNextProject, settitleNextProject] = useState("");
 
@@ -60,11 +61,13 @@ const project = () => {
   };
   const animationStyleTitle = returnAnimation(1.4, "y");
   const animationStyleDescription = returnAnimation(1.6, "y");
-  const animationStyleFrontEndTitle = returnAnimation(1.8, "x");
-  const animationStyleFrontEnd = returnAnimation(2.2, "x");
-  const animationStyleBackEndTitle = returnAnimation(2.4, "x");
-  const animationStyleBackEnd = returnAnimation(2.6, "x");
-  const animationStyleLinkWebsite = returnAnimation(2.8, "x");
+  const animationStyleGoalTitle = returnAnimation(1.8, "x");
+  const animationStyleGoalDescription = returnAnimation(2, "x");
+  const animationStyleFrontEndTitle = returnAnimation(2.2, "x");
+  const animationStyleFrontEnd = returnAnimation(2.4, "x");
+  const animationStyleBackEndTitle = returnAnimation(2.6, "x");
+  const animationStyleBackEnd = returnAnimation(2.8, "x");
+  const animationStyleLinkWebsite = returnAnimation(3, "x");
 
   const id = router.query.id ?? indexProject;
   const indexProjectNext = +id === projectsItems.length ? 1 : +id + 1;
@@ -124,6 +127,17 @@ const project = () => {
               className="w-4/5 pl-8  md:pl-5  text-xl  xl:pr-14  leading-7 xl:leading-10"
             >
               {projectObject.description}
+            </div>
+            <div className="text-2xl p-8">
+              <span style={animationStyleGoalTitle} className="block pb-2 text-2xl">
+                Main goal:
+              </span>
+              <div
+                style={animationStyleGoalDescription}
+                className=" w-4/5 lg:p-5 text-xl xl:pr-14 tracking-wide "
+              >
+                {projectObject.goal}
+              </div>
             </div>
             <div className="text-2xl p-8">
               <span style={animationStyleFrontEndTitle} className="block pb-2 text-2xl">

@@ -76,6 +76,7 @@ module.exports = {
         dalleAssistant: "url('../public/dalleAssistant.png')",
         shareYourPrompt: "url('../public/shareYourPrompt.png')",
         myDashboard: "url('../public/myDashboard.png')",
+        myPortfolio: "url('../public/myPortfolio.png')",
       },
       animation: {
         gradient: "gradient 7s ease infinite",
