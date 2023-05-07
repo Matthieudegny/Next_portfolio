@@ -49,7 +49,7 @@ const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVer
           </LayoutText>
         </h5>
 
-        <div className="flex flex-col lg:flex-row  justify-between 2xl:mt-36">
+        <div className="flex flex-col lg:flex-row  justify-between">
           <div className="w-full lg:w-4/6 lg:pl-20">
             <ContactForm mobileVersion={mobileVersion} isInViewSectionForm={isInViewSectionForm} />
           </div>
