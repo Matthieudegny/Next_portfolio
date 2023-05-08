@@ -119,7 +119,7 @@ function ContactForm({
           transform: responseEmail !== "" ? "scaleX(1)" : "scaleX(0)",
           transition: "transform 1s ease-in-out",
         }}
-        className={`absolute w-full h-140px bottom-12 -ml-5  md:-top-10 xl:top-20 -translate-x-1/2 z-10 flex justify-start items-start md:justify-center md:items-center text-center text-base `}
+        className={`absolute w-full h-140px bottom-12 -ml-5  md:-top-10 xl:top-0 -translate-x-1/2 z-10 flex justify-start items-start md:justify-center md:items-center text-center text-base `}
       >
         {messageToDisplayFromEmailResponse}
       </div>
