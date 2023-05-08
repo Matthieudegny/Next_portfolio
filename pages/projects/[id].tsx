@@ -97,8 +97,8 @@ const project = () => {
         <Head>
           <title>{projectObject.title} - Matthieu Degny Portfolio</title>
         </Head>
-        <div className={`md:h-screen w-full  flex flex-col md:flex-row justify-center items-center text-7xl`}>
-          <div className={`w-full md:w-3/6 h-screen relative`}>
+        <div className={`lg:h-screen w-full  flex flex-col lg:flex-row justify-center items-center text-7xl`}>
+          <div className={`w-full lg:w-3/6 h-screen relative`}>
             {projectObject.image ? (
               <img className="h-full w-full" src={projectObject.image} alt="my_image" />
             ) : (
@@ -115,7 +115,7 @@ const project = () => {
             ></div>
           </div>
 
-          <div className="`w-full min-h-screen md:w-3/6  flex flex-col justify-evenly ">
+          <div className="`w-full min-h-screen  lg:w-3/6  flex flex-col justify-evenly ">
             <div
               style={animationStyleTitle}
               className="w-4/5 pl-8 md:pl-5 mb-6 md:mb-0 mt-6 md:mt-0 text-2xl md:text-4xl font-bold tracking-widest"
@@ -128,18 +128,18 @@ const project = () => {
             >
               {projectObject.description}
             </div>
-            <div className="text-2xl p-8">
+            <div className="text-2xl pl-8 pr-8">
               <span style={animationStyleGoalTitle} className="block pb-2 text-2xl">
                 Main goal:
               </span>
               <div
                 style={animationStyleGoalDescription}
-                className=" w-4/5 lg:p-5 text-xl xl:pr-14 tracking-wide leading-7 xl:leading-10"
+                className=" w-3/4 lg:p-5 text-xl xl:pr-14 tracking-wide leading-7 xl:leading-10"
               >
                 {projectObject.goal}
               </div>
             </div>
-            <div className="text-2xl p-8">
+            <div className="text-2xl pl-8 pr-8">
               <span style={animationStyleFrontEndTitle} className="block pb-2 text-2xl">
                 Front-end :
               </span>
@@ -147,7 +147,7 @@ const project = () => {
                 {projectObject.frontEnd}.
               </div>
             </div>
-            <div className="text-2xl p-8">
+            <div className="text-2xl pl-8 pr-8">
               <span style={animationStyleBackEndTitle} className="block pb-2 text-2xl">
                 Back-end :
               </span>
@@ -156,10 +156,10 @@ const project = () => {
               </div>
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex justify-evenly items-center mt-8 md:mt-0">
               {projectObject.linkwebsite !== "" ? (
                 <a
-                  className="text-3xl m-8 text-center font-semibold"
+                  className="text-2xl lg:text-3xl text-center font-semibold"
                   target="_blank"
                   href={projectObject.linkwebsite}
                   rel="noopener noreferrer"
@@ -172,7 +172,7 @@ const project = () => {
               )}
 
               <a
-                className="text-3xl  m-8 text-center font-semibold"
+                className="text-2xl lg:text-3xl text-center font-semibold"
                 target="_blank"
                 href={projectObject.linkRepoGithub}
                 rel="noopener noreferrer"
