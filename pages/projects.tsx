@@ -18,29 +18,25 @@ const projects = ({ lastPositionXY }: { lastPositionXY: any }) => {
     amount: 0.25,
   });
 
-  const project1 = useRef<HTMLInputElement>(null);
-  const isInViewproject1 = useInView(project1, {
-    margin: "-210px 100px -210px 0px",
+  const amountProjects = {
+    margin: "-210px 100px -280px 0px",
     amount: 0.7,
-  });
+  };
+
+  const project1 = useRef<HTMLInputElement>(null);
+  const isInViewproject1 = useInView(project1, amountProjects);
 
   const project2 = useRef<HTMLInputElement>(null);
-  const isInViewproject2 = useInView(project2, {
-    margin: "-210px 100px -210px 0px",
-    amount: 0.7,
-  });
+  const isInViewproject2 = useInView(project2, amountProjects);
 
   const project3 = useRef<HTMLInputElement>(null);
-  const isInViewproject3 = useInView(project3, {
-    margin: "-210px 100px -210px 0px",
-    amount: 0.7,
-  });
+  const isInViewproject3 = useInView(project3, amountProjects);
 
   const project4 = useRef<HTMLInputElement>(null);
-  const isInViewproject4 = useInView(project4, {
-    margin: "-210px 100px -210px 0px",
-    amount: 0.7,
-  });
+  const isInViewproject4 = useInView(project4, amountProjects);
+
+  const project5 = useRef<HTMLInputElement>(null);
+  const isInViewproject5 = useInView(project5, amountProjects);
 
   return (
     <>
@@ -57,6 +53,7 @@ const projects = ({ lastPositionXY }: { lastPositionXY: any }) => {
           <Item_Numero_SideBar_Project isInView={isInViewproject2} number={2} />
           <Item_Numero_SideBar_Project isInView={isInViewproject3} number={3} />
           <Item_Numero_SideBar_Project isInView={isInViewproject4} number={4} />
+          <Item_Numero_SideBar_Project isInView={isInViewproject5} number={5} />
         </div>
       </div>
 
@@ -125,6 +122,17 @@ const projects = ({ lastPositionXY }: { lastPositionXY: any }) => {
               title={projectsItems[3].title}
               marginBottom={projectsItems[3].marginBottom}
               id={projectsItems[3].id}
+            />
+
+            <ItemProject
+              ref={project5}
+              isInView={isInViewproject5}
+              key={projectsItems[4].title}
+              image={projectsItems[4].image}
+              link={projectsItems[4].link}
+              title={projectsItems[4].title}
+              marginBottom={projectsItems[4].marginBottom}
+              id={projectsItems[4].id}
             />
           </section>
         </main>

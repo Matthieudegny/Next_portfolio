@@ -30,9 +30,10 @@ const ItemProject = forwardRef<HTMLDivElement, ItemProjectProps>((props, ref) =>
         >
           <p
             ref={ref}
-            className="text-3xl sm:text-5xl xl:text-7xl cursor-pointer z-50 "
+            className="text-3xl sm:text-5xl xl:text-7xl cursor-pointer z-50 font-Playfair "
             style={{
               willChange: "transform, opacity",
+              textShadow: "0px 0px 15px white",
               opacity: isInViewprojectTitlte ? "1" : "0",
               transform: `scaleX(${isInViewprojectTitlte ? 1 : 0})`,
               transition:

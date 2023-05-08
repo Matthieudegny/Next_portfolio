@@ -28,7 +28,7 @@ const project = () => {
   const [titleNextProject, settitleNextProject] = useState("");
 
   // i need to save an initial value for router.query.id
-  //because when i leave the page,evrything is crush but the animation take some times to execute, and during this time,
+  //because when i leave the page,evrything is crushed but the animation take some times to execute, and during this time,
   //the value of router.query.id is undefined and make crash the app
   //onlyAtMountParamsRoute
   //is used to change the value of indexProject only at the end of the animation (when the new page is loaded)
@@ -134,7 +134,7 @@ const project = () => {
               </span>
               <div
                 style={animationStyleGoalDescription}
-                className=" w-4/5 lg:p-5 text-xl xl:pr-14 tracking-wide "
+                className=" w-4/5 lg:p-5 text-xl xl:pr-14 tracking-wide leading-7 xl:leading-10"
               >
                 {projectObject.goal}
               </div>

@@ -38,7 +38,7 @@ export const projectsItems: itemsProjects[] = [
     marginBottom: true,
     description:
       "My Dashboard is a trading desktop (no responsive) app that provides users with a clear view of their positions and allows them to draw insights from the data. With features like performance tracking and market comparison, traders can easily monitor their investments and make informed decisions. A version 2 is planned for September, which includes a new UI, a new structure built with Next.js and Supabase, TypeScript support, and unit testing with Jest",
-    goal: "Build a full-stack web application using the MERN stack that allows the front-end to synthesize data and display it using Chart.js data visualization library.",
+    goal: "Build a full-stack web application using the MERN stack that allows the front-end to synthesize data and display it using Chart.js data visualization library. Have some world financial market data with the free API : twelvedata.",
     frontEnd: "React, react-query, SASS, react-chart JS, JsonwebToken, useContext",
     backEnd: "Node.js, Express.js, MongoDB, bcryptjs",
     linkwebsite: "https://my-dash-board-md.vercel.app/",
@@ -50,7 +50,7 @@ export const projectsItems: itemsProjects[] = [
     image: "/myPortfolio.png",
     link: "/projects/4",
     title: "My portfolio",
-    marginBottom: false,
+    marginBottom: true,
     description:
       "I created this portfolio to showcase my work and give a glimpse into my personality. Through this project, I hope to connect with like-minded individuals and potential collaborators.",
     goal: "Create Next.js web application with strong SEO and use TypeScript for the structural development. Implement smooth animations for the transition page using Framer Motion for a better UX, all other animations are homemade.",
@@ -60,5 +60,20 @@ export const projectsItems: itemsProjects[] = [
     linkRepoGithub: "https://github.com/Matthieudegny/portfolio_next",
     id: 4,
     imageTailwind: "bg-myPortfolio",
+  },
+  {
+    image: "/next3.jpg",
+    link: "/projects/5",
+    title: "My prompts",
+    marginBottom: false,
+    description:
+      "This app is designed to help users discover, create, and share creative prompts, with the aim of improving the relationship between artificial intelligence (AI) tools and users. The app is currently in development.",
+    goal: "Improve my skills in Next.js, by using features such as next-auth, App Folder Structure, Client and Server Components, and File-based Routing (including dynamic and nested routes)",
+    frontEnd: "React, Type-script, Tailwind",
+    backEnd: "Next.js, bcryptjs, MongoDB, next-auth",
+    linkwebsite: "",
+    linkRepoGithub: "https://github.com/Matthieudegny/Next_MyPrompts",
+    id: 5,
+    imageTailwind: "nextJs",
   },
 ];

@@ -77,6 +77,7 @@ module.exports = {
         shareYourPrompt: "url('../public/shareYourPrompt.png')",
         myDashboard: "url('../public/myDashboard.png')",
         myPortfolio: "url('../public/myPortfolio.png')",
+        nextJs: "url('../public/next.jpg')",
       },
       animation: {
         gradient: "gradient 7s ease infinite",
