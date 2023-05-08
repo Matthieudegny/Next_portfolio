@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import Head from "next/head";
 
@@ -10,16 +10,88 @@ import Footer from "@/components/Footer";
 
 //data
 import { projectsItems } from "../data/itemsProjects";
+import { userAgent } from "next/server";
 
-const projects = ({ lastPositionXY }: { lastPositionXY: any }) => {
+const projects = () => {
+  const [sizescreen, setsizescreen] = useState("");
   const refSectionProjects = useRef<HTMLInputElement>(null);
   const isInViewSectionProjects = useInView(refSectionProjects, {
     margin: "0px 0px 0px 0px",
     amount: 0.25,
   });
 
+  useEffect(() => {
+    //evet lsitener on width screen
+    const handleResize = () => {
+      if (window.innerWidth > 1700) {
+        setsizescreen("3xl");
+      }
+      if (window.innerWidth < 1700 && window.innerWidth > 1536) {
+        setsizescreen("2xl");
+      }
+      if (window.innerWidth < 1536 && window.innerWidth > 1280) {
+        setsizescreen("xl");
+      }
+      if (window.innerWidth < 1280 && window.innerWidth > 1024) {
+        setsizescreen("lg");
+      }
+      if (window.innerWidth < 1024 && window.innerWidth > 768) {
+        setsizescreen("md");
+      }
+      if (window.innerWidth < 768 && window.innerWidth > 640) {
+        setsizescreen("sm");
+      }
+      if (window.innerWidth < 640 && window.innerWidth > 400) {
+        setsizescreen("xs");
+      }
+      if (window.innerWidth < 400) {
+        setsizescreen("2xs");
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log(sizescreen);
+  }, [sizescreen]);
+
+  let marginUpdate;
+  switch (sizescreen) {
+    case "3xl":
+      marginUpdate = "-200px 0px -280px 0px";
+      break;
+    case "2xl":
+      marginUpdate = "-50px 0px -280px 0px";
+      break;
+    case "xl":
+      marginUpdate = "-20px 0px -280px 0px";
+      break;
+    case "lg":
+      marginUpdate = "-30px 0px -280px 0px";
+      break;
+    case "md":
+      marginUpdate = "-120px 0px -280px 0px";
+      break;
+    case "sm":
+      marginUpdate = "-90px 0px -280px 0px";
+      break;
+    case "xs":
+      marginUpdate = "-200px 0px -200px 0px";
+      break;
+    case "2xs":
+      marginUpdate = "-150px 0px -200px 0px";
+      break;
+    default:
+      marginUpdate = "-200px 0px -280px 0px";
+      break;
+  }
+
   const amountProjects = {
-    margin: "-210px 100px -280px 0px",
+    margin: marginUpdate,
     amount: 0.7,
   };
 
@@ -71,7 +143,7 @@ const projects = ({ lastPositionXY }: { lastPositionXY: any }) => {
           <Head>
             <title>Projects - Matthieu Degny Portfolio</title>
           </Head>
-          <h5 className="font-NotoSansGeorgian min-h-60v mb-20 xl:mb-0 w-4/5 lg:w-3/5   md:tracking-widest text-2xl p-1 pr-8 sm:pr-0 md:text-3xl pl-5  sm:px-5rem px-24 pt-14 ">
+          <h5 className="font-NotoSansGeorgian min-h-60v mb-20 xl:mb-0 w-4/5 lg:w-3/5   md:tracking-widest text-xl sm:text-2xl p-1 pr-8 sm:pr-0 md:text-3xl pl-5  sm:px-5rem px-24 pt-14 ">
             <LayoutText delay={0.5} timeAnimation={0.02} animationColor={false}>
               As a web developer, I thrive on combining purposeful design with powerful user interfaces,
               continually pushing the boundaries of what's possible through my deep understanding of
