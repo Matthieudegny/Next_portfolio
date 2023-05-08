@@ -62,7 +62,7 @@ const projects = () => {
   let marginUpdate;
   switch (sizescreen) {
     case "3xl":
-      marginUpdate = "-200px 0px -280px 0px";
+      marginUpdate = "-190px 0px -250px 0px";
       break;
     case "2xl":
       marginUpdate = "-50px 0px -280px 0px";
