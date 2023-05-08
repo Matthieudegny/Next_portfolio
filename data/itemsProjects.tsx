@@ -37,7 +37,7 @@ export const projectsItems: itemsProjects[] = [
     title: "My Dashboard",
     marginBottom: true,
     description:
-      "My Dashboard is a trading desktop (no responsive) app that provides users with a clear view of their positions and allows them to draw insights from the data. With features like performance tracking and market comparison, traders can easily monitor their investments and make informed decisions. A version 2 is planned for September, which includes a new UI, a new structure built with Next.js and Supabase, TypeScript support, and unit testing with Jest",
+      "My Dashboard is a trading desktop (no responsive) app that provides users with a clear view of their positions and allows them to draw insights from the data. With features like performance tracking and market comparison, traders can easily monitor their investments and make informed decisions.",
     goal: "Build a full-stack web application using the MERN stack that allows the front-end to synthesize data and display it using Chart.js data visualization library. Have some world financial market data with the free API : twelvedata.",
     frontEnd: "React, react-query, SASS, react-chart JS, JsonwebToken, useContext",
     backEnd: "Node.js, Express.js, MongoDB, bcryptjs",
