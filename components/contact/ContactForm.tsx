@@ -102,7 +102,7 @@ function ContactForm({
   return (
     <form
       autoComplete="off"
-      className="relative flex flex-col p-5 pb-52 md:pb-10 pt-24 md:pt-28 xl:pt-36"
+      className="relative flex flex-col p-5 pb-52 md:pb-10 pt-24 md:pt-28 xl:pt-24"
       onSubmit={handleSubmit}
     >
       {/* <div
