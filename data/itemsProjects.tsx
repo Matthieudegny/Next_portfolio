@@ -22,7 +22,7 @@ export const projectsItems: itemsProjects[] = [
     title: "Share your Prompt",
     marginBottom: true,
     description:
-      "Share your Prompt is a social web app that enables users to share and discover creative prompts through pictures. With features like liking and saving posts, users can easily build their own libraries of inspiring content.",
+      "Share your Prompt is a social web app that enables users to share, like, comment and discover creative prompts through pictures. With features like liking and saving posts, users can easily build their own libraries of inspiring content.",
     goal: "Create a dynamic full-stack web application using Next.js and integrate PSQL with Supabase to incorporate primary and foreign keys into the data structure.",
     frontEnd: "React, Next.js, Tailwind CSS, react-spinner",
     backEnd: "Next.js, Supabase",

@@ -10,13 +10,13 @@ const AnimationButton = ({ children, Anim }: { children: any; Anim: boolean }) =
   const array = getLettersAndSpaces(string);
 
   return (
-    <div className="inline-block">
+    <div className="inline-block h-10 overflow-hidden">
       <div>
         {array.map((item: string, index: number) => {
           return (
             <span
               key={index}
-              className={`text-white inline-block transition-transform duration-500  font-Montserrat_thin font-light text-3xl ${
+              className={`text-white inline-block  transition-transform duration-500  font-Montserrat_thin font-light text-3xl ${
                 Anim ? "-translate-y-full" : ""
               }`}
               style={{
@@ -35,7 +35,7 @@ const AnimationButton = ({ children, Anim }: { children: any; Anim: boolean }) =
         {array.map((item: string, index: number) => (
           <span
             key={index}
-            className={`text-white inline-block tracking-wider transition-transform duration-500 font-NotoSansGeorgian text-3xl    ${
+            className={`text-white inline-block  tracking-wider transition-transform duration-500 font-NotoSansGeorgian text-3xl    ${
               Anim ? "-translate-y-full " : ""
             }`}
             style={{
