@@ -118,23 +118,23 @@ const project = () => {
           <div className="`w-full min-h-screen  lg:w-3/6  flex flex-col justify-evenly ">
             <div
               style={animationStyleTitle}
-              className="w-4/5 pl-8 md:pl-5 mb-6 md:mb-0 mt-6 md:mt-0 text-2xl md:text-4xl font-bold tracking-widest"
+              className="w-4/5 pl-8 md:pl-5 mb-6 md:mb-0 mt-6 md:mt-0 text-2xl md:text-3xl font-bold tracking-widest"
             >
               {projectObject.title} :
             </div>
             <div
               style={animationStyleDescription}
-              className="w-4/5 pl-8  md:pl-5  text-xl  xl:pr-14  leading-7 xl:leading-10"
+              className="w-4/5 pl-8  md:pl-5  text-xl  xl:pr-14  leading-7"
             >
               {projectObject.description}
             </div>
             <div className="text-2xl pl-8 pr-8">
-              <span style={animationStyleGoalTitle} className="block pb-2 text-2xl">
+              <span style={animationStyleGoalTitle} className="block pt-2 text-2xl">
                 Main goal:
               </span>
               <div
                 style={animationStyleGoalDescription}
-                className=" w-3/4 lg:p-5 text-xl xl:pr-14 tracking-wide leading-7 xl:leading-10"
+                className=" w-3/4 pl-5  text-xl xl:pr-14 tracking-wide leading-7 "
               >
                 {projectObject.goal}
               </div>
@@ -143,7 +143,7 @@ const project = () => {
               <span style={animationStyleFrontEndTitle} className="block pb-2 text-2xl">
                 Front-end :
               </span>
-              <div style={animationStyleFrontEnd} className="lg:p-5 text-xl  tracking-wide ">
+              <div style={animationStyleFrontEnd} className="pl-5 text-xl  tracking-wide ">
                 {projectObject.frontEnd}.
               </div>
             </div>
@@ -151,7 +151,7 @@ const project = () => {
               <span style={animationStyleBackEndTitle} className="block pb-2 text-2xl">
                 Back-end :
               </span>
-              <div style={animationStyleBackEnd} className="lg:p-5 text-xl  tracking-wide ">
+              <div style={animationStyleBackEnd} className="pl-5 text-xl  tracking-wide ">
                 {projectObject.backEnd}.
               </div>
             </div>
