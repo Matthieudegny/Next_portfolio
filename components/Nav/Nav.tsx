@@ -26,7 +26,7 @@ const Nav = ({
   const [menuNavMobile, setmenuNavMobile] = useState<boolean>(false);
   const [mobilAnimationLink, setmobilAnimationLink] = useState<any>(false);
   //turn on menu nav for mobile
-  const [width, setWidth] = useState<string>("desktopWidth");
+  const [width, setWidth] = useState<string>("");
 
   const turnOffAnimation = (setstate: Function) => {
     const timeOutOffAnimation = setTimeout(() => {
@@ -89,7 +89,7 @@ const Nav = ({
         onMouseLeave={() => {
           if (link !== currentPage) turnOffAnimation(seStateAnimation);
         }}
-        className={styleNav }
+        className={styleNav}
         href={link}
         onClick={() => setcurrentPage(link)}
       >
