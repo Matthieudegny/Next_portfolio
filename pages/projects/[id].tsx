@@ -128,7 +128,7 @@ const project = () => {
             >
               {projectObject.description}
             </div>
-            <div className="text-2xl pl-8 pr-8">
+            <div className="pl-8 pr-8 mb-5">
               <span style={animationStyleGoalTitle} className="block  text-2xl pb-2">
                 Main goal:
               </span>
@@ -139,7 +139,7 @@ const project = () => {
                 {projectObject.goal}
               </div>
             </div>
-            <div className="text-2xl  mb-5 lg:mb-0 pl-8 pr-8">
+            <div className="mb-5 lg:mb-0 pl-8 pr-8">
               <span style={animationStyleFrontEndTitle} className="block pb-2 text-2xl">
                 Front-end :
               </span>
@@ -147,7 +147,7 @@ const project = () => {
                 {projectObject.frontEnd}.
               </div>
             </div>
-            <div className="text-2xl  mb-5 lg:mb-0 pl-8 pr-8">
+            <div className="mb-5 lg:mb-0 pl-8 pr-8">
               <span style={animationStyleBackEndTitle} className="block pb-2 text-2xl">
                 Back-end :
               </span>

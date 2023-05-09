@@ -40,7 +40,7 @@ const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVer
 
         <h5
           ref={refSectionFormContact}
-          className="font-NotoSansGeorgian min-h-30v mb-20 xl:mb-0 w-4/5 xl:w-4/5   md:tracking-widest text-2xl p-1 pr-8 sm:pr-0 md:text-3xl pl-5  sm:px-5rem px-24 pt-14 cursor-default"
+          className="font-NotoSansGeorgian min-h-30v mb-20 xl:mb-0 w-4/5 xl:w-4/5   md:tracking-widest  p-1 pr-8 sm:pr-0 text-xl sm:text-2xl md:text-3xl pl-5  sm:px-5rem px-24 pt-14 cursor-default"
         >
           <LayoutText delay={0.5} timeAnimation={0.02} animationColor={false}>
             Ready to collaborate with you! Whether you have an idea in mind, a project to discuss, or just
