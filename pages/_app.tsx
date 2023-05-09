@@ -53,8 +53,7 @@ export default function App({ Component, pageProps }: AppProps) {
           lightThemeNav={lightThemeNav}
         />
         <Component
-         key={`component-${router.pathname}`}
-        
+         key={router.asPath}
           mobileVersion={mobileVersion}
           padVersion={padVersion}
           setHideNav={setHideNav}
