@@ -36,7 +36,7 @@ const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVer
         <Head>
           <title>Contact - Matthieu Degny Portfolio</title>
         </Head>
-        {!mobileVersion && !padVersion && <CursorAnim />}
+        {/* {!mobileVersion && !padVersion && <CursorAnim />} */}
 
         <h5
           ref={refSectionFormContact}
