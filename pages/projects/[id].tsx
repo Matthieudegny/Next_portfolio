@@ -129,7 +129,7 @@ const project = () => {
               {projectObject.description}
             </div>
             <div className="text-2xl pl-8 pr-8">
-              <span style={animationStyleGoalTitle} className="block pb-2 text-2xl">
+              <span style={animationStyleGoalTitle} className="block  text-2xl pb-2">
                 Main goal:
               </span>
               <div
