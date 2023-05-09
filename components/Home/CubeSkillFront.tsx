@@ -107,7 +107,7 @@ const CubeSkillFront = ({
             willChange: "transform background-color color",
             transform: animationOn ? "translateX(-100%)" : "translateX(0%)",
             color: !animationOn ? secondColor : background,
-            transition: `transform 1s,background-color 0s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color  0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s`,
+            transition: `transform 1s,background-color 0.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color  0.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s`,
           }}
           className={`absolute w-full h-full ${isInViewrefSection3 ? "bg-black" : "bg-primary-color"}`}
         >
