@@ -124,22 +124,22 @@ const project = () => {
             </div>
             <div
               style={animationStyleDescription}
-              className="w-4/5 pl-8  md:pl-5  text-xl  xl:pr-14  leading-7"
+              className="w-4/5 pl-8 mb-5 lg:mb-0  md:pl-5  text-xl  xl:pr-14  leading-7"
             >
               {projectObject.description}
             </div>
-            <div className="text-2xl pl-8 pr-8">
+            <div className="text-2xl  mb-5 lg:mb-0 pl-8 pr-8">
               <span style={animationStyleGoalTitle} className="block pt-2 text-2xl">
                 Main goal:
               </span>
               <div
                 style={animationStyleGoalDescription}
-                className=" w-3/4 pl-5  text-xl xl:pr-14 tracking-wide leading-7 "
+                className=" w-5/6 pl-5  text-xl xl:pr-14 tracking-wide leading-7 "
               >
                 {projectObject.goal}
               </div>
             </div>
-            <div className="text-2xl pl-8 pr-8">
+            <div className="text-2xl  mb-5 lg:mb-0 pl-8 pr-8">
               <span style={animationStyleFrontEndTitle} className="block pb-2 text-2xl">
                 Front-end :
               </span>
@@ -147,7 +147,7 @@ const project = () => {
                 {projectObject.frontEnd}.
               </div>
             </div>
-            <div className="text-2xl pl-8 pr-8">
+            <div className="text-2xl  mb-5 lg:mb-0 pl-8 pr-8">
               <span style={animationStyleBackEndTitle} className="block pb-2 text-2xl">
                 Back-end :
               </span>

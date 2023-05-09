@@ -73,7 +73,6 @@ const Nav = ({
     } else {
       setProjects(false);
     }
-    console.log(currentPage);
   }, [currentPage]);
 
   const diplsayNavdesktop = (
@@ -90,7 +89,7 @@ const Nav = ({
         onMouseLeave={() => {
           if (link !== currentPage) turnOffAnimation(seStateAnimation);
         }}
-        className={styleNav + "animate-[0.25s_slideinNav_1s_ease-out_forwards]"}
+        className={styleNav }
         href={link}
         onClick={() => setcurrentPage(link)}
       >
@@ -101,7 +100,7 @@ const Nav = ({
     );
   };
 
-  const styleNav = "inline-block translate-x-full opacity-0 leading-9 h-9 overflow-hidden mb-5 ";
+  const styleNav = "inline-block  leading-9 h-9 overflow-hidden mb-5 ";
   const conditions_ToSet_NAv_In_White = (lightThemeNav && currentPage === "/") || currentPage === "/contact";
 
   return (
