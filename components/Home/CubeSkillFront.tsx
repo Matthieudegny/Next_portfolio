@@ -49,7 +49,7 @@ const CubeSkillFront = ({
         }}
         className="relative w-600px h-300px m-14 cursor-pointer "
       >
-        {/* front faace */}
+        {/* font face */}
         <div
           style={{
             willChange: "transform background color",
@@ -62,7 +62,6 @@ const CubeSkillFront = ({
         >
           <div className="h-full flex text-center justify-center items-center text-6xl">{title}</div>
         </div>
-        {/* other */}
         <div
           style={{
             willChange: "transform background",
@@ -103,17 +102,12 @@ const CubeSkillFront = ({
         }}
         className="relative w-screen h-96 cursor-pointer "
       >
-        {/* front faace */}
         <div
           style={{
             willChange: "transform background-color color",
             transform: animationOn ? "translateX(-100%)" : "translateX(0%)",
             color: !animationOn ? secondColor : background,
-            transition: `transform 1s,background-color ${
-              mobileVersion ? "0.2" : "1.7"
-            }s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color  ${
-              mobileVersion ? "0.2" : "0.7"
-            }s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s`,
+            transition: `transform 1s,background-color 0s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color  0s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s`,
           }}
           className={`absolute w-full h-full ${isInViewrefSection3 ? "bg-black" : "bg-primary-color"}`}
         >
@@ -122,14 +116,13 @@ const CubeSkillFront = ({
             <BsFillArrowRightCircleFill className="mt-6" />
           </div>
         </div>
-        {/* other */}
         <div
           style={{
             willChange: "transform opacity background",
             transform: animationOn ? "translateX(0%)" : "translateX(100%)",
             opacity: animationOn ? 1 : 0,
-            background: animationOn ? secondColor : background,
-            transition: `transform 1s,opacity 2.5s,${animationOn ? "2.5" : "1"}s background 0s`,
+            background: secondColor,
+            transition: `transform 1s,opacity 0.5s,${animationOn ? "0" : "0"}s background 0s`,
           }}
           className="absolute w-full h-full animate-[gradient_7s_ease_infinite]"
         >

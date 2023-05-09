@@ -26,7 +26,7 @@ const ArticleSkillsComponent = ({
       return {
         willChange: "transform opacity",
         transform: isInView ? "none" : `translateX(${X}px)`,
-        opacity: isInView ? 1 : 0,
+        opacity: isInView ? 1 : 1,
         transition: `
           transform 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0s,
           opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s`,
