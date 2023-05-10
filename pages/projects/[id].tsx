@@ -124,34 +124,34 @@ const project = () => {
             </div>
             <div
               style={animationStyleDescription}
-              className="w-4/5 pl-8 mb-5 lg:mb-0  md:pl-5  text-xl  xl:pr-14  leading-7"
+              className="w-4/5 pl-8 mb-5 lg:mb-0  md:pl-5  text-lg  md:text-xl  xl:pr-14  leading-7"
             >
               {projectObject.description}
             </div>
             <div className="pl-8 pr-8 mb-5">
-              <span style={animationStyleGoalTitle} className="block  text-2xl pb-2">
+              <span style={animationStyleGoalTitle} className="block  text-xl md:text-2xl pb-2">
                 Main goal:
               </span>
               <div
                 style={animationStyleGoalDescription}
-                className=" w-5/6 pl-5  text-xl xl:pr-14 tracking-wide leading-7 "
+                className=" w-5/6 pl-5  text-lg  md:text-xl xl:pr-14 tracking-wide leading-7 "
               >
                 {projectObject.goal}
               </div>
             </div>
             <div className="mb-5 lg:mb-0 pl-8 pr-8">
-              <span style={animationStyleFrontEndTitle} className="block pb-2 text-2xl">
+              <span style={animationStyleFrontEndTitle} className="block pb-2 text-xl md:text-2xl">
                 Front-end :
               </span>
-              <div style={animationStyleFrontEnd} className="pl-5 text-xl  tracking-wide ">
+              <div style={animationStyleFrontEnd} className="pl-5 text-lg  md:text-xl  tracking-wide ">
                 {projectObject.frontEnd}.
               </div>
             </div>
             <div className="mb-5 lg:mb-0 pl-8 pr-8">
-              <span style={animationStyleBackEndTitle} className="block pb-2 text-2xl">
+              <span style={animationStyleBackEndTitle} className="block pb-2  text-xl md:text-2xl">
                 Back-end :
               </span>
-              <div style={animationStyleBackEnd} className="pl-5 text-xl  tracking-wide ">
+              <div style={animationStyleBackEnd} className="pl-5 text-lg  md:text-xl  tracking-wide ">
                 {projectObject.backEnd}.
               </div>
             </div>
@@ -159,7 +159,7 @@ const project = () => {
             <div className="flex justify-evenly items-center mt-8 md:mt-0">
               {projectObject.linkwebsite !== "" ? (
                 <a
-                  className="text-2xl lg:text-3xl text-center font-semibold"
+                  className="text-xl md:text-2xl lg:text-3xl text-center font-semibold"
                   target="_blank"
                   href={projectObject.linkwebsite}
                   rel="noopener noreferrer"
@@ -172,7 +172,7 @@ const project = () => {
               )}
 
               <a
-                className="text-2xl lg:text-3xl text-center font-semibold"
+                className="text-xl md:text-2xl lg:text-3xl text-center font-semibold"
                 target="_blank"
                 href={projectObject.linkRepoGithub}
                 rel="noopener noreferrer"

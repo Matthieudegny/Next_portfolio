@@ -16,7 +16,7 @@ const AnimationButton = ({ children, Anim }: { children: any; Anim: boolean }) =
           return (
             <span
               key={index}
-              className={`text-white inline-block  transition-transform duration-500  font-Montserrat_thin font-light text-3xl ${
+              className={`text-white inline-block  transition-transform duration-500  font-Montserrat_thin font-light text-xl md:text-3xl ${
                 Anim ? "-translate-y-full" : ""
               }`}
               style={{
@@ -36,7 +36,7 @@ const AnimationButton = ({ children, Anim }: { children: any; Anim: boolean }) =
         {array.map((item: string, index: number) => (
           <span
             key={index}
-            className={`text-white inline-block  tracking-wider transition-transform duration-500 font-NotoSansGeorgian text-3xl    ${
+            className={`text-white inline-block  tracking-wider transition-transform duration-500 font-NotoSansGeorgian text-xl md:text-3xl    ${
               Anim ? "-translate-y-full " : ""
             }`}
             style={{
