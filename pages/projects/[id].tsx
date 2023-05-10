@@ -189,7 +189,7 @@ const project = () => {
             pathname: `/projects/${indexProjectNext}`,
           }}
           passHref
-          className="mt-20 md:mt-0 h-44 w-full flex flex-wrap justify-center text-center items-center text-3xl md:text-5xl  hover:bg-second-color hover:shadow-2xl ease-in-out duration-300 "
+          className="h-20 md:mt-0 md:h-44 w-full flex flex-wrap justify-center text-center items-center text-md sm:text-2xl md:text-3xl  hover:bg-second-color hover:shadow-2xl ease-in-out duration-300 "
         >
           Next Project: {titleNextProject}
           <svg
@@ -198,7 +198,7 @@ const project = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-10 h-10 ml-4"
+            className="w-6 h-6 ml-4"
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
           </svg>

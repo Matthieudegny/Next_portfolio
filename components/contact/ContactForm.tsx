@@ -194,7 +194,7 @@ function ContactForm({
                 opacity: isInViewSectionForm ? 1 : 0,
                 transition: `transform 1s cubic-bezier(0.17, 0.55, 0.55, 1) 2.4s, opacity 1s cubic-bezier(0.17, 0.55, 0.55, 1) 2.4s`,
               }}
-              className="mt-14 md:mt-20  bg-black"
+              className="mt-14 md:mt-20 h-8 overflow-hidden bg-black"
             >
               <AnimationButton Anim={aniamtionButton}>SEND MESSAGE</AnimationButton>
             </button>
@@ -205,10 +205,10 @@ function ContactForm({
                 opacity: isInViewSectionForm ? 1 : 0,
                 transition: `transform 1s cubic-bezier(0.17, 0.55, 0.55, 1) 2.4s, opacity 1s cubic-bezier(0.17, 0.55, 0.55, 1) 2.4s`,
               }}
-              className="absolute right-0 bottom-8  md:bottom-5 text-white hover:white cursor-pointer"
+              className="absolute right-0  bottom-9 sm:bottom-8  md:bottom-5 text-white hover:white cursor-pointer"
               onMouseEnter={() => setResponseEmail("GDPR")}
               onMouseLeave={() => setdisplayInfos(false)}
-              size={30}
+              size={mobileVersion ? 20 : 30}
             />
           </>
         )}
