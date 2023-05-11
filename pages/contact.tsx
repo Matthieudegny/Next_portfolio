@@ -17,7 +17,6 @@ import CursorAnim from "@/components/contact/CursorAnim";
 
 const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVersion: boolean }) => {
   const refSectionFormContact = useRef<HTMLInputElement>(null);
-  const [first, setfirst] = useState(second);
   const isInViewSectionForm = useInView(refSectionFormContact, {
     amount: padVersion ? 0.5 : 1,
     once: true,
