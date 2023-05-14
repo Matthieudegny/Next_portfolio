@@ -116,7 +116,7 @@ const CubeSkillFront = ({
             <BsFillArrowRightCircleFill className="mt-6" />
           </div>
         </div>
-        <div
+        {/* <div
           style={{
             willChange: "transform opacity background",
             transform: animationOn ? "translateX(0%)" : "translateX(100%)",
@@ -145,7 +145,7 @@ const CubeSkillFront = ({
               })}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     )
   );
