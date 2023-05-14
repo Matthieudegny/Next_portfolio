@@ -76,14 +76,14 @@ export default function Home({
         duration: 1,
         ease: "easeOut",
       }}
-      className="fixed top-0 left-0 h-screen w-full  overflow-y-auto"
+      className="fixed top-0 left-0 h-screen max-w-full-vw  overflow-y-auto"
     >
       <main
         className={`${
           isInViewrefSection3
             ? "text-white bg-black duration-200"
             : "text-gray-900 bg-primary-color duration-200"
-        } relative text-gray-900   min-h-screen w-screen  flex flex-col justify-center  font-Montserrat_regular  sm:px-5rem xl:px-44`}
+        } relative text-gray-900  min-h-screen max-w-full-vw flex flex-col justify-center  font-Montserrat_regular  sm:px-5rem xl:px-44`}
         style={{
           willChange: "background-color",
           transition: `background-color ${
