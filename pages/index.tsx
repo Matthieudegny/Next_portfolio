@@ -96,7 +96,7 @@ export default function Home({
         <Head>
           <title>Home - Matthieu Degny Portfolio</title>
         </Head>
-        <section className="min-h-screen lg:h-screen  flex flex-col justify-evenly">
+        <section className="min-h-screen lg:h-screen max-w-full-vw  flex flex-col justify-evenly">
           <h1 className="font-NotoSansGeorgian tracking-widest  w-full p-2 pr-16 sm:pr-0 text-xl sm:text-2xl md:text-3xl  2xl:w-3/5  ">
             <LayoutText delay={0.5} timeAnimation={0.04} animationColor={true}>
               Hello, I'm Matthieu, a front end Developer / in progress to be full stack, specialized with
@@ -117,7 +117,7 @@ export default function Home({
           <h1 className="opacity-0">React , Next.js, Type script</h1>
         </section>
 
-        <section className="2xl:min-h-screen 2xl:-mt-8 mt-5 pb-8 flex flex-col ">
+        <section className="2xl:min-h-screen max-w-full-vw 2xl:-mt-8 mt-5 pb-8 flex flex-col ">
           <h5
             ref={refTitle2}
             style={{

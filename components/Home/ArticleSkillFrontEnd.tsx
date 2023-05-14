@@ -37,8 +37,8 @@ const ArticleSkillsComponent = ({
   }
 
   return (
-    <section className="group relative flex flex-col w-full justify-evenly mb-28 sm:mb-0">
-      <div className="flex flex-col items-center">
+    <section className="group relative max-w-full-vw flex flex-col w-full justify-evenly mb-28 sm:mb-0">
+      <div className="flex flex-col items-center max-w-full-vw">
         {/* top */}
         <div ref={refskill1} style={getAnimationStyle(isInViewSkill1, -200)} className="2xl:mr-35rem z-20 ">
           <CubeSkillFront
