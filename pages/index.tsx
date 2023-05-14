@@ -76,14 +76,14 @@ export default function Home({
         duration: 1,
         ease: "easeOut",
       }}
-      className="fixed top-0 left-0 h-screen max-w-full-vw  overflow-y-auto"
+      className="fixed top-0 left-0 w-full h-screen  overflow-y-auto overflow-x-hidden"
     >
       <main
         className={`${
           isInViewrefSection3
             ? "text-white bg-black duration-200"
             : "text-gray-900 bg-primary-color duration-200"
-        } relative text-gray-900  min-h-screen max-w-full-vw flex flex-col justify-center  font-Montserrat_regular  sm:px-5rem xl:px-44`}
+        } relative min-h-screen w-screen flex flex-col justify-center  font-Montserrat_regular  sm:px-5rem xl:px-44`}
         style={{
           willChange: "background-color",
           transition: `background-color ${
@@ -96,15 +96,15 @@ export default function Home({
         <Head>
           <title>Home - Matthieu Degny Portfolio</title>
         </Head>
-        <section className="min-h-screen lg:h-screen max-w-full-vw  flex flex-col justify-evenly">
-          <h1 className="font-NotoSansGeorgian tracking-widest  w-full p-2 pr-16 sm:pr-0 text-xl sm:text-2xl md:text-3xl  2xl:w-3/5  ">
+        <section className="min-h-screen lg:h-screen  flex flex-col justify-evenly">
+          <h1 className="font-NotoSansGeorgian tracking-widest   p-2 pr-16 sm:pr-0 text-xl sm:text-2xl md:text-3xl  2xl:w-3/5  ">
             <LayoutText delay={0.5} timeAnimation={0.04} animationColor={true}>
               Hello, I'm Matthieu, a front end Developer / in progress to be full stack, specialized with
               modern technologies built around Javascript.
             </LayoutText>
           </h1>
           <h1>
-            <strong className="opacity-0">Matthieu DEGNY Full stack developer</strong>
+            <strong className="opacity-0 hidden ">Matthieu DEGNY Full stack developer</strong>
           </h1>
 
           <h2 className="min-w-full p-2 font-Montserrat_thin pr-16 sm:pr-0  md:pl-20 2xl:pl-30vw text-xl sm:text-2xl  md:text-3xl ">
@@ -114,7 +114,7 @@ export default function Home({
               you:
             </LayoutText>
           </h2>
-          <h1 className="opacity-0">React , Next.js, Type script</h1>
+          <h1 className="opacity-0 hidden">React , Next.js, Type script</h1>
         </section>
 
         <section className="2xl:min-h-screen max-w-full-vw 2xl:-mt-8 mt-5 pb-8 flex flex-col ">
