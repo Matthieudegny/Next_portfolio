@@ -93,61 +93,60 @@ const CubeSkillFront = ({
         </div>
       </div>
     ) : (
-      <></>
-      // <div
-      //   onMouseEnter={() => {
-      //     setAnimationOn(true);
-      //   }}
-      //   onMouseLeave={() => {
-      //     turnAnimationOff();
-      //   }}
-      //   className="relative max-w-full-vw h-96 cursor-pointer overflow-hidden "
-      // >
-      //   <div
-      //     style={{
-      //       willChange: "transform background-color color",
-      //       transform: animationOn ? "translateX(-100%)" : "translateX(0%)",
-      //       color: !animationOn ? secondColor : background,
-      //       transition: `transform 1s,background-color 0.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color  0.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s`,
-      //     }}
-      //     className={`absolute w-full h-full ${isInViewrefSection3 ? "bg-black" : "bg-primary-color"}`}
-      //   >
-      //     <div className="h-full flex flex-col text-center justify-center items-center text-3xl">
-      //       {title}
-      //       <BsFillArrowRightCircleFill className="mt-6" />
-      //     </div>
-      //   </div>
-      //   <div
-      //     style={{
-      //       willChange: "transform opacity background",
-      //       transform: animationOn ? "translateX(0%)" : "translateX(100%)",
-      //       opacity: animationOn ? 1 : 0,
-      //       background: secondColor,
-      //       transition: `transform 1s,opacity 0.5s,${animationOn ? "0" : "0"}s background 0s`,
-      //     }}
-      //     className="absolute w-full h-full animate-[gradient_7s_ease_infinite]"
-      //   >
-      //     <div className="h-full p-3 text-white flex flex-col text-center justify-center items-center text-xl">
-      //       <div className="leading-10">{text}</div>
-      //       <div className="flex flex-wrap justify-center mt-5">
-      //         {listItems.map((item, index) => {
-      //           return (
-      //             <div
-      //               key={index}
-      //               style={{
-      //                 color: secondColor,
-      //                 boxShadow: "0px 0px 6px white",
-      //               }}
-      //               className="p-1 m-2 bg-primary-color hover:bg-white duration-200 hover:scale-110 rounded-lg text-xl font-semibold "
-      //             >
-      //               {item}
-      //             </div>
-      //           );
-      //         })}
-      //       </div>
-      //     </div>
-      //   </div>
-      // </div>
+      <div
+        onMouseEnter={() => {
+          setAnimationOn(true);
+        }}
+        onMouseLeave={() => {
+          turnAnimationOff();
+        }}
+        className="relative max-w-full-vw h-96 cursor-pointer overflow-hidden bg-red-400"
+      >
+        {/* <div
+          style={{
+            willChange: "transform background-color color",
+            transform: animationOn ? "translateX(-100%)" : "translateX(0%)",
+            color: !animationOn ? secondColor : background,
+            transition: `transform 1s,background-color 0.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color  0.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s`,
+          }}
+          className={`absolute w-full h-full ${isInViewrefSection3 ? "bg-black" : "bg-primary-color"}`}
+        >
+          <div className="h-full flex flex-col text-center justify-center items-center text-3xl">
+            {title}
+            <BsFillArrowRightCircleFill className="mt-6" />
+          </div>
+        </div>
+        <div
+          style={{
+            willChange: "transform opacity background",
+            transform: animationOn ? "translateX(0%)" : "translateX(100%)",
+            opacity: animationOn ? 1 : 0,
+            background: secondColor,
+            transition: `transform 1s,opacity 0.5s,${animationOn ? "0" : "0"}s background 0s`,
+          }}
+          className="absolute w-full h-full animate-[gradient_7s_ease_infinite]"
+        >
+          <div className="h-full p-3 text-white flex flex-col text-center justify-center items-center text-xl">
+            <div className="leading-10">{text}</div>
+            <div className="flex flex-wrap justify-center mt-5">
+              {listItems.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    style={{
+                      color: secondColor,
+                      boxShadow: "0px 0px 6px white",
+                    }}
+                    className="p-1 m-2 bg-primary-color hover:bg-white duration-200 hover:scale-110 rounded-lg text-xl font-semibold "
+                  >
+                    {item}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div> */}
+      </div>
     )
   );
 };
