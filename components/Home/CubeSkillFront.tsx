@@ -100,7 +100,7 @@ const CubeSkillFront = ({
         onMouseLeave={() => {
           turnAnimationOff();
         }}
-        className="relative w-screen h-96 cursor-pointer "
+        className="relative w-screen overflow-hidden h-96 cursor-pointer "
       >
         <div
           style={{
@@ -109,7 +109,7 @@ const CubeSkillFront = ({
             color: !animationOn ? secondColor : background,
             transition: `transform 1s,background-color 0.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0s, color  0.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s`,
           }}
-          className={`absolute w-full h-full ${isInViewrefSection3 ? "bg-black" : "bg-primary-color"}`}
+          className={`absolute w-full h-full`}
         >
           <div className="h-full flex flex-col text-center justify-center items-center text-3xl">
             {title}
@@ -122,7 +122,7 @@ const CubeSkillFront = ({
             transform: animationOn ? "translateX(0%)" : "translateX(100%)",
             opacity: animationOn ? 1 : 0,
             background: secondColor,
-            transition: `transform 1s,opacity 0.5s,${animationOn ? "0" : "0"}s background 0s`,
+            transition: `transform 1s,opacity 0.5s,0s background 0s`,
           }}
           className="absolute w-full h-full animate-[gradient_7s_ease_infinite]"
         >
