@@ -2,7 +2,7 @@ import { itemsSkills, FrontSkills } from "../models/typesIndex";
 
 export const frontSkills: FrontSkills = {
   uiUX: ["FIGMA", "CSS", "SASS", "TAILWIND", "MUI"],
-  perfOpti: ["REACT", "REACT-ROUTER", "RAECT-QUERY"],
+  perfOpti: ["REACT", "REACT-ROUTER", "REACT-QUERY"],
   stateManagement: ["REDUX", "REDUX-TOOLKIT", "CONTEXT-API"],
   SEO: ["NEXT.JS"],
 };

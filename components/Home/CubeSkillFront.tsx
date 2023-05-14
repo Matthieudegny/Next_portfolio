@@ -102,7 +102,7 @@ const CubeSkillFront = ({
         }}
         className="relative max-w-full-vw h-96 cursor-pointer overflow-hidden "
       >
-        <div
+        {/* <div
           style={{
             willChange: "transform background-color color",
             transform: animationOn ? "translateX(-100%)" : "translateX(0%)",
@@ -145,7 +145,7 @@ const CubeSkillFront = ({
               })}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     )
   );
