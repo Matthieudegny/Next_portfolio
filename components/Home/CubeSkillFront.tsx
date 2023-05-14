@@ -102,7 +102,7 @@ const CubeSkillFront = ({
         }}
         className="relative w-screen overflow-hidden h-96 cursor-pointer "
       >
-        <div
+        {/* <div
           style={{
             willChange: "transform background-color color",
             transform: animationOn ? "translateX(-100%)" : "translateX(0%)",
@@ -115,7 +115,7 @@ const CubeSkillFront = ({
             {title}
             <BsFillArrowRightCircleFill className="mt-6" />
           </div>
-        </div>
+        </div> */}
         {/* <div
           style={{
             willChange: "transform opacity background",
