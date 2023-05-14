@@ -100,7 +100,7 @@ const CubeSkillFront = ({
         onMouseLeave={() => {
           turnAnimationOff();
         }}
-        className="relative max-w-full-vw h-96 cursor-pointer overflow-hidden bg-red-400"
+        className="relative max-w-full-vw h-96 cursor-pointer bg-red-400"
       >
         {/* <div
           style={{
