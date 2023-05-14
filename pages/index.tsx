@@ -76,7 +76,7 @@ export default function Home({
         duration: 1,
         ease: "easeOut",
       }}
-      className="fixed top-0 left-0 w-screen h-screen max-w-max overflow-y-auto"
+      className="fixed top-0 left-0 w-screen h-screen max-w-full-vw overflow-y-auto"
     >
       <main
         className={`${

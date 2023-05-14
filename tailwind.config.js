@@ -70,6 +70,9 @@ module.exports = {
         "40v": "40vh",
         "60v": "60vh",
       },
+      maxWidth: {
+        "full-vw": "100vw",
+      },
       lineHeight: {
         "65px": "65px",
       },
