@@ -79,7 +79,7 @@ const Contact = ({ mobileVersion, padVersion }: { mobileVersion: boolean; padVer
                   mobileVersion ? 0 : 3.2
                 }s,background 0.4s ease-in-out,color 0.4s ease-in-out`,
               }}
-              href="/Degny_Matthieu_CV.pdf"
+              href="/DegnyMatthieuCV.pdf"
               download
               target="_blank"
             >
