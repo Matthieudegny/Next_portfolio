@@ -8,9 +8,9 @@ export const frontSkills: FrontSkills = {
 };
 
 export const API: itemsSkills = {
-  titles: ["NODEJS", "EXPRESS.JS"],
-  colors: [" #6BBF47", "#808080"],
-  delays: ["0.1s", "0.2s"],
+  titles: ["C#", "NODEJS", "EXPRESS.JS"],
+  colors: ["#8B00FF", " #6BBF47", "#808080"],
+  delays: ["0.1s", "0.2s", "0.3s"],
 };
 export const cleanCode: itemsSkills = {
   titles: ["TYPE-SCRIPT"],

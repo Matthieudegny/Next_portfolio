@@ -103,18 +103,15 @@ export default function Home({
               modern technologies built around Javascript.
             </LayoutText>
           </h1>
-          <h1>
-            <strong className="opacity-0 hidden ">Matthieu DEGNY Full stack developer</strong>
-          </h1>
+          <h1></h1>
 
           <h2 className="min-w-full p-2 font-Montserrat_thin pr-16 sm:pr-0  md:pl-20 2xl:pl-30vw text-xl sm:text-2xl  md:text-3xl ">
             <LayoutText delay={1.3} timeAnimation={0.03} animationColor={false}>
-              As a futur full stack developer with expertise in React, Node.js, Next.js, and TypeScript. I'm
-              passionate about crafting user-friendly interfaces that bring ideas to life. What i can bring to
-              you:
+              As a futur full stack developer with expertise in React, C#, Node.js, Next.js, and TypeScript.
+              I'm passionate about crafting user-friendly interfaces that bring ideas to life. What i can
+              bring to you:
             </LayoutText>
           </h2>
-          <h1 className="opacity-0 hidden">React , Next.js, Type script</h1>
         </section>
 
         <section className="2xl:min-h-screen max-w-full-vw 2xl:-mt-8 mt-5 pb-8 flex flex-col ">
@@ -160,7 +157,7 @@ export default function Home({
                 <DiplayContainerh4
                   title={"API creation:"}
                   text={
-                    "Experienced in building scalable APIs using Node.js and Express.js, with RESTful API design principles and good practices."
+                    "Experienced in building scalable APIs using C# / .Net and Node.js / Express.js, with RESTful API design principles and good practices."
                   }
                   items={API}
                   isInViewrefSection3={isInViewrefSection3}
