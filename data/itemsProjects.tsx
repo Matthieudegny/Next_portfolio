@@ -61,19 +61,4 @@ export const projectsItems: itemsProjects[] = [
     id: 4,
     imageTailwind: "bg-myPortfolio",
   },
-  {
-    image: "/next3.jpg",
-    link: "/projects/5",
-    title: "My prompts",
-    marginBottom: false,
-    description:
-      "This app is designed to help users discover, create, and share creative prompts, with the aim of improving the relationship between artificial intelligence (AI) tools and users. The app is currently in development.",
-    goal: "Improve my skills in Next.js, by using features such as next-auth, App Folder Structure, Client and Server Components, and File-based Routing (including dynamic and nested routes)",
-    frontEnd: "React, Type-script, Tailwind",
-    backEnd: "Next.js, bcryptjs, MongoDB, next-auth",
-    linkwebsite: "",
-    linkRepoGithub: "https://github.com/Matthieudegny/Next_MyPrompts",
-    id: 5,
-    imageTailwind: "nextJs",
-  },
 ];

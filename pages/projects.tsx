@@ -107,9 +107,6 @@ const projects = () => {
   const project4 = useRef<HTMLInputElement>(null);
   const isInViewproject4 = useInView(project4, amountProjects);
 
-  const project5 = useRef<HTMLInputElement>(null);
-  const isInViewproject5 = useInView(project5, amountProjects);
-
   return (
     <>
       <div
@@ -125,7 +122,6 @@ const projects = () => {
           <Item_Numero_SideBar_Project isInView={isInViewproject2} number={2} />
           <Item_Numero_SideBar_Project isInView={isInViewproject3} number={3} />
           <Item_Numero_SideBar_Project isInView={isInViewproject4} number={4} />
-          <Item_Numero_SideBar_Project isInView={isInViewproject5} number={5} />
         </div>
       </div>
 
@@ -194,17 +190,6 @@ const projects = () => {
               title={projectsItems[3].title}
               marginBottom={projectsItems[3].marginBottom}
               id={projectsItems[3].id}
-            />
-
-            <ItemProject
-              ref={project5}
-              isInView={isInViewproject5}
-              key={projectsItems[4].title}
-              image={projectsItems[4].image}
-              link={projectsItems[4].link}
-              title={projectsItems[4].title}
-              marginBottom={projectsItems[4].marginBottom}
-              id={projectsItems[4].id}
             />
           </section>
         </main>
