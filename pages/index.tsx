@@ -99,22 +99,22 @@ export default function Home({
         <section className="min-h-screen lg:h-screen  flex flex-col justify-evenly">
           <h1 className="font-NotoSansGeorgian tracking-widest   p-2 pr-16 sm:pr-0 text-xl sm:text-2xl md:text-3xl  2xl:w-3/5  ">
             <LayoutText delay={0.5} timeAnimation={0.04} animationColor={true}>
-              Hello, I'm Matthieu, a front end Developer / in progress to be full stack, specialized with
-              modern technologies built around Javascript.
+              Hello, I'm Matthieu, a front end Developer / in progress to be full stack, specialized
+              with modern technologies built around Javascript.
             </LayoutText>
           </h1>
           <h1></h1>
 
           <h2 className="min-w-full p-2 font-Montserrat_thin pr-16 sm:pr-0  md:pl-20 2xl:pl-30vw text-xl sm:text-2xl  md:text-3xl ">
             <LayoutText delay={1.3} timeAnimation={0.03} animationColor={false}>
-              As a futur full stack developer with expertise in React, C#, Node.js, Next.js, and TypeScript.
-              I'm passionate about crafting user-friendly interfaces that bring ideas to life. What i can
-              bring to you:
+              As a futur full stack developer with expertise in React, C#, Node.js, Next.js, and
+              TypeScript. I'm passionate about crafting user-friendly interfaces that bring ideas to
+              life. What i can bring to you:
             </LayoutText>
           </h2>
         </section>
 
-        <section className="2xl:min-h-screen max-w-full-vw 2xl:-mt-8 mt-5 pb-8 flex flex-col ">
+        <section className="2xl:min-h-screen max-w-full-vw 2xl:-mt-8 mt-5 flex flex-col ">
           <h5
             ref={refTitle2}
             style={{
@@ -126,13 +126,16 @@ export default function Home({
           >
             FRONT-END:
           </h5>
-          <ArticleSkillsComponent mobileVersion={mobileVersion} isInViewrefSection3={isInViewrefSection3} />
+          <ArticleSkillsComponent
+            mobileVersion={mobileVersion}
+            isInViewrefSection3={isInViewrefSection3}
+          />
         </section>
 
         <section ref={refSection3}>
-          <div className="h-screen flex flex-col  justify-center items-center m-auto ">
+          <div className="h-screen flex flex-col  justify-center items-center m-auto">
             <div
-              className="relative w-full   md:h-60v lg:h-50v xl:h-50v flex flex-col md:flex-row "
+              className="relative w-full md:h-60v lg:h-50v xl:h-70v flex flex-col md:flex-row"
               ref={refSkillsTexts}
             >
               {/* border top horyzontale */}
